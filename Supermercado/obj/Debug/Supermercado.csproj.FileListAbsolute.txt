@@ -1,0 +1,12 @@
+E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\Supermercado.exe.config
+E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\Supermercado.exe
+E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\Supermercado.pdb
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.csproj.AssemblyReference.cache
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.TelaPrincipal.resources
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.Properties.Resources.resources
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.csproj.GenerateResource.cache
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.csproj.CoreCompileInputs.cache
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.exe
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.pdb
+E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\CuoreUI.dll
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermer.F0BE87B0.Up2Date
