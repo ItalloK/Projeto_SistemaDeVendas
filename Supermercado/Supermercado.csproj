@@ -108,5 +108,20 @@
   <ItemGroup>
     <None Include="Resources\btn8.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnVenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Venda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Relatorios.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,6 +16,7 @@ namespace Supermercado
         public TelaPrincipal()
         {
             InitializeComponent();
+            firstLabel.BringToFront();
         }
 
         private void panel_Close_Click(object sender, EventArgs e)
@@ -61,6 +62,34 @@ namespace Supermercado
             string hora = agora.ToString("HH:mm:ss");
 
             lbl_Horario.Text = $"São Luis, {hora}";
+        }
+
+        private void btn_Venda_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btn_Venda.Height;
+            slidePanel.Top = btn_Venda.Top;  // Ajusta a posição vertical
+            firstLabel.BringToFront();
+        }
+
+        private void btn_Estoque_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btn_Estoque.Height;
+            slidePanel.Top = btn_Estoque.Top;  // Ajusta a posição vertical
+            seccondLabel.BringToFront();
+        }
+
+        private void btn_Clientes_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btn_Clientes.Height;
+            slidePanel.Top = btn_Clientes.Top;  // Ajusta a posição vertical
+            treeLabel.BringToFront();
+        }
+
+        private void btn_Relatorios_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btn_Relatorios.Height;
+            slidePanel.Top = btn_Relatorios.Top;  // Ajusta a posição vertical
+            fourLabel.BringToFront();
         }
     }
 }
