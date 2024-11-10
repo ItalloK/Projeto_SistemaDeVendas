@@ -49,6 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +132,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btn_Relatorios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Funcionario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn6Menor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn6Menormm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn4MenorMM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn5MenorMM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -83,6 +83,26 @@ namespace Supermercado.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn_Funcionario {
+            get {
+                object obj = ResourceManager.GetObject("btn_Funcionario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_Home {
+            get {
+                object obj = ResourceManager.GetObject("btn_Home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_Relatorios {
             get {
                 object obj = ResourceManager.GetObject("btn_Relatorios", resourceCulture);
@@ -143,6 +163,16 @@ namespace Supermercado.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn4MenorMM {
+            get {
+                object obj = ResourceManager.GetObject("btn4MenorMM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn5 {
             get {
                 object obj = ResourceManager.GetObject("btn5", resourceCulture);
@@ -153,9 +183,29 @@ namespace Supermercado.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn5MenorMM {
+            get {
+                object obj = ResourceManager.GetObject("btn5MenorMM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn6 {
             get {
                 object obj = ResourceManager.GetObject("btn6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn6Menormm {
+            get {
+                object obj = ResourceManager.GetObject("btn6Menormm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -197,6 +247,16 @@ namespace Supermercado.Properties {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
