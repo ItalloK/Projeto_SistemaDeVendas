@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Supermercado
 {
@@ -17,6 +18,7 @@ namespace Supermercado
         {
             InitializeComponent();
             homeLabel.BringToFront();
+            Funcoes.SetPlaceholder(tb_Pesquisa, "Digite para pesquisar nos dados...");
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)

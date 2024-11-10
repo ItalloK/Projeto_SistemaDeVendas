@@ -34,34 +34,42 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Minimize = new System.Windows.Forms.Button();
+            this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_Maximize = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Horario = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.slidePanel = new System.Windows.Forms.Panel();
-            this.firstLabel = new System.Windows.Forms.Panel();
-            this.seccondLabel = new System.Windows.Forms.Panel();
-            this.treeLabel = new System.Windows.Forms.Panel();
-            this.fourLabel = new System.Windows.Forms.Panel();
-            this.fiveLabel = new System.Windows.Forms.Panel();
-            this.homeLabel = new System.Windows.Forms.Panel();
             this.btn_Home = new System.Windows.Forms.Button();
             this.btn_Funcionario = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.slidePanel = new System.Windows.Forms.Panel();
             this.btn_Relatorios = new System.Windows.Forms.Button();
             this.btn_Clientes = new System.Windows.Forms.Button();
             this.btn_Estoque = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Venda = new System.Windows.Forms.Button();
-            this.btn_Minimize = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
-            this.btn_Maximize = new System.Windows.Forms.Button();
+            this.firstLabel = new System.Windows.Forms.Panel();
+            this.seccondLabel = new System.Windows.Forms.Panel();
+            this.fourLabel = new System.Windows.Forms.Panel();
+            this.treeLabel = new System.Windows.Forms.Panel();
+            this.fiveLabel = new System.Windows.Forms.Panel();
+            this.homeLabel = new System.Windows.Forms.Panel();
+            this.dgv_Dados = new CuoreUI.Controls.cuiDataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_Pesquisa = new System.Windows.Forms.TextBox();
+            this.btn_CadCliente = new System.Windows.Forms.Button();
+            this.btn_AttCliente = new System.Windows.Forms.Button();
+            this.btn_DelCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.treeLabel.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +114,45 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(95, 28);
             this.panel3.TabIndex = 6;
+            // 
+            // btn_Minimize
+            // 
+            this.btn_Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Minimize.FlatAppearance.BorderSize = 0;
+            this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Minimize.Image = global::Supermercado.Properties.Resources.btn4MenorMM;
+            this.btn_Minimize.Location = new System.Drawing.Point(5, 2);
+            this.btn_Minimize.Name = "btn_Minimize";
+            this.btn_Minimize.Size = new System.Drawing.Size(25, 25);
+            this.btn_Minimize.TabIndex = 14;
+            this.btn_Minimize.UseVisualStyleBackColor = true;
+            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.Image = global::Supermercado.Properties.Resources.btn6Menormm;
+            this.btn_Close.Location = new System.Drawing.Point(65, 2);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(25, 25);
+            this.btn_Close.TabIndex = 15;
+            this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
+            // btn_Maximize
+            // 
+            this.btn_Maximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Maximize.FlatAppearance.BorderSize = 0;
+            this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Maximize.Image = global::Supermercado.Properties.Resources.btn5MenorMM;
+            this.btn_Maximize.Location = new System.Drawing.Point(35, 2);
+            this.btn_Maximize.Name = "btn_Maximize";
+            this.btn_Maximize.Size = new System.Drawing.Size(25, 25);
+            this.btn_Maximize.TabIndex = 13;
+            this.btn_Maximize.UseVisualStyleBackColor = true;
+            this.btn_Maximize.Click += new System.EventHandler(this.btn_Maximize_Click);
             // 
             // panel5
             // 
@@ -167,92 +214,6 @@
             this.panel4.Size = new System.Drawing.Size(179, 453);
             this.panel4.TabIndex = 2;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Company Market";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // slidePanel
-            // 
-            this.slidePanel.BackColor = System.Drawing.Color.LightGray;
-            this.slidePanel.Location = new System.Drawing.Point(3, 129);
-            this.slidePanel.Name = "slidePanel";
-            this.slidePanel.Size = new System.Drawing.Size(10, 48);
-            this.slidePanel.TabIndex = 9;
-            // 
-            // firstLabel
-            // 
-            this.firstLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.firstLabel.BackColor = System.Drawing.Color.Black;
-            this.firstLabel.Location = new System.Drawing.Point(185, 57);
-            this.firstLabel.Name = "firstLabel";
-            this.firstLabel.Size = new System.Drawing.Size(748, 410);
-            this.firstLabel.TabIndex = 9;
-            // 
-            // seccondLabel
-            // 
-            this.seccondLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seccondLabel.BackColor = System.Drawing.Color.Gray;
-            this.seccondLabel.Location = new System.Drawing.Point(185, 57);
-            this.seccondLabel.Name = "seccondLabel";
-            this.seccondLabel.Size = new System.Drawing.Size(748, 410);
-            this.seccondLabel.TabIndex = 10;
-            // 
-            // treeLabel
-            // 
-            this.treeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeLabel.BackColor = System.Drawing.Color.Gainsboro;
-            this.treeLabel.Location = new System.Drawing.Point(185, 57);
-            this.treeLabel.Name = "treeLabel";
-            this.treeLabel.Size = new System.Drawing.Size(748, 410);
-            this.treeLabel.TabIndex = 11;
-            // 
-            // fourLabel
-            // 
-            this.fourLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fourLabel.BackColor = System.Drawing.Color.RosyBrown;
-            this.fourLabel.Location = new System.Drawing.Point(185, 57);
-            this.fourLabel.Name = "fourLabel";
-            this.fourLabel.Size = new System.Drawing.Size(748, 410);
-            this.fourLabel.TabIndex = 12;
-            // 
-            // fiveLabel
-            // 
-            this.fiveLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fiveLabel.BackColor = System.Drawing.Color.Olive;
-            this.fiveLabel.Location = new System.Drawing.Point(185, 57);
-            this.fiveLabel.Name = "fiveLabel";
-            this.fiveLabel.Size = new System.Drawing.Size(748, 410);
-            this.fiveLabel.TabIndex = 11;
-            // 
-            // homeLabel
-            // 
-            this.homeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.homeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.homeLabel.Location = new System.Drawing.Point(185, 57);
-            this.homeLabel.Name = "homeLabel";
-            this.homeLabel.Size = new System.Drawing.Size(748, 410);
-            this.homeLabel.TabIndex = 12;
-            // 
             // btn_Home
             // 
             this.btn_Home.FlatAppearance.BorderSize = 0;
@@ -287,6 +248,26 @@
             this.btn_Funcionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Funcionario.UseVisualStyleBackColor = true;
             this.btn_Funcionario.Click += new System.EventHandler(this.btn_Funcionario_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(26, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Company Market";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // slidePanel
+            // 
+            this.slidePanel.BackColor = System.Drawing.Color.LightGray;
+            this.slidePanel.Location = new System.Drawing.Point(3, 129);
+            this.slidePanel.Name = "slidePanel";
+            this.slidePanel.Size = new System.Drawing.Size(10, 48);
+            this.slidePanel.TabIndex = 9;
             // 
             // btn_Relatorios
             // 
@@ -368,44 +349,157 @@
             this.btn_Venda.UseVisualStyleBackColor = true;
             this.btn_Venda.Click += new System.EventHandler(this.btn_Venda_Click);
             // 
-            // btn_Minimize
+            // firstLabel
             // 
-            this.btn_Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Minimize.FlatAppearance.BorderSize = 0;
-            this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Minimize.Image = global::Supermercado.Properties.Resources.btn4MenorMM;
-            this.btn_Minimize.Location = new System.Drawing.Point(5, 2);
-            this.btn_Minimize.Name = "btn_Minimize";
-            this.btn_Minimize.Size = new System.Drawing.Size(25, 25);
-            this.btn_Minimize.TabIndex = 14;
-            this.btn_Minimize.UseVisualStyleBackColor = true;
-            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
+            this.firstLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.firstLabel.BackColor = System.Drawing.Color.Black;
+            this.firstLabel.Location = new System.Drawing.Point(185, 57);
+            this.firstLabel.Name = "firstLabel";
+            this.firstLabel.Size = new System.Drawing.Size(748, 410);
+            this.firstLabel.TabIndex = 9;
             // 
-            // btn_Close
+            // seccondLabel
             // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.Image = global::Supermercado.Properties.Resources.btn6Menormm;
-            this.btn_Close.Location = new System.Drawing.Point(65, 2);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(25, 25);
-            this.btn_Close.TabIndex = 15;
-            this.btn_Close.UseVisualStyleBackColor = true;
-            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            this.seccondLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.seccondLabel.BackColor = System.Drawing.Color.Gray;
+            this.seccondLabel.Location = new System.Drawing.Point(185, 57);
+            this.seccondLabel.Name = "seccondLabel";
+            this.seccondLabel.Size = new System.Drawing.Size(748, 410);
+            this.seccondLabel.TabIndex = 10;
             // 
-            // btn_Maximize
+            // fourLabel
             // 
-            this.btn_Maximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Maximize.FlatAppearance.BorderSize = 0;
-            this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Maximize.Image = global::Supermercado.Properties.Resources.btn5MenorMM;
-            this.btn_Maximize.Location = new System.Drawing.Point(35, 2);
-            this.btn_Maximize.Name = "btn_Maximize";
-            this.btn_Maximize.Size = new System.Drawing.Size(25, 25);
-            this.btn_Maximize.TabIndex = 13;
-            this.btn_Maximize.UseVisualStyleBackColor = true;
-            this.btn_Maximize.Click += new System.EventHandler(this.btn_Maximize_Click);
+            this.fourLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fourLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.fourLabel.Location = new System.Drawing.Point(185, 57);
+            this.fourLabel.Name = "fourLabel";
+            this.fourLabel.Size = new System.Drawing.Size(748, 410);
+            this.fourLabel.TabIndex = 11;
+            // 
+            // treeLabel
+            // 
+            this.treeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.treeLabel.BackColor = System.Drawing.Color.White;
+            this.treeLabel.Controls.Add(this.tableLayoutPanel1);
+            this.treeLabel.Controls.Add(this.dgv_Dados);
+            this.treeLabel.Location = new System.Drawing.Point(185, 57);
+            this.treeLabel.Name = "treeLabel";
+            this.treeLabel.Size = new System.Drawing.Size(748, 410);
+            this.treeLabel.TabIndex = 12;
+            // 
+            // fiveLabel
+            // 
+            this.fiveLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fiveLabel.BackColor = System.Drawing.Color.Olive;
+            this.fiveLabel.Location = new System.Drawing.Point(185, 57);
+            this.fiveLabel.Name = "fiveLabel";
+            this.fiveLabel.Size = new System.Drawing.Size(748, 410);
+            this.fiveLabel.TabIndex = 11;
+            // 
+            // homeLabel
+            // 
+            this.homeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.homeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.homeLabel.Location = new System.Drawing.Point(185, 57);
+            this.homeLabel.Name = "homeLabel";
+            this.homeLabel.Size = new System.Drawing.Size(748, 410);
+            this.homeLabel.TabIndex = 12;
+            // 
+            // dgv_Dados
+            // 
+            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Dados.Cell = System.Drawing.Color.White;
+            this.dgv_Dados.Cell2 = System.Drawing.Color.LightGray;
+            this.dgv_Dados.CellBorder = System.Drawing.Color.Black;
+            this.dgv_Dados.CellHover = System.Drawing.Color.Gray;
+            this.dgv_Dados.CellSelect = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.dgv_Dados.DataSource = null;
+            this.dgv_Dados.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgv_Dados.Location = new System.Drawing.Point(3, 53);
+            this.dgv_Dados.Name = "dgv_Dados";
+            this.dgv_Dados.Rounding = 8;
+            this.dgv_Dados.Size = new System.Drawing.Size(742, 354);
+            this.dgv_Dados.TabIndex = 1;
+            this.dgv_Dados.Text = "cuiDataGridView1";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_DelCliente, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_AttCliente, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tb_Pesquisa, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_CadCliente, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(741, 44);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // tb_Pesquisa
+            // 
+            this.tb_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_Pesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Pesquisa.Location = new System.Drawing.Point(3, 9);
+            this.tb_Pesquisa.Name = "tb_Pesquisa";
+            this.tb_Pesquisa.Size = new System.Drawing.Size(290, 26);
+            this.tb_Pesquisa.TabIndex = 0;
+            // 
+            // btn_CadCliente
+            // 
+            this.btn_CadCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CadCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CadCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_CadCliente.Location = new System.Drawing.Point(299, 9);
+            this.btn_CadCliente.Name = "btn_CadCliente";
+            this.btn_CadCliente.Size = new System.Drawing.Size(142, 26);
+            this.btn_CadCliente.TabIndex = 1;
+            this.btn_CadCliente.Text = "Cadastrar Cliente";
+            this.btn_CadCliente.UseVisualStyleBackColor = true;
+            // 
+            // btn_AttCliente
+            // 
+            this.btn_AttCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AttCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AttCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_AttCliente.Location = new System.Drawing.Point(447, 9);
+            this.btn_AttCliente.Name = "btn_AttCliente";
+            this.btn_AttCliente.Size = new System.Drawing.Size(142, 26);
+            this.btn_AttCliente.TabIndex = 2;
+            this.btn_AttCliente.Text = "Atualizar Cliente";
+            this.btn_AttCliente.UseVisualStyleBackColor = true;
+            // 
+            // btn_DelCliente
+            // 
+            this.btn_DelCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DelCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_DelCliente.Location = new System.Drawing.Point(595, 9);
+            this.btn_DelCliente.Name = "btn_DelCliente";
+            this.btn_DelCliente.Size = new System.Drawing.Size(143, 26);
+            this.btn_DelCliente.TabIndex = 3;
+            this.btn_DelCliente.Text = "Deletar Cliente";
+            this.btn_DelCliente.UseVisualStyleBackColor = true;
             // 
             // TelaPrincipal
             // 
@@ -413,17 +507,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(938, 493);
-            this.Controls.Add(this.homeLabel);
-            this.Controls.Add(this.fiveLabel);
-            this.Controls.Add(this.seccondLabel);
-            this.Controls.Add(this.firstLabel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.treeLabel);
+            this.Controls.Add(this.fourLabel);
+            this.Controls.Add(this.homeLabel);
+            this.Controls.Add(this.fiveLabel);
+            this.Controls.Add(this.seccondLabel);
+            this.Controls.Add(this.firstLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -438,6 +532,9 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.treeLabel.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,8 +559,8 @@
         private System.Windows.Forms.Button btn_Venda;
         private System.Windows.Forms.Panel firstLabel;
         private System.Windows.Forms.Panel seccondLabel;
-        private System.Windows.Forms.Panel treeLabel;
         private System.Windows.Forms.Panel fourLabel;
+        private System.Windows.Forms.Panel treeLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_Funcionario;
         private System.Windows.Forms.Panel fiveLabel;
@@ -472,6 +569,12 @@
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Panel homeLabel;
         private System.Windows.Forms.Button btn_Home;
+        private CuoreUI.Controls.cuiDataGridView dgv_Dados;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox tb_Pesquisa;
+        private System.Windows.Forms.Button btn_CadCliente;
+        private System.Windows.Forms.Button btn_AttCliente;
+        private System.Windows.Forms.Button btn_DelCliente;
     }
 }
 
