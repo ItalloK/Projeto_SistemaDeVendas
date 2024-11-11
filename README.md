@@ -4,5 +4,5 @@
 <h4>* Projeto voltado para cadastro de mercadorias, cadastro de clientes, venda de produto, geração de relatórios, geração de estoque e muitos outros...</h4>
 
 <h2>Detalhes da API:</h2>
-<h4>* API em Javascript</h4>
+<h4>* API em Javascript.</h4>
 
