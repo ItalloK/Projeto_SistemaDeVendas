@@ -17,13 +17,25 @@ namespace Supermercado
         public TelaPrincipal()
         {
             InitializeComponent();
+            CarregarPromo();
             homeLabel.BringToFront();
             Funcoes.SetPlaceholder(tb_Pesquisa, "Digite para pesquisar nos dados...");
+            Funcoes.SetPlaceholder(tb_NomeCliente, "Digite o nome do cliente...");
+            Funcoes.SetPlaceholder(tb_EmailCliente, "Digite o email do cliente...");
+            Funcoes.SetPlaceholder(tb_EnderecoCliente, "Digite o endereço do cliente...");
+            Funcoes.SetPlaceholder(tb_AnotacoesCliente, "Digite aqui anotações para este cliente...");
+
+            if(Global.nomeFuncionario != null && Global.cpfFuncionario != null)
+            {
+                string nome = Global.nomeFuncionario, cpf = Global.cpfFuncionario;
+                lbl_DadosFuncionario.Text = $"Usuário: {nome}, Cpf: {cpf}";
+            }
+
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            
+            CarregarClientes(); // fazer função
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -119,6 +131,65 @@ namespace Supermercado
             {
                 return true;
             }
+        }
+
+        private void btn_CadCliente_Click(object sender, EventArgs e)
+        {
+            painelCadCliente.BringToFront();
+        }
+
+        private void btn_CancelarCadCliente_Click(object sender, EventArgs e)
+        {
+            LimparDados();
+            treeLabel.BringToFront();
+        }
+
+
+        private void LimparDados()
+        {
+            tb_NomeCliente.Clear();
+            mtb_CPFCliente.Clear();
+            mtb_DataNascCliente.Clear();
+            mtb_TelefoneCliente.Clear();
+            tb_EmailCliente.Clear();
+            tb_EnderecoCliente.Clear();
+            tb_AnotacoesCliente.Clear();
+        }
+
+
+        private void CarregarClientes()
+        {
+
+        }
+
+        private void CadastrarCliente()
+        {
+
+        }
+
+        private void CarregarPromo()
+        {
+            try
+            {
+                string caminhoDaImagem = System.IO.Path.Combine(Application.StartupPath, "promo.png");
+                if (System.IO.File.Exists(caminhoDaImagem))
+                {
+                    pictureboxPromo.Image = Image.FromFile(caminhoDaImagem);
+                }
+                else
+                {
+                    MessageBox.Show("O arquivo de imagem 'promo.png' não foi encontrado na pasta raiz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar a imagem: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_CadastrarCliente_Click(object sender, EventArgs e)
+        {
+            CadastrarCliente(); // Fazer Função
         }
     }
 }
