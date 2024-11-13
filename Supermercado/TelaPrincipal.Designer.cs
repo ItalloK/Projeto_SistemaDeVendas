@@ -34,13 +34,23 @@
             this.lbl_DadosFuncionario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Minimize = new System.Windows.Forms.Button();
+            this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_Maximize = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Horario = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Home = new System.Windows.Forms.Button();
+            this.btn_Funcionario = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.slidePanel = new System.Windows.Forms.Panel();
+            this.btn_Relatorios = new System.Windows.Forms.Button();
+            this.btn_Clientes = new System.Windows.Forms.Button();
+            this.btn_Estoque = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_Venda = new System.Windows.Forms.Button();
             this.firstLabel = new System.Windows.Forms.Panel();
             this.seccondLabel = new System.Windows.Forms.Panel();
             this.fourLabel = new System.Windows.Forms.Panel();
@@ -50,55 +60,46 @@
             this.btn_AttCliente = new System.Windows.Forms.Button();
             this.tb_Pesquisa = new System.Windows.Forms.TextBox();
             this.btn_CadCliente = new System.Windows.Forms.Button();
-            this.dgv_Dados = new CuoreUI.Controls.cuiDataGridView();
             this.fiveLabel = new System.Windows.Forms.Panel();
             this.homeLabel = new System.Windows.Forms.Panel();
             this.painelCadCliente = new System.Windows.Forms.Panel();
-            this.tb_NomeCliente = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_CancelarCadCliente = new CuoreUI.Controls.cuiButton();
             this.btn_CadastrarCliente = new CuoreUI.Controls.cuiButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb_EnderecoCliente = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tb_AnotacoesCliente = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.tb_AnotacoesCliente = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_EnderecoCliente = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tb_EmailCliente = new System.Windows.Forms.TextBox();
-            this.mtb_TelefoneCliente = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.mtb_CPFCliente = new System.Windows.Forms.MaskedTextBox();
             this.mtb_DataNascCliente = new System.Windows.Forms.MaskedTextBox();
-            this.btn_Home = new System.Windows.Forms.Button();
-            this.btn_Funcionario = new System.Windows.Forms.Button();
-            this.btn_Relatorios = new System.Windows.Forms.Button();
-            this.btn_Clientes = new System.Windows.Forms.Button();
-            this.btn_Estoque = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_Venda = new System.Windows.Forms.Button();
-            this.btn_Minimize = new System.Windows.Forms.Button();
-            this.btn_Close = new System.Windows.Forms.Button();
-            this.btn_Maximize = new System.Windows.Forms.Button();
+            this.mtb_CPFCliente = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.mtb_TelefoneCliente = new System.Windows.Forms.MaskedTextBox();
+            this.tb_EmailCliente = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_NomeCliente = new System.Windows.Forms.TextBox();
             this.pictureboxPromo = new System.Windows.Forms.PictureBox();
+            this.dgv_Dados = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.treeLabel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.homeLabel.SuspendLayout();
             this.painelCadCliente.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,6 +144,45 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(95, 28);
             this.panel3.TabIndex = 6;
+            // 
+            // btn_Minimize
+            // 
+            this.btn_Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Minimize.FlatAppearance.BorderSize = 0;
+            this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Minimize.Image = global::Supermercado.Properties.Resources.btn4MenorMM;
+            this.btn_Minimize.Location = new System.Drawing.Point(5, 2);
+            this.btn_Minimize.Name = "btn_Minimize";
+            this.btn_Minimize.Size = new System.Drawing.Size(25, 25);
+            this.btn_Minimize.TabIndex = 14;
+            this.btn_Minimize.UseVisualStyleBackColor = true;
+            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.Image = global::Supermercado.Properties.Resources.btn6Menormm;
+            this.btn_Close.Location = new System.Drawing.Point(65, 2);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(25, 25);
+            this.btn_Close.TabIndex = 15;
+            this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
+            // btn_Maximize
+            // 
+            this.btn_Maximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Maximize.FlatAppearance.BorderSize = 0;
+            this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Maximize.Image = global::Supermercado.Properties.Resources.btn5MenorMM;
+            this.btn_Maximize.Location = new System.Drawing.Point(35, 2);
+            this.btn_Maximize.Name = "btn_Maximize";
+            this.btn_Maximize.Size = new System.Drawing.Size(25, 25);
+            this.btn_Maximize.TabIndex = 13;
+            this.btn_Maximize.UseVisualStyleBackColor = true;
+            this.btn_Maximize.Click += new System.EventHandler(this.btn_Maximize_Click);
             // 
             // panel5
             // 
@@ -204,6 +244,41 @@
             this.panel4.Size = new System.Drawing.Size(179, 453);
             this.panel4.TabIndex = 2;
             // 
+            // btn_Home
+            // 
+            this.btn_Home.FlatAppearance.BorderSize = 0;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Home.ForeColor = System.Drawing.Color.White;
+            this.btn_Home.Image = global::Supermercado.Properties.Resources.btn_Home;
+            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.Location = new System.Drawing.Point(12, 129);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(164, 48);
+            this.btn_Home.TabIndex = 16;
+            this.btn_Home.Text = "     Home";
+            this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            // 
+            // btn_Funcionario
+            // 
+            this.btn_Funcionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Funcionario.FlatAppearance.BorderSize = 0;
+            this.btn_Funcionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Funcionario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Funcionario.ForeColor = System.Drawing.Color.White;
+            this.btn_Funcionario.Image = global::Supermercado.Properties.Resources.btn_Funcionario;
+            this.btn_Funcionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Funcionario.Location = new System.Drawing.Point(12, 399);
+            this.btn_Funcionario.Name = "btn_Funcionario";
+            this.btn_Funcionario.Size = new System.Drawing.Size(164, 48);
+            this.btn_Funcionario.TabIndex = 15;
+            this.btn_Funcionario.Text = "     Funcionario";
+            this.btn_Funcionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Funcionario.UseVisualStyleBackColor = true;
+            this.btn_Funcionario.Click += new System.EventHandler(this.btn_Funcionario_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -223,6 +298,86 @@
             this.slidePanel.Name = "slidePanel";
             this.slidePanel.Size = new System.Drawing.Size(10, 48);
             this.slidePanel.TabIndex = 9;
+            // 
+            // btn_Relatorios
+            // 
+            this.btn_Relatorios.FlatAppearance.BorderSize = 0;
+            this.btn_Relatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Relatorios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Relatorios.ForeColor = System.Drawing.Color.White;
+            this.btn_Relatorios.Image = global::Supermercado.Properties.Resources.btn_Relatorios;
+            this.btn_Relatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Relatorios.Location = new System.Drawing.Point(12, 345);
+            this.btn_Relatorios.Name = "btn_Relatorios";
+            this.btn_Relatorios.Size = new System.Drawing.Size(164, 48);
+            this.btn_Relatorios.TabIndex = 14;
+            this.btn_Relatorios.Text = "     Relatórios";
+            this.btn_Relatorios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Relatorios.UseVisualStyleBackColor = true;
+            this.btn_Relatorios.Click += new System.EventHandler(this.btn_Relatorios_Click);
+            // 
+            // btn_Clientes
+            // 
+            this.btn_Clientes.FlatAppearance.BorderSize = 0;
+            this.btn_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clientes.ForeColor = System.Drawing.Color.White;
+            this.btn_Clientes.Image = global::Supermercado.Properties.Resources.btn_Clientes;
+            this.btn_Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Clientes.Location = new System.Drawing.Point(12, 291);
+            this.btn_Clientes.Name = "btn_Clientes";
+            this.btn_Clientes.Size = new System.Drawing.Size(164, 48);
+            this.btn_Clientes.TabIndex = 13;
+            this.btn_Clientes.Text = "     Clientes";
+            this.btn_Clientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Clientes.UseVisualStyleBackColor = true;
+            this.btn_Clientes.Click += new System.EventHandler(this.btn_Clientes_Click);
+            // 
+            // btn_Estoque
+            // 
+            this.btn_Estoque.FlatAppearance.BorderSize = 0;
+            this.btn_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Estoque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Estoque.ForeColor = System.Drawing.Color.White;
+            this.btn_Estoque.Image = global::Supermercado.Properties.Resources.btn_Estoque;
+            this.btn_Estoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Estoque.Location = new System.Drawing.Point(12, 237);
+            this.btn_Estoque.Name = "btn_Estoque";
+            this.btn_Estoque.Size = new System.Drawing.Size(164, 48);
+            this.btn_Estoque.TabIndex = 12;
+            this.btn_Estoque.Text = "     Ver Estoque";
+            this.btn_Estoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Estoque.UseVisualStyleBackColor = true;
+            this.btn_Estoque.Click += new System.EventHandler(this.btn_Estoque_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(43, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_Venda
+            // 
+            this.btn_Venda.FlatAppearance.BorderSize = 0;
+            this.btn_Venda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Venda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Venda.ForeColor = System.Drawing.Color.White;
+            this.btn_Venda.Image = global::Supermercado.Properties.Resources.btn_Venda;
+            this.btn_Venda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Venda.Location = new System.Drawing.Point(12, 183);
+            this.btn_Venda.Name = "btn_Venda";
+            this.btn_Venda.Size = new System.Drawing.Size(164, 48);
+            this.btn_Venda.TabIndex = 9;
+            this.btn_Venda.Text = "     Realizar Venda";
+            this.btn_Venda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Venda.UseVisualStyleBackColor = true;
+            this.btn_Venda.Click += new System.EventHandler(this.btn_Venda_Click);
             // 
             // firstLabel
             // 
@@ -263,8 +418,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeLabel.BackColor = System.Drawing.Color.White;
-            this.treeLabel.Controls.Add(this.tableLayoutPanel1);
             this.treeLabel.Controls.Add(this.dgv_Dados);
+            this.treeLabel.Controls.Add(this.tableLayoutPanel1);
             this.treeLabel.Location = new System.Drawing.Point(185, 57);
             this.treeLabel.Name = "treeLabel";
             this.treeLabel.Size = new System.Drawing.Size(748, 410);
@@ -336,25 +491,6 @@
             this.btn_CadCliente.UseVisualStyleBackColor = true;
             this.btn_CadCliente.Click += new System.EventHandler(this.btn_CadCliente_Click);
             // 
-            // dgv_Dados
-            // 
-            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_Dados.Cell = System.Drawing.Color.White;
-            this.dgv_Dados.Cell2 = System.Drawing.Color.LightGray;
-            this.dgv_Dados.CellBorder = System.Drawing.Color.Black;
-            this.dgv_Dados.CellHover = System.Drawing.Color.Gray;
-            this.dgv_Dados.CellSelect = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.dgv_Dados.DataSource = null;
-            this.dgv_Dados.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgv_Dados.Location = new System.Drawing.Point(3, 53);
-            this.dgv_Dados.Name = "dgv_Dados";
-            this.dgv_Dados.Rounding = 8;
-            this.dgv_Dados.Size = new System.Drawing.Size(742, 354);
-            this.dgv_Dados.TabIndex = 1;
-            this.dgv_Dados.Text = "cuiDataGridView1";
-            // 
             // fiveLabel
             // 
             this.fiveLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -392,41 +528,6 @@
             this.painelCadCliente.Name = "painelCadCliente";
             this.painelCadCliente.Size = new System.Drawing.Size(748, 410);
             this.painelCadCliente.TabIndex = 1;
-            // 
-            // tb_NomeCliente
-            // 
-            this.tb_NomeCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_NomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NomeCliente.Location = new System.Drawing.Point(3, 34);
-            this.tb_NomeCliente.Name = "tb_NomeCliente";
-            this.tb_NomeCliente.Size = new System.Drawing.Size(736, 26);
-            this.tb_NomeCliente.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Nome do Cliente:";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tb_NomeCliente, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(742, 62);
-            this.tableLayoutPanel2.TabIndex = 6;
             // 
             // tableLayoutPanel6
             // 
@@ -512,48 +613,6 @@
             this.btn_CadastrarCliente.TextOffset = new System.Drawing.Point(0, 0);
             this.btn_CadastrarCliente.Click += new System.EventHandler(this.btn_CadastrarCliente_Click);
             // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label10.Location = new System.Drawing.Point(3, 2);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(736, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Endereço:";
-            // 
-            // tb_EnderecoCliente
-            // 
-            this.tb_EnderecoCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_EnderecoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tb_EnderecoCliente.Location = new System.Drawing.Point(3, 28);
-            this.tb_EnderecoCliente.Multiline = true;
-            this.tb_EnderecoCliente.Name = "tb_EnderecoCliente";
-            this.tb_EnderecoCliente.Size = new System.Drawing.Size(736, 37);
-            this.tb_EnderecoCliente.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.Location = new System.Drawing.Point(3, 70);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(736, 20);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Anotações:";
-            // 
-            // tb_AnotacoesCliente
-            // 
-            this.tb_AnotacoesCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_AnotacoesCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tb_AnotacoesCliente.Location = new System.Drawing.Point(3, 96);
-            this.tb_AnotacoesCliente.Multiline = true;
-            this.tb_AnotacoesCliente.Name = "tb_AnotacoesCliente";
-            this.tb_AnotacoesCliente.Size = new System.Drawing.Size(736, 59);
-            this.tb_AnotacoesCliente.TabIndex = 3;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -575,27 +634,47 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(742, 158);
             this.tableLayoutPanel5.TabIndex = 9;
             // 
-            // label8
+            // tb_AnotacoesCliente
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(365, 20);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Telefone";
+            this.tb_AnotacoesCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_AnotacoesCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_AnotacoesCliente.Location = new System.Drawing.Point(3, 96);
+            this.tb_AnotacoesCliente.Multiline = true;
+            this.tb_AnotacoesCliente.Name = "tb_AnotacoesCliente";
+            this.tb_AnotacoesCliente.Size = new System.Drawing.Size(736, 59);
+            this.tb_AnotacoesCliente.TabIndex = 3;
             // 
-            // label9
+            // label11
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(374, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(365, 20);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Email:";
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(3, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(736, 20);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Anotações:";
+            // 
+            // tb_EnderecoCliente
+            // 
+            this.tb_EnderecoCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_EnderecoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_EnderecoCliente.Location = new System.Drawing.Point(3, 28);
+            this.tb_EnderecoCliente.Multiline = true;
+            this.tb_EnderecoCliente.Name = "tb_EnderecoCliente";
+            this.tb_EnderecoCliente.Size = new System.Drawing.Size(736, 37);
+            this.tb_EnderecoCliente.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.Location = new System.Drawing.Point(3, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(736, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Endereço:";
             // 
             // tableLayoutPanel4
             // 
@@ -622,35 +701,25 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(742, 140);
             this.tableLayoutPanel4.TabIndex = 8;
             // 
-            // tb_EmailCliente
+            // mtb_DataNascCliente
             // 
-            this.tb_EmailCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_EmailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tb_EmailCliente.Location = new System.Drawing.Point(374, 38);
-            this.tb_EmailCliente.Name = "tb_EmailCliente";
-            this.tb_EmailCliente.Size = new System.Drawing.Size(365, 26);
-            this.tb_EmailCliente.TabIndex = 9;
+            this.mtb_DataNascCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtb_DataNascCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.mtb_DataNascCliente.Location = new System.Drawing.Point(374, 108);
+            this.mtb_DataNascCliente.Mask = "00/00/0000";
+            this.mtb_DataNascCliente.Name = "mtb_DataNascCliente";
+            this.mtb_DataNascCliente.Size = new System.Drawing.Size(365, 26);
+            this.mtb_DataNascCliente.TabIndex = 13;
             // 
-            // mtb_TelefoneCliente
+            // mtb_CPFCliente
             // 
-            this.mtb_TelefoneCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mtb_TelefoneCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.mtb_TelefoneCliente.Location = new System.Drawing.Point(3, 38);
-            this.mtb_TelefoneCliente.Mask = "(00) 0 0000-0000";
-            this.mtb_TelefoneCliente.Name = "mtb_TelefoneCliente";
-            this.mtb_TelefoneCliente.Size = new System.Drawing.Size(365, 26);
-            this.mtb_TelefoneCliente.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(365, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "CPF:";
+            this.mtb_CPFCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtb_CPFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.mtb_CPFCliente.Location = new System.Drawing.Point(3, 108);
+            this.mtb_CPFCliente.Mask = "000.000.000-00";
+            this.mtb_CPFCliente.Name = "mtb_CPFCliente";
+            this.mtb_CPFCliente.Size = new System.Drawing.Size(365, 26);
+            this.mtb_CPFCliente.TabIndex = 12;
             // 
             // label7
             // 
@@ -663,189 +732,115 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Data de Nascimento:";
             // 
-            // mtb_CPFCliente
+            // label6
             // 
-            this.mtb_CPFCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mtb_CPFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.mtb_CPFCliente.Location = new System.Drawing.Point(3, 108);
-            this.mtb_CPFCliente.Mask = "000.000.000-00";
-            this.mtb_CPFCliente.Name = "mtb_CPFCliente";
-            this.mtb_CPFCliente.Size = new System.Drawing.Size(365, 26);
-            this.mtb_CPFCliente.TabIndex = 12;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(365, 20);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "CPF:";
             // 
-            // mtb_DataNascCliente
+            // label9
             // 
-            this.mtb_DataNascCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mtb_DataNascCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.mtb_DataNascCliente.Location = new System.Drawing.Point(374, 108);
-            this.mtb_DataNascCliente.Mask = "00/00/0000";
-            this.mtb_DataNascCliente.Name = "mtb_DataNascCliente";
-            this.mtb_DataNascCliente.Size = new System.Drawing.Size(365, 26);
-            this.mtb_DataNascCliente.TabIndex = 13;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(374, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(365, 20);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Email:";
             // 
-            // btn_Home
+            // label8
             // 
-            this.btn_Home.FlatAppearance.BorderSize = 0;
-            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Home.ForeColor = System.Drawing.Color.White;
-            this.btn_Home.Image = global::Supermercado.Properties.Resources.btn_Home;
-            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Home.Location = new System.Drawing.Point(12, 129);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(164, 48);
-            this.btn_Home.TabIndex = 16;
-            this.btn_Home.Text = "     Home";
-            this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Home.UseVisualStyleBackColor = true;
-            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(365, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Telefone";
             // 
-            // btn_Funcionario
+            // mtb_TelefoneCliente
             // 
-            this.btn_Funcionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Funcionario.FlatAppearance.BorderSize = 0;
-            this.btn_Funcionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Funcionario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Funcionario.ForeColor = System.Drawing.Color.White;
-            this.btn_Funcionario.Image = global::Supermercado.Properties.Resources.btn_Funcionario;
-            this.btn_Funcionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Funcionario.Location = new System.Drawing.Point(12, 399);
-            this.btn_Funcionario.Name = "btn_Funcionario";
-            this.btn_Funcionario.Size = new System.Drawing.Size(164, 48);
-            this.btn_Funcionario.TabIndex = 15;
-            this.btn_Funcionario.Text = "     Funcionario";
-            this.btn_Funcionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Funcionario.UseVisualStyleBackColor = true;
-            this.btn_Funcionario.Click += new System.EventHandler(this.btn_Funcionario_Click);
+            this.mtb_TelefoneCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtb_TelefoneCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.mtb_TelefoneCliente.Location = new System.Drawing.Point(3, 38);
+            this.mtb_TelefoneCliente.Mask = "(00) 0 0000-0000";
+            this.mtb_TelefoneCliente.Name = "mtb_TelefoneCliente";
+            this.mtb_TelefoneCliente.Size = new System.Drawing.Size(365, 26);
+            this.mtb_TelefoneCliente.TabIndex = 8;
             // 
-            // btn_Relatorios
+            // tb_EmailCliente
             // 
-            this.btn_Relatorios.FlatAppearance.BorderSize = 0;
-            this.btn_Relatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Relatorios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Relatorios.ForeColor = System.Drawing.Color.White;
-            this.btn_Relatorios.Image = global::Supermercado.Properties.Resources.btn_Relatorios;
-            this.btn_Relatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Relatorios.Location = new System.Drawing.Point(12, 345);
-            this.btn_Relatorios.Name = "btn_Relatorios";
-            this.btn_Relatorios.Size = new System.Drawing.Size(164, 48);
-            this.btn_Relatorios.TabIndex = 14;
-            this.btn_Relatorios.Text = "     Relatórios";
-            this.btn_Relatorios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Relatorios.UseVisualStyleBackColor = true;
-            this.btn_Relatorios.Click += new System.EventHandler(this.btn_Relatorios_Click);
+            this.tb_EmailCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_EmailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tb_EmailCliente.Location = new System.Drawing.Point(374, 38);
+            this.tb_EmailCliente.Name = "tb_EmailCliente";
+            this.tb_EmailCliente.Size = new System.Drawing.Size(365, 26);
+            this.tb_EmailCliente.TabIndex = 9;
             // 
-            // btn_Clientes
+            // tableLayoutPanel2
             // 
-            this.btn_Clientes.FlatAppearance.BorderSize = 0;
-            this.btn_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Clientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Clientes.ForeColor = System.Drawing.Color.White;
-            this.btn_Clientes.Image = global::Supermercado.Properties.Resources.btn_Clientes;
-            this.btn_Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Clientes.Location = new System.Drawing.Point(12, 291);
-            this.btn_Clientes.Name = "btn_Clientes";
-            this.btn_Clientes.Size = new System.Drawing.Size(164, 48);
-            this.btn_Clientes.TabIndex = 13;
-            this.btn_Clientes.Text = "     Clientes";
-            this.btn_Clientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Clientes.UseVisualStyleBackColor = true;
-            this.btn_Clientes.Click += new System.EventHandler(this.btn_Clientes_Click);
-            // 
-            // btn_Estoque
-            // 
-            this.btn_Estoque.FlatAppearance.BorderSize = 0;
-            this.btn_Estoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Estoque.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Estoque.ForeColor = System.Drawing.Color.White;
-            this.btn_Estoque.Image = global::Supermercado.Properties.Resources.btn_Estoque;
-            this.btn_Estoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Estoque.Location = new System.Drawing.Point(12, 237);
-            this.btn_Estoque.Name = "btn_Estoque";
-            this.btn_Estoque.Size = new System.Drawing.Size(164, 48);
-            this.btn_Estoque.TabIndex = 12;
-            this.btn_Estoque.Text = "     Ver Estoque";
-            this.btn_Estoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Estoque.UseVisualStyleBackColor = true;
-            this.btn_Estoque.Click += new System.EventHandler(this.btn_Estoque_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(43, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tb_NomeCliente, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(742, 62);
+            this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // btn_Venda
+            // label5
             // 
-            this.btn_Venda.FlatAppearance.BorderSize = 0;
-            this.btn_Venda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Venda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Venda.ForeColor = System.Drawing.Color.White;
-            this.btn_Venda.Image = global::Supermercado.Properties.Resources.btn_Venda;
-            this.btn_Venda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Venda.Location = new System.Drawing.Point(12, 183);
-            this.btn_Venda.Name = "btn_Venda";
-            this.btn_Venda.Size = new System.Drawing.Size(164, 48);
-            this.btn_Venda.TabIndex = 9;
-            this.btn_Venda.Text = "     Realizar Venda";
-            this.btn_Venda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Venda.UseVisualStyleBackColor = true;
-            this.btn_Venda.Click += new System.EventHandler(this.btn_Venda_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Nome do Cliente:";
             // 
-            // btn_Minimize
+            // tb_NomeCliente
             // 
-            this.btn_Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Minimize.FlatAppearance.BorderSize = 0;
-            this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Minimize.Image = global::Supermercado.Properties.Resources.btn4MenorMM;
-            this.btn_Minimize.Location = new System.Drawing.Point(5, 2);
-            this.btn_Minimize.Name = "btn_Minimize";
-            this.btn_Minimize.Size = new System.Drawing.Size(25, 25);
-            this.btn_Minimize.TabIndex = 14;
-            this.btn_Minimize.UseVisualStyleBackColor = true;
-            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.Image = global::Supermercado.Properties.Resources.btn6Menormm;
-            this.btn_Close.Location = new System.Drawing.Point(65, 2);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(25, 25);
-            this.btn_Close.TabIndex = 15;
-            this.btn_Close.UseVisualStyleBackColor = true;
-            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
-            // 
-            // btn_Maximize
-            // 
-            this.btn_Maximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Maximize.FlatAppearance.BorderSize = 0;
-            this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Maximize.Image = global::Supermercado.Properties.Resources.btn5MenorMM;
-            this.btn_Maximize.Location = new System.Drawing.Point(35, 2);
-            this.btn_Maximize.Name = "btn_Maximize";
-            this.btn_Maximize.Size = new System.Drawing.Size(25, 25);
-            this.btn_Maximize.TabIndex = 13;
-            this.btn_Maximize.UseVisualStyleBackColor = true;
-            this.btn_Maximize.Click += new System.EventHandler(this.btn_Maximize_Click);
+            this.tb_NomeCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_NomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_NomeCliente.Location = new System.Drawing.Point(3, 34);
+            this.tb_NomeCliente.Name = "tb_NomeCliente";
+            this.tb_NomeCliente.Size = new System.Drawing.Size(736, 26);
+            this.tb_NomeCliente.TabIndex = 0;
             // 
             // pictureboxPromo
             // 
-            this.pictureboxPromo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureboxPromo.Location = new System.Drawing.Point(0, 0);
             this.pictureboxPromo.Name = "pictureboxPromo";
-            this.pictureboxPromo.Size = new System.Drawing.Size(748, 410);
+            this.pictureboxPromo.Size = new System.Drawing.Size(50, 50);
             this.pictureboxPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureboxPromo.TabIndex = 0;
             this.pictureboxPromo.TabStop = false;
+            // 
+            // dgv_Dados
+            // 
+            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Dados.Location = new System.Drawing.Point(3, 52);
+            this.dgv_Dados.MultiSelect = false;
+            this.dgv_Dados.Name = "dgv_Dados";
+            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Dados.Size = new System.Drawing.Size(742, 355);
+            this.dgv_Dados.TabIndex = 4;
             // 
             // TelaPrincipal
             // 
@@ -858,13 +853,13 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.treeLabel);
+            this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
             this.Controls.Add(this.fiveLabel);
             this.Controls.Add(this.seccondLabel);
             this.Controls.Add(this.firstLabel);
             this.Controls.Add(this.painelCadCliente);
-            this.Controls.Add(this.treeLabel);
-            this.Controls.Add(this.fourLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -878,20 +873,21 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.treeLabel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.homeLabel.ResumeLayout(false);
             this.painelCadCliente.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -926,7 +922,6 @@
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Panel homeLabel;
         private System.Windows.Forms.Button btn_Home;
-        private CuoreUI.Controls.cuiDataGridView dgv_Dados;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox tb_Pesquisa;
         private System.Windows.Forms.Button btn_CadCliente;
@@ -954,6 +949,7 @@
         private System.Windows.Forms.MaskedTextBox mtb_CPFCliente;
         private System.Windows.Forms.MaskedTextBox mtb_DataNascCliente;
         private System.Windows.Forms.PictureBox pictureboxPromo;
+        private System.Windows.Forms.DataGridView dgv_Dados;
     }
 }
 

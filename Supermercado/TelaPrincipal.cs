@@ -159,12 +159,33 @@ namespace Supermercado
 
         private void CarregarClientes()
         {
-
+            dgv_Dados.DataSource = Banco.DadosClientes();
         }
 
         private void CadastrarCliente()
         {
+            string nome = tb_NomeCliente.Text;
+            mtb_TelefoneCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefone = mtb_TelefoneCliente.Text;
+            string email = tb_EmailCliente.Text;
+            mtb_CPFCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtb_CPFCliente.Text;
+            mtb_DataNascCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string dataNasc = mtb_DataNascCliente.Text;
+            string endereco = tb_EnderecoCliente.Text;
+            string anotacoes = tb_AnotacoesCliente.Text;
 
+            var result =  Banco.CadastrarCliente(nome, telefone, email, cpf, dataNasc, endereco, anotacoes);
+            if (result)
+            {
+                treeLabel.BringToFront();
+                LimparDados();
+                CarregarClientes();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void CarregarPromo()
@@ -189,7 +210,7 @@ namespace Supermercado
 
         private void btn_CadastrarCliente_Click(object sender, EventArgs e)
         {
-            CadastrarCliente(); // Fazer Função
+            CadastrarCliente();
         }
     }
 }

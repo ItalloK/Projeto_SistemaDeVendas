@@ -11,3 +11,5 @@ E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.pdb
 E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\CuoreUI.dll
 E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermer.F0BE87B0.Up2Date
 E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.Login.resources
+E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\System.Data.SQLite.dll
+E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\System.Data.SQLite.xml
