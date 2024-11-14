@@ -32,5 +32,17 @@ namespace Supermercado
                 }
             };
         }
+
+        public static void Notificar(string tipo, string mensagem)
+        {
+            Notificacao not = new Notificacao(tipo, mensagem);
+            not.Show();
+        }
+
+        public static void CriarLogLocal(string erroMessage)
+        {
+            LogLocal logLocal = new LogLocal();
+            logLocal.RegistrarLog(erroMessage);
+        }
     }
 }

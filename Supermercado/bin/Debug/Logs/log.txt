@@ -1,0 +1,3 @@
+2024-11-14 16:39:09 - ERRO: Cliente 'user teste1' insirido com sucesso.
+2024-11-14 16:40:48 - LOG: Cliente 'teste2' inserido com sucesso.
+14-11-2024 16:42:14 - LOG: Cliente 'teste3' inserido com sucesso.

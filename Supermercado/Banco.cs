@@ -40,17 +40,19 @@ namespace Supermercado
                         command.ExecuteNonQuery();
                     }
                 }
-                MessageBox.Show($"Cliente {nome}, inserido com sucesso!");
+                Funcoes.Notificar("SUCESSO", "Cliente Inserido com Sucesso!");
                 return true;
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show("Erro ao inserir cliente no banco de dados: " + ex.Message);
+                Funcoes.CriarLogLocal("Erro ao inserir cliente no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao inserir cliente, olhe o LOG!");
                 return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro ao cadastrar o cliente: " + ex.Message);
+                Funcoes.CriarLogLocal("Erro ao inserir cliente no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao inserir cliente, olhe o LOG!");
                 return false;
             }
         }
@@ -76,12 +78,14 @@ namespace Supermercado
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show($"Erro SQL: {ex.Message}");
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
                 return null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro: {ex.Message}");
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
                 return null;
             }
         }
