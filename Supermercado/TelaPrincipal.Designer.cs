@@ -55,7 +55,6 @@
             this.seccondLabel = new System.Windows.Forms.Panel();
             this.fourLabel = new System.Windows.Forms.Panel();
             this.treeLabel = new System.Windows.Forms.Panel();
-            this.dgv_Dados = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_DelCliente = new System.Windows.Forms.Button();
             this.btn_AttCliente = new System.Windows.Forms.Button();
@@ -85,13 +84,34 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_NomeCliente = new System.Windows.Forms.TextBox();
+            this.dgv_Dados = new System.Windows.Forms.DataGridView();
+            this.panelAttCliente = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelarAtualizar = new CuoreUI.Controls.cuiButton();
+            this.btnAtualizarCliente = new CuoreUI.Controls.cuiButton();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbAtt_AnotacoesCliente = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbAtt_EnderecoCliente = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.mtbAtt_DataNascCliente = new System.Windows.Forms.MaskedTextBox();
+            this.mtbAtt_CpfCliente = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.mtbAtt_TelefoneCliente = new System.Windows.Forms.MaskedTextBox();
+            this.tbAtt_EmailCliente = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbAtt_NomeCliente = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.treeLabel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.homeLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
@@ -100,6 +120,12 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
+            this.panelAttCliente.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -425,20 +451,6 @@
             this.treeLabel.Size = new System.Drawing.Size(748, 410);
             this.treeLabel.TabIndex = 12;
             // 
-            // dgv_Dados
-            // 
-            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Dados.Location = new System.Drawing.Point(3, 52);
-            this.dgv_Dados.MultiSelect = false;
-            this.dgv_Dados.Name = "dgv_Dados";
-            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Dados.Size = new System.Drawing.Size(742, 355);
-            this.dgv_Dados.TabIndex = 4;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -482,6 +494,7 @@
             this.btn_AttCliente.TabIndex = 2;
             this.btn_AttCliente.Text = "Atualizar Cliente";
             this.btn_AttCliente.UseVisualStyleBackColor = true;
+            this.btn_AttCliente.Click += new System.EventHandler(this.btn_AttCliente_Click);
             // 
             // tb_Pesquisa
             // 
@@ -531,9 +544,12 @@
             // 
             // pictureboxPromo
             // 
-            this.pictureboxPromo.Location = new System.Drawing.Point(0, 0);
+            this.pictureboxPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureboxPromo.Location = new System.Drawing.Point(4, 3);
             this.pictureboxPromo.Name = "pictureboxPromo";
-            this.pictureboxPromo.Size = new System.Drawing.Size(50, 50);
+            this.pictureboxPromo.Size = new System.Drawing.Size(741, 401);
             this.pictureboxPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureboxPromo.TabIndex = 0;
             this.pictureboxPromo.TabStop = false;
@@ -842,24 +858,348 @@
             this.tb_NomeCliente.Size = new System.Drawing.Size(736, 26);
             this.tb_NomeCliente.TabIndex = 0;
             // 
+            // dgv_Dados
+            // 
+            this.dgv_Dados.AllowUserToAddRows = false;
+            this.dgv_Dados.AllowUserToDeleteRows = false;
+            this.dgv_Dados.AllowUserToResizeColumns = false;
+            this.dgv_Dados.AllowUserToResizeRows = false;
+            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Dados.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_Dados.Location = new System.Drawing.Point(3, 56);
+            this.dgv_Dados.Name = "dgv_Dados";
+            this.dgv_Dados.ReadOnly = true;
+            this.dgv_Dados.RowHeadersVisible = false;
+            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Dados.Size = new System.Drawing.Size(742, 351);
+            this.dgv_Dados.TabIndex = 22;
+            this.dgv_Dados.SelectionChanged += new System.EventHandler(this.dgv_Dados_SelectionChanged);
+            // 
+            // panelAttCliente
+            // 
+            this.panelAttCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAttCliente.Controls.Add(this.tableLayoutPanel3);
+            this.panelAttCliente.Controls.Add(this.tableLayoutPanel7);
+            this.panelAttCliente.Controls.Add(this.tableLayoutPanel8);
+            this.panelAttCliente.Controls.Add(this.tableLayoutPanel9);
+            this.panelAttCliente.Location = new System.Drawing.Point(185, 57);
+            this.panelAttCliente.Name = "panelAttCliente";
+            this.panelAttCliente.Size = new System.Drawing.Size(748, 410);
+            this.panelAttCliente.TabIndex = 11;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Controls.Add(this.btnCancelarAtualizar, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAtualizarCliente, 3, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 375);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(742, 32);
+            this.tableLayoutPanel3.TabIndex = 10;
+            // 
+            // btnCancelarAtualizar
+            // 
+            this.btnCancelarAtualizar.CheckButton = false;
+            this.btnCancelarAtualizar.Checked = false;
+            this.btnCancelarAtualizar.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAtualizar.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCancelarAtualizar.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAtualizar.Content = "Cancelar Atualização";
+            this.btnCancelarAtualizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancelarAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnCancelarAtualizar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarAtualizar.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAtualizar.HoveredImageTint = System.Drawing.Color.White;
+            this.btnCancelarAtualizar.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCancelarAtualizar.Image = null;
+            this.btnCancelarAtualizar.ImageAutoCenter = true;
+            this.btnCancelarAtualizar.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancelarAtualizar.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancelarAtualizar.ImageTint = System.Drawing.Color.White;
+            this.btnCancelarAtualizar.Location = new System.Drawing.Point(373, 3);
+            this.btnCancelarAtualizar.Name = "btnCancelarAtualizar";
+            this.btnCancelarAtualizar.NormalBackground = System.Drawing.Color.Gray;
+            this.btnCancelarAtualizar.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCancelarAtualizar.OutlineThickness = 1.6F;
+            this.btnCancelarAtualizar.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAtualizar.PressedImageTint = System.Drawing.Color.White;
+            this.btnCancelarAtualizar.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCancelarAtualizar.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnCancelarAtualizar.Size = new System.Drawing.Size(179, 26);
+            this.btnCancelarAtualizar.TabIndex = 0;
+            this.btnCancelarAtualizar.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnAtualizarCliente
+            // 
+            this.btnAtualizarCliente.CheckButton = false;
+            this.btnAtualizarCliente.Checked = false;
+            this.btnAtualizarCliente.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarCliente.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAtualizarCliente.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarCliente.Content = "Atualizar Cliente";
+            this.btnAtualizarCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAtualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnAtualizarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarCliente.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarCliente.HoveredImageTint = System.Drawing.Color.White;
+            this.btnAtualizarCliente.HoverOutline = System.Drawing.Color.Empty;
+            this.btnAtualizarCliente.Image = null;
+            this.btnAtualizarCliente.ImageAutoCenter = true;
+            this.btnAtualizarCliente.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAtualizarCliente.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAtualizarCliente.ImageTint = System.Drawing.Color.White;
+            this.btnAtualizarCliente.Location = new System.Drawing.Point(558, 3);
+            this.btnAtualizarCliente.Name = "btnAtualizarCliente";
+            this.btnAtualizarCliente.NormalBackground = System.Drawing.Color.Gray;
+            this.btnAtualizarCliente.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAtualizarCliente.OutlineThickness = 1.6F;
+            this.btnAtualizarCliente.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarCliente.PressedImageTint = System.Drawing.Color.White;
+            this.btnAtualizarCliente.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAtualizarCliente.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnAtualizarCliente.Size = new System.Drawing.Size(181, 26);
+            this.btnAtualizarCliente.TabIndex = 1;
+            this.btnAtualizarCliente.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.tbAtt_AnotacoesCliente, 0, 3);
+            this.tableLayoutPanel7.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.tbAtt_EnderecoCliente, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 214);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 4;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(742, 158);
+            this.tableLayoutPanel7.TabIndex = 9;
+            // 
+            // tbAtt_AnotacoesCliente
+            // 
+            this.tbAtt_AnotacoesCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAtt_AnotacoesCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbAtt_AnotacoesCliente.Location = new System.Drawing.Point(3, 96);
+            this.tbAtt_AnotacoesCliente.Multiline = true;
+            this.tbAtt_AnotacoesCliente.Name = "tbAtt_AnotacoesCliente";
+            this.tbAtt_AnotacoesCliente.Size = new System.Drawing.Size(736, 59);
+            this.tbAtt_AnotacoesCliente.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(3, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(736, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Anotações:";
+            // 
+            // tbAtt_EnderecoCliente
+            // 
+            this.tbAtt_EnderecoCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAtt_EnderecoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbAtt_EnderecoCliente.Location = new System.Drawing.Point(3, 28);
+            this.tbAtt_EnderecoCliente.Multiline = true;
+            this.tbAtt_EnderecoCliente.Name = "tbAtt_EnderecoCliente";
+            this.tbAtt_EnderecoCliente.Size = new System.Drawing.Size(736, 37);
+            this.tbAtt_EnderecoCliente.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label12.Location = new System.Drawing.Point(3, 2);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(736, 20);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Endereço:";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.mtbAtt_DataNascCliente, 1, 3);
+            this.tableLayoutPanel8.Controls.Add(this.mtbAtt_CpfCliente, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.label13, 1, 2);
+            this.tableLayoutPanel8.Controls.Add(this.label14, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.label15, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.mtbAtt_TelefoneCliente, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.tbAtt_EmailCliente, 1, 1);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 68);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 4;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(742, 140);
+            this.tableLayoutPanel8.TabIndex = 8;
+            // 
+            // mtbAtt_DataNascCliente
+            // 
+            this.mtbAtt_DataNascCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtbAtt_DataNascCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.mtbAtt_DataNascCliente.Location = new System.Drawing.Point(374, 108);
+            this.mtbAtt_DataNascCliente.Mask = "00/00/0000";
+            this.mtbAtt_DataNascCliente.Name = "mtbAtt_DataNascCliente";
+            this.mtbAtt_DataNascCliente.Size = new System.Drawing.Size(365, 26);
+            this.mtbAtt_DataNascCliente.TabIndex = 13;
+            // 
+            // mtbAtt_CpfCliente
+            // 
+            this.mtbAtt_CpfCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtbAtt_CpfCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.mtbAtt_CpfCliente.Location = new System.Drawing.Point(3, 108);
+            this.mtbAtt_CpfCliente.Mask = "000.000.000-00";
+            this.mtbAtt_CpfCliente.Name = "mtbAtt_CpfCliente";
+            this.mtbAtt_CpfCliente.Size = new System.Drawing.Size(365, 26);
+            this.mtbAtt_CpfCliente.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(374, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(365, 20);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Data de Nascimento:";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 77);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(365, 20);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "CPF:";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(374, 7);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(365, 20);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Email:";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 7);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(365, 20);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Telefone";
+            // 
+            // mtbAtt_TelefoneCliente
+            // 
+            this.mtbAtt_TelefoneCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mtbAtt_TelefoneCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.mtbAtt_TelefoneCliente.Location = new System.Drawing.Point(3, 38);
+            this.mtbAtt_TelefoneCliente.Mask = "(00) 0 0000-0000";
+            this.mtbAtt_TelefoneCliente.Name = "mtbAtt_TelefoneCliente";
+            this.mtbAtt_TelefoneCliente.Size = new System.Drawing.Size(365, 26);
+            this.mtbAtt_TelefoneCliente.TabIndex = 8;
+            // 
+            // tbAtt_EmailCliente
+            // 
+            this.tbAtt_EmailCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAtt_EmailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbAtt_EmailCliente.Location = new System.Drawing.Point(374, 38);
+            this.tbAtt_EmailCliente.Name = "tbAtt_EmailCliente";
+            this.tbAtt_EmailCliente.Size = new System.Drawing.Size(365, 26);
+            this.tbAtt_EmailCliente.TabIndex = 9;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Controls.Add(this.label17, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbAtt_NomeCliente, 0, 1);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(742, 62);
+            this.tableLayoutPanel9.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(130, 20);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Nome do Cliente:";
+            // 
+            // tbAtt_NomeCliente
+            // 
+            this.tbAtt_NomeCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAtt_NomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAtt_NomeCliente.Location = new System.Drawing.Point(3, 34);
+            this.tbAtt_NomeCliente.Name = "tbAtt_NomeCliente";
+            this.tbAtt_NomeCliente.Size = new System.Drawing.Size(736, 26);
+            this.tbAtt_NomeCliente.TabIndex = 0;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(938, 493);
+            this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.painelCadCliente);
             this.Controls.Add(this.treeLabel);
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
             this.Controls.Add(this.fiveLabel);
             this.Controls.Add(this.seccondLabel);
             this.Controls.Add(this.firstLabel);
-            this.Controls.Add(this.painelCadCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -875,7 +1215,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.treeLabel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.homeLabel.ResumeLayout(false);
@@ -888,6 +1227,15 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
+            this.panelAttCliente.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,6 +1298,27 @@
         private System.Windows.Forms.MaskedTextBox mtb_DataNascCliente;
         private System.Windows.Forms.PictureBox pictureboxPromo;
         private System.Windows.Forms.DataGridView dgv_Dados;
+        private System.Windows.Forms.Panel panelAttCliente;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private CuoreUI.Controls.cuiButton btnCancelarAtualizar;
+        private CuoreUI.Controls.cuiButton btnAtualizarCliente;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TextBox tbAtt_AnotacoesCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbAtt_EnderecoCliente;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.MaskedTextBox mtbAtt_DataNascCliente;
+        private System.Windows.Forms.MaskedTextBox mtbAtt_CpfCliente;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.MaskedTextBox mtbAtt_TelefoneCliente;
+        private System.Windows.Forms.TextBox tbAtt_EmailCliente;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox tbAtt_NomeCliente;
     }
 }
 

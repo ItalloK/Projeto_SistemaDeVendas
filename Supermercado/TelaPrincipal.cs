@@ -33,6 +33,8 @@ namespace Supermercado
 
         }
 
+        private int idCliente;
+
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
             CarregarClientes(); // fazer função
@@ -211,6 +213,48 @@ namespace Supermercado
         private void btn_CadastrarCliente_Click(object sender, EventArgs e)
         {
             CadastrarCliente();
+        }
+
+        private void dgv_Dados_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_Dados.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgv_Dados.SelectedRows[0];
+                idCliente = Convert.ToInt32(selectedRow.Cells["id"].Value);
+            }
+            else
+            {
+                idCliente = -1;
+            }
+        }
+
+        private void btn_AttCliente_Click(object sender, EventArgs e)
+        {
+            PegarDadosCliente();
+        }
+
+        private void PegarDadosCliente()
+        {
+            if(idCliente != -1)
+            {
+                panelAttCliente.BringToFront();
+
+                tbAtt_NomeCliente.Text = "";
+                mtbAtt_TelefoneCliente.Text = "";
+                tbAtt_EmailCliente.Text = "";
+
+                mtbAtt_CpfCliente.Text = "";
+                mtbAtt_CpfCliente.Enabled = false;
+
+                mtbAtt_DataNascCliente.Text = "";
+                tbAtt_EnderecoCliente.Text = "";
+                tbAtt_AnotacoesCliente.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cliente para atualizar!");
+                return;
+            }
         }
     }
 }
