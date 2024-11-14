@@ -13,3 +13,5 @@ E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermer.F0BE87B0.
 E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.Login.resources
 E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\System.Data.SQLite.dll
 E:\Programação\Projetos\Supermercado\Supermercado\bin\Debug\System.Data.SQLite.xml
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.ChamarNoti.resources
+E:\Programação\Projetos\Supermercado\Supermercado\obj\Debug\Supermercado.Notificacao.resources

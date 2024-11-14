@@ -55,6 +55,7 @@
             this.seccondLabel = new System.Windows.Forms.Panel();
             this.fourLabel = new System.Windows.Forms.Panel();
             this.treeLabel = new System.Windows.Forms.Panel();
+            this.dgv_Dados = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_DelCliente = new System.Windows.Forms.Button();
             this.btn_AttCliente = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             this.btn_CadCliente = new System.Windows.Forms.Button();
             this.fiveLabel = new System.Windows.Forms.Panel();
             this.homeLabel = new System.Windows.Forms.Panel();
+            this.pictureboxPromo = new System.Windows.Forms.PictureBox();
             this.painelCadCliente = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_CancelarCadCliente = new CuoreUI.Controls.cuiButton();
@@ -83,23 +85,21 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_NomeCliente = new System.Windows.Forms.TextBox();
-            this.pictureboxPromo = new System.Windows.Forms.PictureBox();
-            this.dgv_Dados = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.treeLabel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.homeLabel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
             this.painelCadCliente.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -425,6 +425,20 @@
             this.treeLabel.Size = new System.Drawing.Size(748, 410);
             this.treeLabel.TabIndex = 12;
             // 
+            // dgv_Dados
+            // 
+            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Dados.Location = new System.Drawing.Point(3, 52);
+            this.dgv_Dados.MultiSelect = false;
+            this.dgv_Dados.Name = "dgv_Dados";
+            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Dados.Size = new System.Drawing.Size(742, 355);
+            this.dgv_Dados.TabIndex = 4;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -514,6 +528,15 @@
             this.homeLabel.Name = "homeLabel";
             this.homeLabel.Size = new System.Drawing.Size(748, 410);
             this.homeLabel.TabIndex = 12;
+            // 
+            // pictureboxPromo
+            // 
+            this.pictureboxPromo.Location = new System.Drawing.Point(0, 0);
+            this.pictureboxPromo.Name = "pictureboxPromo";
+            this.pictureboxPromo.Size = new System.Drawing.Size(50, 50);
+            this.pictureboxPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureboxPromo.TabIndex = 0;
+            this.pictureboxPromo.TabStop = false;
             // 
             // painelCadCliente
             // 
@@ -819,29 +842,6 @@
             this.tb_NomeCliente.Size = new System.Drawing.Size(736, 26);
             this.tb_NomeCliente.TabIndex = 0;
             // 
-            // pictureboxPromo
-            // 
-            this.pictureboxPromo.Location = new System.Drawing.Point(0, 0);
-            this.pictureboxPromo.Name = "pictureboxPromo";
-            this.pictureboxPromo.Size = new System.Drawing.Size(50, 50);
-            this.pictureboxPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureboxPromo.TabIndex = 0;
-            this.pictureboxPromo.TabStop = false;
-            // 
-            // dgv_Dados
-            // 
-            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Dados.Location = new System.Drawing.Point(3, 52);
-            this.dgv_Dados.MultiSelect = false;
-            this.dgv_Dados.Name = "dgv_Dados";
-            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Dados.Size = new System.Drawing.Size(742, 355);
-            this.dgv_Dados.TabIndex = 4;
-            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -875,9 +875,11 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.treeLabel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.homeLabel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).EndInit();
             this.painelCadCliente.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -886,8 +888,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
