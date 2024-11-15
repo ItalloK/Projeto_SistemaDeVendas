@@ -55,6 +55,7 @@
             this.seccondLabel = new System.Windows.Forms.Panel();
             this.fourLabel = new System.Windows.Forms.Panel();
             this.treeLabel = new System.Windows.Forms.Panel();
+            this.dgv_Dados = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_DelCliente = new System.Windows.Forms.Button();
             this.btn_AttCliente = new System.Windows.Forms.Button();
@@ -84,7 +85,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_NomeCliente = new System.Windows.Forms.TextBox();
-            this.dgv_Dados = new System.Windows.Forms.DataGridView();
             this.panelAttCliente = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancelarAtualizar = new CuoreUI.Controls.cuiButton();
@@ -112,6 +112,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.treeLabel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.homeLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
@@ -120,7 +121,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.panelAttCliente.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -451,6 +451,28 @@
             this.treeLabel.Size = new System.Drawing.Size(748, 410);
             this.treeLabel.TabIndex = 12;
             // 
+            // dgv_Dados
+            // 
+            this.dgv_Dados.AllowUserToAddRows = false;
+            this.dgv_Dados.AllowUserToDeleteRows = false;
+            this.dgv_Dados.AllowUserToResizeColumns = false;
+            this.dgv_Dados.AllowUserToResizeRows = false;
+            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Dados.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_Dados.Location = new System.Drawing.Point(3, 56);
+            this.dgv_Dados.MultiSelect = false;
+            this.dgv_Dados.Name = "dgv_Dados";
+            this.dgv_Dados.ReadOnly = true;
+            this.dgv_Dados.RowHeadersVisible = false;
+            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Dados.Size = new System.Drawing.Size(742, 351);
+            this.dgv_Dados.TabIndex = 22;
+            this.dgv_Dados.SelectionChanged += new System.EventHandler(this.dgv_Dados_SelectionChanged);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -482,6 +504,7 @@
             this.btn_DelCliente.TabIndex = 3;
             this.btn_DelCliente.Text = "Deletar Cliente";
             this.btn_DelCliente.UseVisualStyleBackColor = true;
+            this.btn_DelCliente.Click += new System.EventHandler(this.btn_DelCliente_Click);
             // 
             // btn_AttCliente
             // 
@@ -858,27 +881,6 @@
             this.tb_NomeCliente.Size = new System.Drawing.Size(736, 26);
             this.tb_NomeCliente.TabIndex = 0;
             // 
-            // dgv_Dados
-            // 
-            this.dgv_Dados.AllowUserToAddRows = false;
-            this.dgv_Dados.AllowUserToDeleteRows = false;
-            this.dgv_Dados.AllowUserToResizeColumns = false;
-            this.dgv_Dados.AllowUserToResizeRows = false;
-            this.dgv_Dados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_Dados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Dados.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_Dados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_Dados.Location = new System.Drawing.Point(3, 56);
-            this.dgv_Dados.Name = "dgv_Dados";
-            this.dgv_Dados.ReadOnly = true;
-            this.dgv_Dados.RowHeadersVisible = false;
-            this.dgv_Dados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Dados.Size = new System.Drawing.Size(742, 351);
-            this.dgv_Dados.TabIndex = 22;
-            this.dgv_Dados.SelectionChanged += new System.EventHandler(this.dgv_Dados_SelectionChanged);
-            // 
             // panelAttCliente
             // 
             this.panelAttCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -942,6 +944,7 @@
             this.btnCancelarAtualizar.Size = new System.Drawing.Size(179, 26);
             this.btnCancelarAtualizar.TabIndex = 0;
             this.btnCancelarAtualizar.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCancelarAtualizar.Click += new System.EventHandler(this.btnCancelarAtualizar_Click);
             // 
             // btnAtualizarCliente
             // 
@@ -974,6 +977,7 @@
             this.btnAtualizarCliente.Size = new System.Drawing.Size(181, 26);
             this.btnAtualizarCliente.TabIndex = 1;
             this.btnAtualizarCliente.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnAtualizarCliente.Click += new System.EventHandler(this.btnAtualizarCliente_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -1187,19 +1191,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(938, 493);
-            this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.painelCadCliente);
             this.Controls.Add(this.treeLabel);
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
             this.Controls.Add(this.fiveLabel);
             this.Controls.Add(this.seccondLabel);
             this.Controls.Add(this.firstLabel);
+            this.Controls.Add(this.panelAttCliente);
+            this.Controls.Add(this.painelCadCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -1215,6 +1219,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.treeLabel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.homeLabel.ResumeLayout(false);
@@ -1227,7 +1232,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.panelAttCliente.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);

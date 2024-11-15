@@ -12,7 +12,7 @@ namespace Supermercado
 {
     internal class Banco
     {
-        private static string stringConexao = "Data Source=banco.db;Version=3;";
+        private static string stringConexao = "Data Source=Banco de Dados\\banco.db;Version=3;";
 
         static Banco()
         {
@@ -57,6 +57,76 @@ namespace Supermercado
             }
         }
 
+        public static bool AtualizarCliente(string nome, string telefone, string email, string cpf, string dataNasc, string endereco, string anotacoes)
+        {
+            try
+            {
+                string query = "UPDATE clientes SET nome = @nome, telefone = @telefone, email = @email, dataNasc = @dataNasc, endereco = @endereco, anotacoes = @anotacoes WHERE cpf = @cpf";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@nome", nome);
+                        command.Parameters.AddWithValue("@telefone", telefone);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@cpf", cpf);
+                        command.Parameters.AddWithValue("@dataNasc", dataNasc);
+                        command.Parameters.AddWithValue("@endereco", endereco);
+                        command.Parameters.AddWithValue("@anotacoes", anotacoes);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+                Funcoes.Notificar("SUCESSO", "Cliente Atualizado com Sucesso!");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao atualizar cliente no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao atualizar cliente, olhe o LOG!");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao atualizar cliente no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao atualizar cliente, olhe o LOG!");
+                return false;
+            }
+        }
+
+        public static bool DeletarCliente(int id)
+        {
+            try
+            {
+                string query = "DELETE FROM clientes WHERE id = @id";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                Funcoes.Notificar("SUCESSO", "Cliente deletado com Sucesso!");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao deletar cliente no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao deletar cliente, olhe o LOG!");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao deletar cliente no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao deletar cliente, olhe o LOG!");
+                return false;
+            }
+        }
+
+
         public static DataTable DadosClientes()
         {
             try
@@ -92,34 +162,39 @@ namespace Supermercado
 
         private static void VerificarBanco()
         {
-            if (!File.Exists("banco.db"))
+            if (!Directory.Exists("Banco de Dados"))
             {
-                SQLiteConnection.CreateFile("banco.db");
+                Directory.CreateDirectory("Banco de Dados");
+            }
+
+            if (!File.Exists("Banco de Dados\\banco.db"))
+            {
+                SQLiteConnection.CreateFile("Banco de Dados\\banco.db");
                 Console.WriteLine("Banco de dados criado com sucesso!");
 
-                using (SQLiteConnection conexao = new SQLiteConnection("Data Source=banco.db;Version=3;"))
+                using (SQLiteConnection conexao = new SQLiteConnection(stringConexao))
                 {
                     conexao.Open();
 
                     string sqlClientes = @"
-                    CREATE TABLE IF NOT EXISTS clientes (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nome TEXT NOT NULL,
-                        email TEXT,
-                        telefone TEXT,
-                        cpf TEXT, 
-                        dataNasc TEXT,
-                        endereco TEXT,
-                        anotacoes TEXT
-                    )";
+            CREATE TABLE IF NOT EXISTS clientes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT NOT NULL,
+                email TEXT,
+                telefone TEXT,
+                cpf TEXT, 
+                dataNasc TEXT,
+                endereco TEXT,
+                anotacoes TEXT
+            )";
 
                     string sqlProdutos = @"
-                    CREATE TABLE IF NOT EXISTS Produtos (
-                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        Nome TEXT NOT NULL,
-                        Preco DECIMAL(10, 2) NOT NULL,
-                        Quantidade INTEGER NOT NULL
-                    )";
+            CREATE TABLE IF NOT EXISTS Produtos (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Nome TEXT NOT NULL,
+                Preco REAL NOT NULL,
+                Quantidade INTEGER NOT NULL
+            )";
 
                     using (SQLiteCommand comando = new SQLiteCommand(sqlClientes, conexao))
                     {

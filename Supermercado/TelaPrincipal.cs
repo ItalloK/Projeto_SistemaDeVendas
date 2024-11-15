@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Supermercado
 {
@@ -34,6 +35,13 @@ namespace Supermercado
         }
 
         private int idCliente;
+        private string nomeCliente;
+        private string telefoneCliente;
+        private string emailCliente;
+        private string cpfCliente;
+        private string dataNascCliente;
+        private string enderecoCliente;
+        private string anotacoesCliente;
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
@@ -144,6 +152,7 @@ namespace Supermercado
         {
             LimparDados();
             treeLabel.BringToFront();
+            Funcoes.Notificar("AVISO", "Cliente não inserido.");
         }
 
 
@@ -156,6 +165,14 @@ namespace Supermercado
             tb_EmailCliente.Clear();
             tb_EnderecoCliente.Clear();
             tb_AnotacoesCliente.Clear();
+
+            tbAtt_NomeCliente.Clear();
+            mtbAtt_CpfCliente.Clear();
+            mtbAtt_DataNascCliente.Clear();
+            mtbAtt_TelefoneCliente.Clear();
+            tbAtt_EmailCliente.Clear();
+            tbAtt_EnderecoCliente.Clear();
+            tbAtt_AnotacoesCliente.Clear();
         }
 
 
@@ -221,6 +238,13 @@ namespace Supermercado
             {
                 DataGridViewRow selectedRow = dgv_Dados.SelectedRows[0];
                 idCliente = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                nomeCliente = selectedRow.Cells["nome"].Value.ToString();
+                telefoneCliente = selectedRow.Cells["telefone"].Value.ToString();
+                emailCliente = selectedRow.Cells["email"].Value.ToString();
+                cpfCliente = selectedRow.Cells["cpf"].Value.ToString();
+                dataNascCliente = selectedRow.Cells["dataNasc"].Value.ToString();
+                enderecoCliente = selectedRow.Cells["endereco"].Value.ToString();
+                anotacoesCliente = selectedRow.Cells["anotacoes"].Value.ToString();
             }
             else
             {
@@ -230,6 +254,7 @@ namespace Supermercado
 
         private void btn_AttCliente_Click(object sender, EventArgs e)
         {
+            LimparDados();
             PegarDadosCliente();
         }
 
@@ -238,21 +263,91 @@ namespace Supermercado
             if(idCliente != -1)
             {
                 panelAttCliente.BringToFront();
-
-                tbAtt_NomeCliente.Text = "";
-                mtbAtt_TelefoneCliente.Text = "";
-                tbAtt_EmailCliente.Text = "";
-
-                mtbAtt_CpfCliente.Text = "";
+                tbAtt_NomeCliente.Text = nomeCliente;
+                mtbAtt_TelefoneCliente.Text = telefoneCliente;
+                tbAtt_EmailCliente.Text = emailCliente;
+                mtbAtt_CpfCliente.Text = cpfCliente;
                 mtbAtt_CpfCliente.Enabled = false;
-
-                mtbAtt_DataNascCliente.Text = "";
-                tbAtt_EnderecoCliente.Text = "";
-                tbAtt_AnotacoesCliente.Text = "";
+                mtbAtt_DataNascCliente.Text = dataNascCliente;
+                tbAtt_EnderecoCliente.Text = enderecoCliente;
+                tbAtt_AnotacoesCliente.Text = anotacoesCliente;
             }
             else
             {
                 MessageBox.Show("Selecione um cliente para atualizar!");
+                return;
+            }
+        }
+
+        private void btnCancelarAtualizar_Click(object sender, EventArgs e)
+        {
+            LimparDados();
+            treeLabel.BringToFront();
+            Funcoes.Notificar("AVISO", "Atualização Cancelada.");
+        }
+
+        private void btnAtualizarCliente_Click(object sender, EventArgs e)
+        {
+            AtualizarCliente();
+        }
+
+        private void AtualizarCliente()
+        {
+            string nome = tbAtt_NomeCliente.Text;
+            mtbAtt_TelefoneCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefone = mtbAtt_TelefoneCliente.Text;
+            string email = tbAtt_EmailCliente.Text;
+            mtbAtt_CpfCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtbAtt_CpfCliente.Text;
+            mtbAtt_DataNascCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string dataNasc = mtbAtt_DataNascCliente.Text;
+            string endereco = tbAtt_EnderecoCliente.Text;
+            string anotacoes = tbAtt_AnotacoesCliente.Text;
+
+            var result = Banco.AtualizarCliente(nome, telefone, email, cpf, dataNasc, endereco, anotacoes);
+            if (result)
+            {
+                treeLabel.BringToFront();
+                LimparDados();
+                CarregarClientes();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btn_DelCliente_Click(object sender, EventArgs e)
+        {
+            DeletarCliente();
+        }
+
+        private void DeletarCliente()
+        {
+            if (idCliente != -1)
+            {
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja deletar?","Confirmação",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if(resultado == DialogResult.Yes)
+                {
+                    var result = Banco.DeletarCliente(idCliente);
+                    if (result)
+                    {
+                        CarregarClientes();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    Funcoes.Notificar("AVISO", "Usuario nao deletado.");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cliente para deletar!");
                 return;
             }
         }
