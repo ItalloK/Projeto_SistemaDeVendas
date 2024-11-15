@@ -164,7 +164,7 @@ namespace Supermercado
 
         /* ------------------------------- Produtos ------------------------------- */
 
-        public static bool CadastrarProduto(string descricao, float preco, float quantidade, float peso)
+        public static bool CadastrarProduto(string descricao, decimal preco, decimal quantidade, decimal peso)
         {
             try
             {
@@ -198,7 +198,7 @@ namespace Supermercado
             }
         }
 
-        public static bool AtualizarProduto(string descricao, float preco, float peso, float quantidade, int codigo)
+        public static bool AtualizarProduto(string descricao, decimal preco, decimal peso, decimal quantidade, int codigo)
         {
             try
             {
@@ -300,9 +300,9 @@ namespace Supermercado
             CREATE TABLE IF NOT EXISTS produtos (
                 codigo INTEGER PRIMARY KEY AUTOINCREMENT,
                 descricao TEXT NOT NULL,
-                preco REAL NOT NULL DEFAULT 0,
-                quantidade REAL NOT NULL DEFAULT 0,
-                peso REAL DEFAULT 0
+                preco NUMERIC NOT NULL DEFAULT 0,
+                quantidade NUMERIC NOT NULL DEFAULT 0,
+                peso NUMERIC DEFAULT 0
             )";
 
                     using (SQLiteCommand comando = new SQLiteCommand(sqlClientes, conexao))

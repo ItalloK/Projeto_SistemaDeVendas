@@ -20,19 +20,15 @@ namespace Supermercado
             InitializeComponent();
             CarregarPromo();
             homeLabel.BringToFront();
-            Funcoes.SetPlaceholder(tb_Pesquisa, "Digite para pesquisar nos dados...");
-            Funcoes.SetPlaceholder(tb_NomeCliente, "Digite o nome do cliente...");
-            Funcoes.SetPlaceholder(tb_EmailCliente, "Digite o email do cliente...");
-            Funcoes.SetPlaceholder(tb_EnderecoCliente, "Digite o endereço do cliente...");
-            Funcoes.SetPlaceholder(tb_AnotacoesCliente, "Digite aqui anotações para este cliente...");
-            Funcoes.SetPlaceholder(tb_PesquisarProduto, "Digite o nome ou codigo do produto...");
+            PlaceHolders();
 
-            if(Global.nomeFuncionario != null && Global.cpfFuncionario != null)
+            if (Global.nomeFuncionario != null && Global.cpfFuncionario != null)
             {
                 string nome = Global.nomeFuncionario, cpf = Global.cpfFuncionario;
                 lbl_DadosFuncionario.Text = $"Usuário: {nome}, Cpf: {cpf}";
             }
 
+            
         }
 
         private int idCliente = -1;
@@ -46,9 +42,9 @@ namespace Supermercado
 
         private int idProduto = -1;
         private string descricaoProduto;
-        private float precoProduto;
-        private float pesoProduto;
-        private float quantidadeProduto;
+        private decimal precoProduto;
+        private decimal pesoProduto;
+        private decimal quantidadeProduto;
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
@@ -187,10 +183,26 @@ namespace Supermercado
         private void CarregarClientes()
         {
             dgv_Dados.DataSource = Banco.DadosClientes();
+            dgv_Dados.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
         private void CarregarEstoque()
         {
+
             dgv_Estoque.DataSource = Banco.Estoque();
+
+            dgv_Estoque.Columns["codigo"].DisplayIndex = 0;
+            dgv_Estoque.Columns["descricao"].DisplayIndex = 1;
+            dgv_Estoque.Columns["preco"].DisplayIndex = 2;
+            dgv_Estoque.Columns["peso"].DisplayIndex = 3;
+            dgv_Estoque.Columns["quantidade"].DisplayIndex = 4;
+
+            dgv_Estoque.Columns["codigo"].HeaderText = "Cod. Produto";
+            dgv_Estoque.Columns["descricao"].HeaderText = "Desc. Produto";
+            dgv_Estoque.Columns["preco"].HeaderText = "Preço";
+            dgv_Estoque.Columns["peso"].HeaderText = "Peso";
+            dgv_Estoque.Columns["quantidade"].HeaderText = "Quantidade";
+
+            dgv_Estoque.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void CadastrarCliente()
@@ -409,9 +421,9 @@ namespace Supermercado
         private void AtualizarProduto()
         {
             string descricao = tbAttDescProduto.Text;
-            float preco = float.Parse(tbAttPrecoProduto.Text);
-            float peso = float.Parse(tbAttPesoProduto.Text);
-            float quantidade = float.Parse(tbAttQuantidadeProduto.Text);
+            decimal preco = decimal.Parse(tbAttPrecoProduto.Text);
+            decimal peso = decimal.Parse(tbAttPesoProduto.Text);
+            decimal quantidade = decimal.Parse(tbAttQuantidadeProduto.Text);
             var result = Banco.AtualizarProduto(descricao, preco, peso, quantidade, idProduto);
             if (result)
             {
@@ -432,9 +444,9 @@ namespace Supermercado
                 DataGridViewRow selectedRow = dgv_Estoque.SelectedRows[0];
                 idProduto = Convert.ToInt32(selectedRow.Cells["codigo"].Value);
                 descricaoProduto = selectedRow.Cells["descricao"].Value.ToString();
-                precoProduto = Convert.ToSingle(selectedRow.Cells["preco"].Value);
-                pesoProduto = Convert.ToSingle(selectedRow.Cells["peso"].Value);
-                quantidadeProduto = Convert.ToSingle(selectedRow.Cells["quantidade"].Value);
+                precoProduto = Convert.ToDecimal(selectedRow.Cells["preco"].Value);
+                pesoProduto = Convert.ToDecimal(selectedRow.Cells["peso"].Value);
+                quantidadeProduto = Convert.ToDecimal(selectedRow.Cells["quantidade"].Value);
             }
             else
             {
@@ -455,11 +467,11 @@ namespace Supermercado
         private void CadastrarProduto()
         {
             string descricao = tb_DescricaoProduto.Text;
-            float preco = float.Parse(tb_PrecoProduto.Text);
-            float peso = float.Parse(tb_PesoProduto.Text);
-            float quantidade = float.Parse(tb_QuantidadeProduto.Text);
+            decimal preco = decimal.Parse(tb_PrecoProduto.Text);
+            decimal peso = decimal.Parse(tb_PesoProduto.Text);
+            decimal quantidade = decimal.Parse(tb_QuantidadeProduto.Text);
 
-            var result = Banco.CadastrarProduto(descricao, preco, peso, quantidade);
+            var result = Banco.CadastrarProduto(descricao, preco, quantidade, peso);
             if (result)
             {
                 seccondLabel.BringToFront();
@@ -484,6 +496,144 @@ namespace Supermercado
             LimparDadosProduto();
             seccondLabel.BringToFront();
             Funcoes.Notificar("AVISO", "Atualização Cancelada.");
+        }
+
+        private void PlaceHolders()
+        {
+            Funcoes.SetPlaceholder(tb_Pesquisa, "Digite para pesquisar nos dados...");
+            Funcoes.SetPlaceholder(tb_NomeCliente, "Digite o nome do cliente...");
+            Funcoes.SetPlaceholder(tb_EmailCliente, "Digite o email do cliente...");
+            Funcoes.SetPlaceholder(tb_EnderecoCliente, "Digite o endereço do cliente...");
+            Funcoes.SetPlaceholder(tb_AnotacoesCliente, "Digite aqui anotações para este cliente...");
+            Funcoes.SetPlaceholder(tb_PesquisarProduto, "Digite o nome ou codigo do produto...");
+            Funcoes.SetPlaceholder(tbAttDescProduto, "Digite o nome do produto.");
+            Funcoes.SetPlaceholder(tbAttPrecoProduto, "Digite o preço, ex: '1000' é '1.000'.");
+            Funcoes.SetPlaceholder(tbAttPesoProduto, "Digite o peso em gramas, ex: '1000' é 1KG.");
+            Funcoes.SetPlaceholder(tbAttQuantidadeProduto, "Digite a quantidade, ex: '1' = '1,00' é 1 unidade.");
+            Funcoes.SetPlaceholder(tb_DescricaoProduto, "Digite o nome do produto.");
+            Funcoes.SetPlaceholder(tb_PrecoProduto, "Digite o preço, ex: '1000' é '1.000'.");
+            Funcoes.SetPlaceholder(tb_PesoProduto, "Digite o peso em gramas, ex: '1000' é 1KG.");
+            Funcoes.SetPlaceholder(tb_QuantidadeProduto, "Digite a quantidade, ex: '1' = '1,00' é 1 unidade.");
+        }
+
+        private void tbAttPrecoProduto_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tbAttPrecoProduto.Text, out decimal preco))
+            {
+                tbAttPrecoProduto.Text = preco.ToString("N2");
+            }
+        }
+
+        private void tbAttPesoProduto_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tbAttPesoProduto.Text, out decimal preco))
+            {
+                tbAttPesoProduto.Text = preco.ToString("N2");
+            }
+        }
+
+        private void tbAttQuantidadeProduto_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tbAttQuantidadeProduto.Text, out decimal preco))
+            {
+                tbAttQuantidadeProduto.Text = preco.ToString("N2");
+            }
+        }
+
+        private void tbAttPrecoProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbAttPesoProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbAttQuantidadeProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_PrecoProduto_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tb_PrecoProduto.Text, out decimal preco))
+            {
+                tb_PrecoProduto.Text = preco.ToString("N2");
+            }
+        }
+
+        private void tb_PesoProduto_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tb_PesoProduto.Text, out decimal preco))
+            {
+                tb_PesoProduto.Text = preco.ToString("N2");
+            }
+        }
+
+        private void tb_QuantidadeProduto_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(tb_QuantidadeProduto.Text, out decimal preco))
+            {
+                tb_QuantidadeProduto.Text = preco.ToString("N2");
+            }
+        }
+
+        private void tb_PrecoProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_PesoProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_QuantidadeProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

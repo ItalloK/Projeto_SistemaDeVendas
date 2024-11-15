@@ -113,19 +113,19 @@
             this.tb_PesquisarProduto = new System.Windows.Forms.TextBox();
             this.btn_NovoProduto = new System.Windows.Forms.Button();
             this.PanelCadProduto = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_QuantidadeProduto = new System.Windows.Forms.TextBox();
+            this.tb_PesoProduto = new System.Windows.Forms.TextBox();
+            this.tb_PrecoProduto = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_CancelarCadProduto = new CuoreUI.Controls.cuiButton();
             this.btn_CadastrarProduto = new CuoreUI.Controls.cuiButton();
-            this.tb_DescricaoProduto = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tb_PrecoProduto = new System.Windows.Forms.TextBox();
-            this.tb_PesoProduto = new System.Windows.Forms.TextBox();
-            this.tb_QuantidadeProduto = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tb_DescricaoProduto = new System.Windows.Forms.TextBox();
             this.PanelAttProduto = new System.Windows.Forms.Panel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tbAttQuantidadeProduto = new System.Windows.Forms.TextBox();
@@ -164,9 +164,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Estoque)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
             this.PanelCadProduto.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
             this.PanelAttProduto.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -1334,6 +1334,91 @@
             this.PanelCadProduto.Size = new System.Drawing.Size(748, 410);
             this.PanelCadProduto.TabIndex = 14;
             // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel12.ColumnCount = 3;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.Controls.Add(this.tb_QuantidadeProduto, 2, 1);
+            this.tableLayoutPanel12.Controls.Add(this.tb_PesoProduto, 1, 1);
+            this.tableLayoutPanel12.Controls.Add(this.tb_PrecoProduto, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.label20, 2, 0);
+            this.tableLayoutPanel12.Controls.Add(this.label19, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.label18, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 98);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(742, 67);
+            this.tableLayoutPanel12.TabIndex = 7;
+            // 
+            // tb_QuantidadeProduto
+            // 
+            this.tb_QuantidadeProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_QuantidadeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_QuantidadeProduto.Location = new System.Drawing.Point(497, 23);
+            this.tb_QuantidadeProduto.Name = "tb_QuantidadeProduto";
+            this.tb_QuantidadeProduto.Size = new System.Drawing.Size(242, 26);
+            this.tb_QuantidadeProduto.TabIndex = 7;
+            this.tb_QuantidadeProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_QuantidadeProduto_KeyPress);
+            this.tb_QuantidadeProduto.Leave += new System.EventHandler(this.tb_QuantidadeProduto_Leave);
+            // 
+            // tb_PesoProduto
+            // 
+            this.tb_PesoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_PesoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_PesoProduto.Location = new System.Drawing.Point(250, 23);
+            this.tb_PesoProduto.Name = "tb_PesoProduto";
+            this.tb_PesoProduto.Size = new System.Drawing.Size(241, 26);
+            this.tb_PesoProduto.TabIndex = 6;
+            this.tb_PesoProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_PesoProduto_KeyPress);
+            this.tb_PesoProduto.Leave += new System.EventHandler(this.tb_PesoProduto_Leave);
+            // 
+            // tb_PrecoProduto
+            // 
+            this.tb_PrecoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_PrecoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_PrecoProduto.Location = new System.Drawing.Point(3, 23);
+            this.tb_PrecoProduto.Name = "tb_PrecoProduto";
+            this.tb_PrecoProduto.Size = new System.Drawing.Size(241, 26);
+            this.tb_PrecoProduto.TabIndex = 5;
+            this.tb_PrecoProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_PrecoProduto_KeyPress);
+            this.tb_PrecoProduto.Leave += new System.EventHandler(this.tb_PrecoProduto_Leave);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(497, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(178, 20);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Quantidade do Produto:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(250, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(224, 20);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Peso do Produto (em gramas):";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(136, 20);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Preço do Produto:";
+            // 
             // tableLayoutPanel11
             // 
             this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -1418,26 +1503,6 @@
             this.btn_CadastrarProduto.TextOffset = new System.Drawing.Point(0, 0);
             this.btn_CadastrarProduto.Click += new System.EventHandler(this.btn_CadastrarProduto_Click);
             // 
-            // tb_DescricaoProduto
-            // 
-            this.tb_DescricaoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_DescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DescricaoProduto.Location = new System.Drawing.Point(3, 26);
-            this.tb_DescricaoProduto.Multiline = true;
-            this.tb_DescricaoProduto.Name = "tb_DescricaoProduto";
-            this.tb_DescricaoProduto.Size = new System.Drawing.Size(736, 63);
-            this.tb_DescricaoProduto.TabIndex = 0;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(3, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(166, 20);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "Descrição do Produto:";
-            // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1454,84 +1519,25 @@
             this.tableLayoutPanel14.Size = new System.Drawing.Size(742, 92);
             this.tableLayoutPanel14.TabIndex = 6;
             // 
-            // tableLayoutPanel12
+            // label24
             // 
-            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel12.ColumnCount = 3;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel12.Controls.Add(this.tb_QuantidadeProduto, 2, 1);
-            this.tableLayoutPanel12.Controls.Add(this.tb_PesoProduto, 1, 1);
-            this.tableLayoutPanel12.Controls.Add(this.tb_PrecoProduto, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.label20, 2, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label19, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 98);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(742, 67);
-            this.tableLayoutPanel12.TabIndex = 7;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(3, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(166, 20);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Descrição do Produto:";
             // 
-            // label18
+            // tb_DescricaoProduto
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(136, 20);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Preço do Produto:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(250, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(131, 20);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "Peso do Produto:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(497, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(178, 20);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Quantidade do Produto:";
-            // 
-            // tb_PrecoProduto
-            // 
-            this.tb_PrecoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_PrecoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_PrecoProduto.Location = new System.Drawing.Point(3, 23);
-            this.tb_PrecoProduto.Name = "tb_PrecoProduto";
-            this.tb_PrecoProduto.Size = new System.Drawing.Size(241, 26);
-            this.tb_PrecoProduto.TabIndex = 5;
-            // 
-            // tb_PesoProduto
-            // 
-            this.tb_PesoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_PesoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_PesoProduto.Location = new System.Drawing.Point(250, 23);
-            this.tb_PesoProduto.Name = "tb_PesoProduto";
-            this.tb_PesoProduto.Size = new System.Drawing.Size(241, 26);
-            this.tb_PesoProduto.TabIndex = 6;
-            // 
-            // tb_QuantidadeProduto
-            // 
-            this.tb_QuantidadeProduto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_QuantidadeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_QuantidadeProduto.Location = new System.Drawing.Point(497, 23);
-            this.tb_QuantidadeProduto.Name = "tb_QuantidadeProduto";
-            this.tb_QuantidadeProduto.Size = new System.Drawing.Size(242, 26);
-            this.tb_QuantidadeProduto.TabIndex = 7;
+            this.tb_DescricaoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DescricaoProduto.Location = new System.Drawing.Point(3, 26);
+            this.tb_DescricaoProduto.Multiline = true;
+            this.tb_DescricaoProduto.Name = "tb_DescricaoProduto";
+            this.tb_DescricaoProduto.Size = new System.Drawing.Size(736, 63);
+            this.tb_DescricaoProduto.TabIndex = 0;
             // 
             // PanelAttProduto
             // 
@@ -1576,6 +1582,8 @@
             this.tbAttQuantidadeProduto.Name = "tbAttQuantidadeProduto";
             this.tbAttQuantidadeProduto.Size = new System.Drawing.Size(242, 26);
             this.tbAttQuantidadeProduto.TabIndex = 7;
+            this.tbAttQuantidadeProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAttQuantidadeProduto_KeyPress);
+            this.tbAttQuantidadeProduto.Leave += new System.EventHandler(this.tbAttQuantidadeProduto_Leave);
             // 
             // tbAttPesoProduto
             // 
@@ -1585,6 +1593,8 @@
             this.tbAttPesoProduto.Name = "tbAttPesoProduto";
             this.tbAttPesoProduto.Size = new System.Drawing.Size(241, 26);
             this.tbAttPesoProduto.TabIndex = 6;
+            this.tbAttPesoProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAttPesoProduto_KeyPress);
+            this.tbAttPesoProduto.Leave += new System.EventHandler(this.tbAttPesoProduto_Leave);
             // 
             // tbAttPrecoProduto
             // 
@@ -1594,6 +1604,8 @@
             this.tbAttPrecoProduto.Name = "tbAttPrecoProduto";
             this.tbAttPrecoProduto.Size = new System.Drawing.Size(241, 26);
             this.tbAttPrecoProduto.TabIndex = 5;
+            this.tbAttPrecoProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAttPrecoProduto_KeyPress);
+            this.tbAttPrecoProduto.Leave += new System.EventHandler(this.tbAttPrecoProduto_Leave);
             // 
             // label21
             // 
@@ -1611,9 +1623,9 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(250, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(131, 20);
+            this.label22.Size = new System.Drawing.Size(224, 20);
             this.label22.TabIndex = 3;
-            this.label22.Text = "Peso do Produto:";
+            this.label22.Text = "Peso do Produto (em gramas):";
             // 
             // label23
             // 
@@ -1756,16 +1768,16 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.PanelAttProduto);
-            this.Controls.Add(this.PanelCadProduto);
-            this.Controls.Add(this.fourLabel);
-            this.Controls.Add(this.homeLabel);
-            this.Controls.Add(this.fiveLabel);
             this.Controls.Add(this.seccondLabel);
             this.Controls.Add(this.firstLabel);
             this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.painelCadCliente);
             this.Controls.Add(this.treeLabel);
+            this.Controls.Add(this.PanelAttProduto);
+            this.Controls.Add(this.PanelCadProduto);
+            this.Controls.Add(this.fourLabel);
+            this.Controls.Add(this.homeLabel);
+            this.Controls.Add(this.fiveLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -1807,11 +1819,11 @@
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.PanelCadProduto.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
             this.PanelAttProduto.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
