@@ -19,7 +19,7 @@ namespace Supermercado
         {
             InitializeComponent();
             CarregarPromo();
-            homeLabel.BringToFront();
+            AtivarPainel(homeLabel); // ativa apenas o home
             PlaceHolders();
 
             if (Global.nomeFuncionario != null && Global.cpfFuncionario != null)
@@ -66,7 +66,7 @@ namespace Supermercado
             if (verificarFuncionario() == false) { MessageBox.Show("Você não está logado como funcionario."); return; }
             slidePanel.Height = btn_Venda.Height;
             slidePanel.Top = btn_Venda.Top;  // Ajusta a posição vertical
-            firstLabel.BringToFront();
+            AtivarPainel(painelRealizarVenda);
         }
 
         private void btn_Estoque_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace Supermercado
             if (verificarFuncionario() == false) { MessageBox.Show("Você não está logado como funcionario."); return; }
             slidePanel.Height = btn_Estoque.Height;
             slidePanel.Top = btn_Estoque.Top;  // Ajusta a posição vertical
-            seccondLabel.BringToFront();
+            AtivarPainel(painelVerEstoque);
         }
 
         private void btn_Clientes_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Supermercado
             if (verificarFuncionario() == false) { MessageBox.Show("Você não está logado como funcionario."); return; }
             slidePanel.Height = btn_Clientes.Height;
             slidePanel.Top = btn_Clientes.Top;  // Ajusta a posição vertical
-            treeLabel.BringToFront();
+            AtivarPainel(painelClientes);
         }
 
         private void btn_Relatorios_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace Supermercado
             if (verificarFuncionario() == false) { MessageBox.Show("Você não está logado como funcionario."); return; }
             slidePanel.Height = btn_Relatorios.Height;
             slidePanel.Top = btn_Relatorios.Top;  // Ajusta a posição vertical
-            fourLabel.BringToFront();
+            AtivarPainel(fourLabel);
         }
 
         private void btn_Funcionario_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace Supermercado
                 login.ShowDialog();
                 return;
             }
-            fiveLabel.BringToFront();
+            AtivarPainel(painelFuncionario);
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -132,7 +132,7 @@ namespace Supermercado
         {
             slidePanel.Height = btn_Home.Height;
             slidePanel.Top = btn_Home.Top;  // Ajusta a posição vertical
-            homeLabel.BringToFront();
+            AtivarPainel(homeLabel);
         }
 
 
@@ -150,13 +150,13 @@ namespace Supermercado
 
         private void btn_CadCliente_Click(object sender, EventArgs e)
         {
-            painelCadCliente.BringToFront();
+            AtivarPainel(painelCadCliente);
         }
 
         private void btn_CancelarCadCliente_Click(object sender, EventArgs e)
         {
             LimparDados();
-            treeLabel.BringToFront();
+            AtivarPainel(painelClientes);
             Funcoes.Notificar("AVISO", "Cliente não inserido.");
         }
 
@@ -224,7 +224,7 @@ namespace Supermercado
             var result =  Banco.CadastrarCliente(nome, telefone, email, cpf, dataNasc, endereco, anotacoes);
             if (result)
             {
-                treeLabel.BringToFront();
+                AtivarPainel(painelClientes);
                 LimparDados();
                 CarregarClientes();
             }
@@ -289,7 +289,7 @@ namespace Supermercado
         {
             if(idCliente != -1)
             {
-                panelAttCliente.BringToFront();
+                AtivarPainel(panelAttCliente);
                 tbAtt_NomeCliente.Text = nomeCliente;
                 mtbAtt_TelefoneCliente.Text = telefoneCliente;
                 tbAtt_EmailCliente.Text = emailCliente;
@@ -309,7 +309,7 @@ namespace Supermercado
         private void btnCancelarAtualizar_Click(object sender, EventArgs e)
         {
             LimparDados();
-            treeLabel.BringToFront();
+            AtivarPainel(painelClientes);
             Funcoes.Notificar("AVISO", "Atualização Cancelada.");
         }
 
@@ -334,7 +334,7 @@ namespace Supermercado
             var result = Banco.AtualizarCliente(nome, telefone, email, cpf, dataNasc, endereco, anotacoes);
             if (result)
             {
-                treeLabel.BringToFront();
+                AtivarPainel(painelClientes);
                 LimparDados();
                 CarregarClientes();
             }
@@ -382,7 +382,7 @@ namespace Supermercado
         private void btn_NovoProduto_Click(object sender, EventArgs e)
         {
             LimparDadosProduto();
-            PanelCadProduto.BringToFront();
+            AtivarPainel(PanelCadProduto);
         }
 
         private void LimparDadosProduto()
@@ -408,7 +408,7 @@ namespace Supermercado
         {
             if (idProduto != -1)
             {
-                PanelAttProduto.BringToFront();
+                AtivarPainel(PanelAttProduto);
                 tbAttCodigoProduto.Text = codigoProduto;
                 tbAttDescProduto.Text = descricaoProduto;
                 tbAttPrecoProduto.Text = precoProduto.ToString();
@@ -432,7 +432,7 @@ namespace Supermercado
             var result = Banco.AtualizarProduto(codigo, descricao, preco, peso, quantidade, idProduto);
             if (result)
             {
-                seccondLabel.BringToFront();
+                AtivarPainel(painelVerEstoque);
                 LimparDadosProduto();
                 CarregarEstoque();
             }
@@ -481,7 +481,7 @@ namespace Supermercado
             var result = Banco.CadastrarProduto(codigo, descricao, preco, quantidade, peso);
             if (result)
             {
-                seccondLabel.BringToFront();
+                AtivarPainel(painelVerEstoque);
                 LimparDadosProduto();
                 CarregarEstoque();
             }
@@ -494,14 +494,14 @@ namespace Supermercado
         private void btn_CancelarCadProduto_Click(object sender, EventArgs e)
         {
             LimparDadosProduto();
-            seccondLabel.BringToFront();
+            AtivarPainel(painelVerEstoque);
             Funcoes.Notificar("AVISO", "Produto não inserido.");
         }
 
         private void btnCancelarAttProduto_Click(object sender, EventArgs e)
         {
             LimparDadosProduto();
-            seccondLabel.BringToFront();
+            AtivarPainel(painelVerEstoque);
             Funcoes.Notificar("AVISO", "Atualização Cancelada.");
         }
 
@@ -685,6 +685,30 @@ namespace Supermercado
             else
             {
                 Console.WriteLine("DataSource não é um DataTable.");
+            }
+        }
+
+        private void AtivarPainel(Panel painelAtivar)
+        {
+            painelRealizarVenda.Visible = false; // Painel que realiza a venda
+            panelAttCliente.Visible = false; // Painel de Atualizar Cliente
+            painelCadCliente.Visible = false; // Painel de Cadastrar Cliente
+            painelClientes.Visible = false; // Painel que mostra os Clientes
+            PanelAttProduto.Visible = false; // Painel para Atualizar Produtos
+            PanelCadProduto.Visible = false; // Painel para Cadastrar Produtos
+            homeLabel.Visible = false; // Painel onde fica as Promos ( home )
+            painelFuncionario.Visible = false; // Painel que mostra os dados do funcionario
+            painelVerEstoque.Visible = false; // Painel onde ver o estoque e funcionalidades dos produtos
+            fourLabel.Visible = false; // não sei
+            painelAtivar.Visible = true;
+        }
+
+        private void TelaPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (painelRealizarVenda.Visible && e.KeyCode == Keys.F5)
+            {
+                MessageBox.Show("Apertou F5 com venda aberta!");
+                e.Handled = true;
             }
         }
     }
