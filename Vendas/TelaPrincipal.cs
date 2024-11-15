@@ -41,6 +41,7 @@ namespace Supermercado
         private string anotacoesCliente;
 
         private int idProduto = -1;
+        private string codigoProduto;
         private string descricaoProduto;
         private decimal precoProduto;
         private decimal pesoProduto;
@@ -190,12 +191,14 @@ namespace Supermercado
 
             dgv_Estoque.DataSource = Banco.Estoque();
 
-            dgv_Estoque.Columns["codigo"].DisplayIndex = 0;
-            dgv_Estoque.Columns["descricao"].DisplayIndex = 1;
-            dgv_Estoque.Columns["preco"].DisplayIndex = 2;
-            dgv_Estoque.Columns["peso"].DisplayIndex = 3;
-            dgv_Estoque.Columns["quantidade"].DisplayIndex = 4;
+            dgv_Estoque.Columns["id"].DisplayIndex = 0;
+            dgv_Estoque.Columns["codigo"].DisplayIndex = 1;
+            dgv_Estoque.Columns["descricao"].DisplayIndex = 2;
+            dgv_Estoque.Columns["preco"].DisplayIndex = 3;
+            dgv_Estoque.Columns["peso"].DisplayIndex = 4;
+            dgv_Estoque.Columns["quantidade"].DisplayIndex = 5;
 
+            dgv_Estoque.Columns["id"].HeaderText = "ID";
             dgv_Estoque.Columns["codigo"].HeaderText = "Cod. Produto";
             dgv_Estoque.Columns["descricao"].HeaderText = "Desc. Produto";
             dgv_Estoque.Columns["preco"].HeaderText = "Preço";
@@ -406,6 +409,7 @@ namespace Supermercado
             if (idProduto != -1)
             {
                 PanelAttProduto.BringToFront();
+                tbAttCodigoProduto.Text = codigoProduto;
                 tbAttDescProduto.Text = descricaoProduto;
                 tbAttPrecoProduto.Text = precoProduto.ToString();
                 tbAttPesoProduto.Text = pesoProduto.ToString();
@@ -424,7 +428,8 @@ namespace Supermercado
             decimal preco = decimal.Parse(tbAttPrecoProduto.Text);
             decimal peso = decimal.Parse(tbAttPesoProduto.Text);
             decimal quantidade = decimal.Parse(tbAttQuantidadeProduto.Text);
-            var result = Banco.AtualizarProduto(descricao, preco, peso, quantidade, idProduto);
+            string codigo = tbAttCodigoProduto.Text;
+            var result = Banco.AtualizarProduto(codigo, descricao, preco, peso, quantidade, idProduto);
             if (result)
             {
                 seccondLabel.BringToFront();
@@ -442,7 +447,8 @@ namespace Supermercado
             if (dgv_Estoque.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dgv_Estoque.SelectedRows[0];
-                idProduto = Convert.ToInt32(selectedRow.Cells["codigo"].Value);
+                idProduto = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                codigoProduto = selectedRow.Cells["codigo"].Value.ToString();
                 descricaoProduto = selectedRow.Cells["descricao"].Value.ToString();
                 precoProduto = Convert.ToDecimal(selectedRow.Cells["preco"].Value);
                 pesoProduto = Convert.ToDecimal(selectedRow.Cells["peso"].Value);
@@ -470,8 +476,9 @@ namespace Supermercado
             decimal preco = decimal.Parse(tb_PrecoProduto.Text);
             decimal peso = decimal.Parse(tb_PesoProduto.Text);
             decimal quantidade = decimal.Parse(tb_QuantidadeProduto.Text);
+            string codigo = tb_CodigoProduto.Text;
 
-            var result = Banco.CadastrarProduto(descricao, preco, quantidade, peso);
+            var result = Banco.CadastrarProduto(codigo, descricao, preco, quantidade, peso);
             if (result)
             {
                 seccondLabel.BringToFront();
@@ -500,12 +507,15 @@ namespace Supermercado
 
         private void PlaceHolders()
         {
-            Funcoes.SetPlaceholder(tb_Pesquisa, "Digite para pesquisar nos dados...");
+            //Funcoes.SetPlaceholder(tb_Pesquisa, "Digite o Nome ou CPF do cliente...");
+            //Funcoes.SetPlaceholder(tb_PesquisarProduto, "Digite o nome ou codigo do produto...");
+
+            /* Os de cima removido devido a bugs na hora de pesquisar, e o placeholder influencia. */
+
             Funcoes.SetPlaceholder(tb_NomeCliente, "Digite o nome do cliente...");
             Funcoes.SetPlaceholder(tb_EmailCliente, "Digite o email do cliente...");
             Funcoes.SetPlaceholder(tb_EnderecoCliente, "Digite o endereço do cliente...");
             Funcoes.SetPlaceholder(tb_AnotacoesCliente, "Digite aqui anotações para este cliente...");
-            Funcoes.SetPlaceholder(tb_PesquisarProduto, "Digite o nome ou codigo do produto...");
             Funcoes.SetPlaceholder(tbAttDescProduto, "Digite o nome do produto.");
             Funcoes.SetPlaceholder(tbAttPrecoProduto, "Digite o preço, ex: '1000' é '1.000'.");
             Funcoes.SetPlaceholder(tbAttPesoProduto, "Digite o peso em gramas, ex: '1000' é 1KG.");
@@ -514,6 +524,8 @@ namespace Supermercado
             Funcoes.SetPlaceholder(tb_PrecoProduto, "Digite o preço, ex: '1000' é '1.000'.");
             Funcoes.SetPlaceholder(tb_PesoProduto, "Digite o peso em gramas, ex: '1000' é 1KG.");
             Funcoes.SetPlaceholder(tb_QuantidadeProduto, "Digite a quantidade, ex: '1' = '1,00' é 1 unidade.");
+            Funcoes.SetPlaceholder(tbAttCodigoProduto, "Digite o código do produto.");
+            Funcoes.SetPlaceholder(tb_CodigoProduto, "Digite o código do produto.");
         }
 
         private void tbAttPrecoProduto_Leave(object sender, EventArgs e)
@@ -633,6 +645,46 @@ namespace Supermercado
             if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1 || (sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void tb_PesquisarProduto_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = tb_PesquisarProduto.Text;
+            if (dgv_Estoque.DataSource is DataTable dataTable)
+            {
+                if (!string.IsNullOrEmpty(filterText))
+                {
+                    dataTable.DefaultView.RowFilter = $"descricao LIKE '%{filterText}%' or codigo LIKE '%{filterText}%'";
+                }
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Empty;
+                }
+            }
+            else
+            {
+                Console.WriteLine("DataSource não é um DataTable.");
+            }
+        }
+
+        private void tb_Pesquisa_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = tb_Pesquisa.Text;
+            if (dgv_Dados.DataSource is DataTable dataTable)
+            {
+                if (!string.IsNullOrEmpty(filterText))
+                {
+                    dataTable.DefaultView.RowFilter = $"nome LIKE '%{filterText}%' or cpf LIKE '%{filterText}%'";
+                }
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Empty;
+                }
+            }
+            else
+            {
+                Console.WriteLine("DataSource não é um DataTable.");
             }
         }
     }

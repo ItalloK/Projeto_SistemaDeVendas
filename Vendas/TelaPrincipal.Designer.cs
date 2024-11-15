@@ -140,6 +140,10 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
             this.tbAttDescProduto = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tbAttCodigoProduto = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tb_CodigoProduto = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -561,6 +565,7 @@
             this.tb_Pesquisa.Name = "tb_Pesquisa";
             this.tb_Pesquisa.Size = new System.Drawing.Size(290, 26);
             this.tb_Pesquisa.TabIndex = 0;
+            this.tb_Pesquisa.TextChanged += new System.EventHandler(this.tb_Pesquisa_TextChanged);
             // 
             // btn_CadCliente
             // 
@@ -1307,6 +1312,7 @@
             this.tb_PesquisarProduto.Name = "tb_PesquisarProduto";
             this.tb_PesquisarProduto.Size = new System.Drawing.Size(290, 26);
             this.tb_PesquisarProduto.TabIndex = 0;
+            this.tb_PesquisarProduto.TextChanged += new System.EventHandler(this.tb_PesquisarProduto_TextChanged);
             // 
             // btn_NovoProduto
             // 
@@ -1348,7 +1354,7 @@
             this.tableLayoutPanel12.Controls.Add(this.label20, 2, 0);
             this.tableLayoutPanel12.Controls.Add(this.label19, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 98);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 162);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -1509,14 +1515,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.tb_CodigoProduto, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.label27, 0, 2);
             this.tableLayoutPanel14.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.tb_DescricaoProduto, 0, 1);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 2;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(742, 92);
+            this.tableLayoutPanel14.RowCount = 4;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(742, 153);
             this.tableLayoutPanel14.TabIndex = 6;
             // 
             // label24
@@ -1533,10 +1543,10 @@
             // 
             this.tb_DescricaoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tb_DescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DescricaoProduto.Location = new System.Drawing.Point(3, 26);
+            this.tb_DescricaoProduto.Location = new System.Drawing.Point(3, 33);
             this.tb_DescricaoProduto.Multiline = true;
             this.tb_DescricaoProduto.Name = "tb_DescricaoProduto";
-            this.tb_DescricaoProduto.Size = new System.Drawing.Size(736, 63);
+            this.tb_DescricaoProduto.Size = new System.Drawing.Size(736, 55);
             this.tb_DescricaoProduto.TabIndex = 0;
             // 
             // PanelAttProduto
@@ -1566,7 +1576,7 @@
             this.tableLayoutPanel13.Controls.Add(this.label21, 2, 0);
             this.tableLayoutPanel13.Controls.Add(this.label22, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.label23, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 98);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 151);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -1662,7 +1672,7 @@
             this.btnCancelarAttProduto.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.btnCancelarAttProduto.CheckedImageTint = System.Drawing.Color.White;
             this.btnCancelarAttProduto.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnCancelarAttProduto.Content = "Cancelar Cadastro";
+            this.btnCancelarAttProduto.Content = "Cancelar Atualização";
             this.btnCancelarAttProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancelarAttProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.btnCancelarAttProduto.ForeColor = System.Drawing.Color.White;
@@ -1727,14 +1737,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel16.ColumnCount = 1;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Controls.Add(this.tbAttCodigoProduto, 0, 3);
+            this.tableLayoutPanel16.Controls.Add(this.label26, 0, 2);
             this.tableLayoutPanel16.Controls.Add(this.label25, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.tbAttDescProduto, 0, 1);
             this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 2;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(742, 92);
+            this.tableLayoutPanel16.RowCount = 4;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(742, 143);
             this.tableLayoutPanel16.TabIndex = 6;
             // 
             // label25
@@ -1751,11 +1765,49 @@
             // 
             this.tbAttDescProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbAttDescProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAttDescProduto.Location = new System.Drawing.Point(3, 26);
+            this.tbAttDescProduto.Location = new System.Drawing.Point(3, 31);
             this.tbAttDescProduto.Multiline = true;
             this.tbAttDescProduto.Name = "tbAttDescProduto";
-            this.tbAttDescProduto.Size = new System.Drawing.Size(736, 63);
+            this.tbAttDescProduto.Size = new System.Drawing.Size(736, 51);
             this.tbAttDescProduto.TabIndex = 0;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(3, 85);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(145, 20);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Codigo do Produto:";
+            // 
+            // tbAttCodigoProduto
+            // 
+            this.tbAttCodigoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAttCodigoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAttCodigoProduto.Location = new System.Drawing.Point(3, 116);
+            this.tbAttCodigoProduto.Name = "tbAttCodigoProduto";
+            this.tbAttCodigoProduto.Size = new System.Drawing.Size(736, 26);
+            this.tbAttCodigoProduto.TabIndex = 3;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(3, 91);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(145, 20);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Código do Produto:";
+            // 
+            // tb_CodigoProduto
+            // 
+            this.tb_CodigoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_CodigoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CodigoProduto.Location = new System.Drawing.Point(3, 124);
+            this.tb_CodigoProduto.Name = "tb_CodigoProduto";
+            this.tb_CodigoProduto.Size = new System.Drawing.Size(736, 26);
+            this.tb_CodigoProduto.TabIndex = 3;
             // 
             // TelaPrincipal
             // 
@@ -1768,16 +1820,16 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.seccondLabel);
-            this.Controls.Add(this.firstLabel);
-            this.Controls.Add(this.panelAttCliente);
-            this.Controls.Add(this.painelCadCliente);
             this.Controls.Add(this.treeLabel);
             this.Controls.Add(this.PanelAttProduto);
             this.Controls.Add(this.PanelCadProduto);
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
             this.Controls.Add(this.fiveLabel);
+            this.Controls.Add(this.seccondLabel);
+            this.Controls.Add(this.firstLabel);
+            this.Controls.Add(this.panelAttCliente);
+            this.Controls.Add(this.painelCadCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -1947,6 +1999,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tbAttDescProduto;
+        private System.Windows.Forms.TextBox tbAttCodigoProduto;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox tb_CodigoProduto;
+        private System.Windows.Forms.Label label27;
     }
 }
 

@@ -164,16 +164,17 @@ namespace Supermercado
 
         /* ------------------------------- Produtos ------------------------------- */
 
-        public static bool CadastrarProduto(string descricao, decimal preco, decimal quantidade, decimal peso)
+        public static bool CadastrarProduto(string codigo, string descricao, decimal preco, decimal quantidade, decimal peso)
         {
             try
             {
-                string query = "INSERT INTO produtos (descricao, preco, quantidade, peso) VALUES (@descricao, @preco, @quantidade, @peso)";
+                string query = "INSERT INTO produtos (codigo, descricao, preco, quantidade, peso) VALUES (@codigo,@descricao, @preco, @quantidade, @peso)";
                 using (var connection = new SQLiteConnection(stringConexao))
                 {
                     connection.Open();
                     using (var command = new SQLiteCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@codigo", codigo);
                         command.Parameters.AddWithValue("@descricao", descricao);
                         command.Parameters.AddWithValue("@preco", preco);
                         command.Parameters.AddWithValue("@quantidade", quantidade);
@@ -198,21 +199,22 @@ namespace Supermercado
             }
         }
 
-        public static bool AtualizarProduto(string descricao, decimal preco, decimal peso, decimal quantidade, int codigo)
+        public static bool AtualizarProduto(string codigo, string descricao, decimal preco, decimal peso, decimal quantidade, int id)
         {
             try
             {
-                string query = "UPDATE produtos SET descricao = @descricao, preco = @preco, peso = @peso, quantidade = @quantidade WHERE codigo = @codigo";
+                string query = "UPDATE produtos SET codigo = @codigo, descricao = @descricao, preco = @preco, peso = @peso, quantidade = @quantidade WHERE id = @id";
                 using (var connection = new SQLiteConnection(stringConexao))
                 {
                     connection.Open();
                     using (var command = new SQLiteCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@codigo", codigo);
                         command.Parameters.AddWithValue("@descricao", descricao);
                         command.Parameters.AddWithValue("@preco", preco);
                         command.Parameters.AddWithValue("@peso", peso);
                         command.Parameters.AddWithValue("@quantidade", quantidade);
-                        command.Parameters.AddWithValue("@codigo", codigo);
+                        command.Parameters.AddWithValue("@id", id);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -298,7 +300,8 @@ namespace Supermercado
 
                     string sqlProdutos = @"
             CREATE TABLE IF NOT EXISTS produtos (
-                codigo INTEGER PRIMARY KEY AUTOINCREMENT,
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                codigo TEXT NOT NULL,
                 descricao TEXT NOT NULL,
                 preco NUMERIC NOT NULL DEFAULT 0,
                 quantidade NUMERIC NOT NULL DEFAULT 0,
