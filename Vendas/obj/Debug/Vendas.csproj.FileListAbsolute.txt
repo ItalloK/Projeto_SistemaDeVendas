@@ -14,3 +14,4 @@ E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Vendas.csproj.CoreCompileInput
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Vendas.csproj.Up2Date
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.exe
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.pdb
+E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.teste.resources

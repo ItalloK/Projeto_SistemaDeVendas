@@ -287,26 +287,26 @@ namespace Supermercado
                     conexao.Open();
 
                     string sqlClientes = @"
-            CREATE TABLE IF NOT EXISTS clientes (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                nome TEXT NOT NULL,
-                email TEXT,
-                telefone TEXT,
-                cpf TEXT, 
-                dataNasc TEXT,
-                endereco TEXT,
-                anotacoes TEXT
-            )";
+                    CREATE TABLE IF NOT EXISTS clientes (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        nome TEXT NOT NULL,
+                        email TEXT,
+                        telefone TEXT,
+                        cpf TEXT, 
+                        dataNasc TEXT,
+                        endereco TEXT,
+                        anotacoes TEXT
+                    )";
 
                     string sqlProdutos = @"
-            CREATE TABLE IF NOT EXISTS produtos (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                codigo TEXT NOT NULL,
-                descricao TEXT NOT NULL,
-                preco NUMERIC NOT NULL DEFAULT 0,
-                quantidade NUMERIC NOT NULL DEFAULT 0,
-                peso NUMERIC DEFAULT 0
-            )";
+                    CREATE TABLE IF NOT EXISTS produtos (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        codigo TEXT NOT NULL,
+                        descricao TEXT NOT NULL,
+                        preco NUMERIC NOT NULL DEFAULT 0,
+                        quantidade NUMERIC NOT NULL DEFAULT 0,
+                        peso NUMERIC DEFAULT 0
+                    )";
 
                     using (SQLiteCommand comando = new SQLiteCommand(sqlClientes, conexao))
                     {
@@ -318,7 +318,6 @@ namespace Supermercado
                         comando.ExecuteNonQuery();
                     }
 
-                    // Verificando se a tabela 'clientes' foi criada corretamente
                     string verificarTabela = "SELECT name FROM sqlite_master WHERE type='table' AND name='clientes';";
                     using (SQLiteCommand cmdVerificar = new SQLiteCommand(verificarTabela, conexao))
                     {
