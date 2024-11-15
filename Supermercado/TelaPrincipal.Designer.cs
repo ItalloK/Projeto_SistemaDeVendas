@@ -52,7 +52,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Venda = new System.Windows.Forms.Button();
             this.firstLabel = new System.Windows.Forms.Panel();
-            this.seccondLabel = new System.Windows.Forms.Panel();
             this.fourLabel = new System.Windows.Forms.Panel();
             this.treeLabel = new System.Windows.Forms.Panel();
             this.dgv_Dados = new System.Windows.Forms.DataGridView();
@@ -106,6 +105,41 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.tbAtt_NomeCliente = new System.Windows.Forms.TextBox();
+            this.seccondLabel = new System.Windows.Forms.Panel();
+            this.dgv_Estoque = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_DeletarProduto = new System.Windows.Forms.Button();
+            this.btn_AtualizarProduto = new System.Windows.Forms.Button();
+            this.tb_PesquisarProduto = new System.Windows.Forms.TextBox();
+            this.btn_NovoProduto = new System.Windows.Forms.Button();
+            this.PanelCadProduto = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_CancelarCadProduto = new CuoreUI.Controls.cuiButton();
+            this.btn_CadastrarProduto = new CuoreUI.Controls.cuiButton();
+            this.tb_DescricaoProduto = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tb_PrecoProduto = new System.Windows.Forms.TextBox();
+            this.tb_PesoProduto = new System.Windows.Forms.TextBox();
+            this.tb_QuantidadeProduto = new System.Windows.Forms.TextBox();
+            this.PanelAttProduto = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbAttQuantidadeProduto = new System.Windows.Forms.TextBox();
+            this.tbAttPesoProduto = new System.Windows.Forms.TextBox();
+            this.tbAttPrecoProduto = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancelarAttProduto = new CuoreUI.Controls.cuiButton();
+            this.btnAtualizarProduto = new CuoreUI.Controls.cuiButton();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbAttDescProduto = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -126,6 +160,17 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.seccondLabel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Estoque)).BeginInit();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.PanelCadProduto.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.PanelAttProduto.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -415,17 +460,6 @@
             this.firstLabel.Name = "firstLabel";
             this.firstLabel.Size = new System.Drawing.Size(748, 410);
             this.firstLabel.TabIndex = 9;
-            // 
-            // seccondLabel
-            // 
-            this.seccondLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.seccondLabel.BackColor = System.Drawing.Color.Gray;
-            this.seccondLabel.Location = new System.Drawing.Point(185, 57);
-            this.seccondLabel.Name = "seccondLabel";
-            this.seccondLabel.Size = new System.Drawing.Size(748, 410);
-            this.seccondLabel.TabIndex = 10;
             // 
             // fourLabel
             // 
@@ -1185,6 +1219,532 @@
             this.tbAtt_NomeCliente.Size = new System.Drawing.Size(736, 26);
             this.tbAtt_NomeCliente.TabIndex = 0;
             // 
+            // seccondLabel
+            // 
+            this.seccondLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.seccondLabel.BackColor = System.Drawing.Color.White;
+            this.seccondLabel.Controls.Add(this.dgv_Estoque);
+            this.seccondLabel.Controls.Add(this.tableLayoutPanel10);
+            this.seccondLabel.Location = new System.Drawing.Point(185, 57);
+            this.seccondLabel.Name = "seccondLabel";
+            this.seccondLabel.Size = new System.Drawing.Size(748, 410);
+            this.seccondLabel.TabIndex = 13;
+            // 
+            // dgv_Estoque
+            // 
+            this.dgv_Estoque.AllowUserToAddRows = false;
+            this.dgv_Estoque.AllowUserToDeleteRows = false;
+            this.dgv_Estoque.AllowUserToResizeColumns = false;
+            this.dgv_Estoque.AllowUserToResizeRows = false;
+            this.dgv_Estoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Estoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Estoque.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Estoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_Estoque.Location = new System.Drawing.Point(3, 56);
+            this.dgv_Estoque.MultiSelect = false;
+            this.dgv_Estoque.Name = "dgv_Estoque";
+            this.dgv_Estoque.ReadOnly = true;
+            this.dgv_Estoque.RowHeadersVisible = false;
+            this.dgv_Estoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Estoque.Size = new System.Drawing.Size(742, 351);
+            this.dgv_Estoque.TabIndex = 22;
+            this.dgv_Estoque.SelectionChanged += new System.EventHandler(this.dgv_Estoque_SelectionChanged);
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel10.ColumnCount = 4;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel10.Controls.Add(this.btn_DeletarProduto, 3, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btn_AtualizarProduto, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tb_PesquisarProduto, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btn_NovoProduto, 1, 0);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(741, 44);
+            this.tableLayoutPanel10.TabIndex = 2;
+            // 
+            // btn_DeletarProduto
+            // 
+            this.btn_DeletarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DeletarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeletarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_DeletarProduto.Location = new System.Drawing.Point(595, 9);
+            this.btn_DeletarProduto.Name = "btn_DeletarProduto";
+            this.btn_DeletarProduto.Size = new System.Drawing.Size(143, 26);
+            this.btn_DeletarProduto.TabIndex = 3;
+            this.btn_DeletarProduto.Text = "Deletar Produto";
+            this.btn_DeletarProduto.UseVisualStyleBackColor = true;
+            // 
+            // btn_AtualizarProduto
+            // 
+            this.btn_AtualizarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AtualizarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AtualizarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_AtualizarProduto.Location = new System.Drawing.Point(447, 9);
+            this.btn_AtualizarProduto.Name = "btn_AtualizarProduto";
+            this.btn_AtualizarProduto.Size = new System.Drawing.Size(142, 26);
+            this.btn_AtualizarProduto.TabIndex = 2;
+            this.btn_AtualizarProduto.Text = "Atualizar Produto";
+            this.btn_AtualizarProduto.UseVisualStyleBackColor = true;
+            this.btn_AtualizarProduto.Click += new System.EventHandler(this.btn_AtualizarProduto_Click);
+            // 
+            // tb_PesquisarProduto
+            // 
+            this.tb_PesquisarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_PesquisarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_PesquisarProduto.Location = new System.Drawing.Point(3, 9);
+            this.tb_PesquisarProduto.Name = "tb_PesquisarProduto";
+            this.tb_PesquisarProduto.Size = new System.Drawing.Size(290, 26);
+            this.tb_PesquisarProduto.TabIndex = 0;
+            // 
+            // btn_NovoProduto
+            // 
+            this.btn_NovoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NovoProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_NovoProduto.Location = new System.Drawing.Point(299, 9);
+            this.btn_NovoProduto.Name = "btn_NovoProduto";
+            this.btn_NovoProduto.Size = new System.Drawing.Size(142, 26);
+            this.btn_NovoProduto.TabIndex = 1;
+            this.btn_NovoProduto.Text = "Novo Produto";
+            this.btn_NovoProduto.UseVisualStyleBackColor = true;
+            this.btn_NovoProduto.Click += new System.EventHandler(this.btn_NovoProduto_Click);
+            // 
+            // PanelCadProduto
+            // 
+            this.PanelCadProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelCadProduto.Controls.Add(this.tableLayoutPanel12);
+            this.PanelCadProduto.Controls.Add(this.tableLayoutPanel11);
+            this.PanelCadProduto.Controls.Add(this.tableLayoutPanel14);
+            this.PanelCadProduto.Location = new System.Drawing.Point(185, 57);
+            this.PanelCadProduto.Name = "PanelCadProduto";
+            this.PanelCadProduto.Size = new System.Drawing.Size(748, 410);
+            this.PanelCadProduto.TabIndex = 14;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel11.ColumnCount = 4;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.Controls.Add(this.btn_CancelarCadProduto, 2, 0);
+            this.tableLayoutPanel11.Controls.Add(this.btn_CadastrarProduto, 3, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 375);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(742, 32);
+            this.tableLayoutPanel11.TabIndex = 10;
+            // 
+            // btn_CancelarCadProduto
+            // 
+            this.btn_CancelarCadProduto.CheckButton = false;
+            this.btn_CancelarCadProduto.Checked = false;
+            this.btn_CancelarCadProduto.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CancelarCadProduto.CheckedImageTint = System.Drawing.Color.White;
+            this.btn_CancelarCadProduto.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CancelarCadProduto.Content = "Cancelar Cadastro";
+            this.btn_CancelarCadProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_CancelarCadProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_CancelarCadProduto.ForeColor = System.Drawing.Color.White;
+            this.btn_CancelarCadProduto.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CancelarCadProduto.HoveredImageTint = System.Drawing.Color.White;
+            this.btn_CancelarCadProduto.HoverOutline = System.Drawing.Color.Empty;
+            this.btn_CancelarCadProduto.Image = null;
+            this.btn_CancelarCadProduto.ImageAutoCenter = true;
+            this.btn_CancelarCadProduto.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btn_CancelarCadProduto.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btn_CancelarCadProduto.ImageTint = System.Drawing.Color.White;
+            this.btn_CancelarCadProduto.Location = new System.Drawing.Point(373, 3);
+            this.btn_CancelarCadProduto.Name = "btn_CancelarCadProduto";
+            this.btn_CancelarCadProduto.NormalBackground = System.Drawing.Color.Gray;
+            this.btn_CancelarCadProduto.NormalOutline = System.Drawing.Color.Empty;
+            this.btn_CancelarCadProduto.OutlineThickness = 1.6F;
+            this.btn_CancelarCadProduto.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CancelarCadProduto.PressedImageTint = System.Drawing.Color.White;
+            this.btn_CancelarCadProduto.PressedOutline = System.Drawing.Color.Empty;
+            this.btn_CancelarCadProduto.Rounding = new System.Windows.Forms.Padding(8);
+            this.btn_CancelarCadProduto.Size = new System.Drawing.Size(179, 26);
+            this.btn_CancelarCadProduto.TabIndex = 0;
+            this.btn_CancelarCadProduto.TextOffset = new System.Drawing.Point(0, 0);
+            this.btn_CancelarCadProduto.Click += new System.EventHandler(this.btn_CancelarCadProduto_Click);
+            // 
+            // btn_CadastrarProduto
+            // 
+            this.btn_CadastrarProduto.CheckButton = false;
+            this.btn_CadastrarProduto.Checked = false;
+            this.btn_CadastrarProduto.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CadastrarProduto.CheckedImageTint = System.Drawing.Color.White;
+            this.btn_CadastrarProduto.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CadastrarProduto.Content = "Cadastrar Produto";
+            this.btn_CadastrarProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_CadastrarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_CadastrarProduto.ForeColor = System.Drawing.Color.White;
+            this.btn_CadastrarProduto.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CadastrarProduto.HoveredImageTint = System.Drawing.Color.White;
+            this.btn_CadastrarProduto.HoverOutline = System.Drawing.Color.Empty;
+            this.btn_CadastrarProduto.Image = null;
+            this.btn_CadastrarProduto.ImageAutoCenter = true;
+            this.btn_CadastrarProduto.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btn_CadastrarProduto.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btn_CadastrarProduto.ImageTint = System.Drawing.Color.White;
+            this.btn_CadastrarProduto.Location = new System.Drawing.Point(558, 3);
+            this.btn_CadastrarProduto.Name = "btn_CadastrarProduto";
+            this.btn_CadastrarProduto.NormalBackground = System.Drawing.Color.Gray;
+            this.btn_CadastrarProduto.NormalOutline = System.Drawing.Color.Empty;
+            this.btn_CadastrarProduto.OutlineThickness = 1.6F;
+            this.btn_CadastrarProduto.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btn_CadastrarProduto.PressedImageTint = System.Drawing.Color.White;
+            this.btn_CadastrarProduto.PressedOutline = System.Drawing.Color.Empty;
+            this.btn_CadastrarProduto.Rounding = new System.Windows.Forms.Padding(8);
+            this.btn_CadastrarProduto.Size = new System.Drawing.Size(181, 26);
+            this.btn_CadastrarProduto.TabIndex = 1;
+            this.btn_CadastrarProduto.TextOffset = new System.Drawing.Point(0, 0);
+            this.btn_CadastrarProduto.Click += new System.EventHandler(this.btn_CadastrarProduto_Click);
+            // 
+            // tb_DescricaoProduto
+            // 
+            this.tb_DescricaoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_DescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DescricaoProduto.Location = new System.Drawing.Point(3, 26);
+            this.tb_DescricaoProduto.Multiline = true;
+            this.tb_DescricaoProduto.Name = "tb_DescricaoProduto";
+            this.tb_DescricaoProduto.Size = new System.Drawing.Size(736, 63);
+            this.tb_DescricaoProduto.TabIndex = 0;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(3, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(166, 20);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Descrição do Produto:";
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.label24, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.tb_DescricaoProduto, 0, 1);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 2;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(742, 92);
+            this.tableLayoutPanel14.TabIndex = 6;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel12.ColumnCount = 3;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel12.Controls.Add(this.tb_QuantidadeProduto, 2, 1);
+            this.tableLayoutPanel12.Controls.Add(this.tb_PesoProduto, 1, 1);
+            this.tableLayoutPanel12.Controls.Add(this.tb_PrecoProduto, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.label20, 2, 0);
+            this.tableLayoutPanel12.Controls.Add(this.label19, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.label18, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 98);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(742, 67);
+            this.tableLayoutPanel12.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(136, 20);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Preço do Produto:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(250, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(131, 20);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Peso do Produto:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(497, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(178, 20);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Quantidade do Produto:";
+            // 
+            // tb_PrecoProduto
+            // 
+            this.tb_PrecoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_PrecoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_PrecoProduto.Location = new System.Drawing.Point(3, 23);
+            this.tb_PrecoProduto.Name = "tb_PrecoProduto";
+            this.tb_PrecoProduto.Size = new System.Drawing.Size(241, 26);
+            this.tb_PrecoProduto.TabIndex = 5;
+            // 
+            // tb_PesoProduto
+            // 
+            this.tb_PesoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_PesoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_PesoProduto.Location = new System.Drawing.Point(250, 23);
+            this.tb_PesoProduto.Name = "tb_PesoProduto";
+            this.tb_PesoProduto.Size = new System.Drawing.Size(241, 26);
+            this.tb_PesoProduto.TabIndex = 6;
+            // 
+            // tb_QuantidadeProduto
+            // 
+            this.tb_QuantidadeProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_QuantidadeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_QuantidadeProduto.Location = new System.Drawing.Point(497, 23);
+            this.tb_QuantidadeProduto.Name = "tb_QuantidadeProduto";
+            this.tb_QuantidadeProduto.Size = new System.Drawing.Size(242, 26);
+            this.tb_QuantidadeProduto.TabIndex = 7;
+            // 
+            // PanelAttProduto
+            // 
+            this.PanelAttProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelAttProduto.Controls.Add(this.tableLayoutPanel13);
+            this.PanelAttProduto.Controls.Add(this.tableLayoutPanel15);
+            this.PanelAttProduto.Controls.Add(this.tableLayoutPanel16);
+            this.PanelAttProduto.Location = new System.Drawing.Point(185, 57);
+            this.PanelAttProduto.Name = "PanelAttProduto";
+            this.PanelAttProduto.Size = new System.Drawing.Size(748, 410);
+            this.PanelAttProduto.TabIndex = 15;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel13.ColumnCount = 3;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.Controls.Add(this.tbAttQuantidadeProduto, 2, 1);
+            this.tableLayoutPanel13.Controls.Add(this.tbAttPesoProduto, 1, 1);
+            this.tableLayoutPanel13.Controls.Add(this.tbAttPrecoProduto, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.label21, 2, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label22, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label23, 0, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 98);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(742, 67);
+            this.tableLayoutPanel13.TabIndex = 7;
+            // 
+            // tbAttQuantidadeProduto
+            // 
+            this.tbAttQuantidadeProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAttQuantidadeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAttQuantidadeProduto.Location = new System.Drawing.Point(497, 23);
+            this.tbAttQuantidadeProduto.Name = "tbAttQuantidadeProduto";
+            this.tbAttQuantidadeProduto.Size = new System.Drawing.Size(242, 26);
+            this.tbAttQuantidadeProduto.TabIndex = 7;
+            // 
+            // tbAttPesoProduto
+            // 
+            this.tbAttPesoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAttPesoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAttPesoProduto.Location = new System.Drawing.Point(250, 23);
+            this.tbAttPesoProduto.Name = "tbAttPesoProduto";
+            this.tbAttPesoProduto.Size = new System.Drawing.Size(241, 26);
+            this.tbAttPesoProduto.TabIndex = 6;
+            // 
+            // tbAttPrecoProduto
+            // 
+            this.tbAttPrecoProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAttPrecoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAttPrecoProduto.Location = new System.Drawing.Point(3, 23);
+            this.tbAttPrecoProduto.Name = "tbAttPrecoProduto";
+            this.tbAttPrecoProduto.Size = new System.Drawing.Size(241, 26);
+            this.tbAttPrecoProduto.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(497, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(178, 20);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Quantidade do Produto:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(250, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(131, 20);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Peso do Produto:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(3, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(136, 20);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Preço do Produto:";
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel15.ColumnCount = 4;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.Controls.Add(this.btnCancelarAttProduto, 2, 0);
+            this.tableLayoutPanel15.Controls.Add(this.btnAtualizarProduto, 3, 0);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 375);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(742, 32);
+            this.tableLayoutPanel15.TabIndex = 10;
+            // 
+            // btnCancelarAttProduto
+            // 
+            this.btnCancelarAttProduto.CheckButton = false;
+            this.btnCancelarAttProduto.Checked = false;
+            this.btnCancelarAttProduto.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAttProduto.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCancelarAttProduto.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAttProduto.Content = "Cancelar Cadastro";
+            this.btnCancelarAttProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancelarAttProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnCancelarAttProduto.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarAttProduto.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAttProduto.HoveredImageTint = System.Drawing.Color.White;
+            this.btnCancelarAttProduto.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCancelarAttProduto.Image = null;
+            this.btnCancelarAttProduto.ImageAutoCenter = true;
+            this.btnCancelarAttProduto.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancelarAttProduto.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancelarAttProduto.ImageTint = System.Drawing.Color.White;
+            this.btnCancelarAttProduto.Location = new System.Drawing.Point(373, 3);
+            this.btnCancelarAttProduto.Name = "btnCancelarAttProduto";
+            this.btnCancelarAttProduto.NormalBackground = System.Drawing.Color.Gray;
+            this.btnCancelarAttProduto.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCancelarAttProduto.OutlineThickness = 1.6F;
+            this.btnCancelarAttProduto.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancelarAttProduto.PressedImageTint = System.Drawing.Color.White;
+            this.btnCancelarAttProduto.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCancelarAttProduto.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnCancelarAttProduto.Size = new System.Drawing.Size(179, 26);
+            this.btnCancelarAttProduto.TabIndex = 0;
+            this.btnCancelarAttProduto.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCancelarAttProduto.Click += new System.EventHandler(this.btnCancelarAttProduto_Click);
+            // 
+            // btnAtualizarProduto
+            // 
+            this.btnAtualizarProduto.CheckButton = false;
+            this.btnAtualizarProduto.Checked = false;
+            this.btnAtualizarProduto.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarProduto.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAtualizarProduto.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarProduto.Content = "Atualizar Produto";
+            this.btnAtualizarProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAtualizarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnAtualizarProduto.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarProduto.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarProduto.HoveredImageTint = System.Drawing.Color.White;
+            this.btnAtualizarProduto.HoverOutline = System.Drawing.Color.Empty;
+            this.btnAtualizarProduto.Image = null;
+            this.btnAtualizarProduto.ImageAutoCenter = true;
+            this.btnAtualizarProduto.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAtualizarProduto.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAtualizarProduto.ImageTint = System.Drawing.Color.White;
+            this.btnAtualizarProduto.Location = new System.Drawing.Point(558, 3);
+            this.btnAtualizarProduto.Name = "btnAtualizarProduto";
+            this.btnAtualizarProduto.NormalBackground = System.Drawing.Color.Gray;
+            this.btnAtualizarProduto.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAtualizarProduto.OutlineThickness = 1.6F;
+            this.btnAtualizarProduto.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAtualizarProduto.PressedImageTint = System.Drawing.Color.White;
+            this.btnAtualizarProduto.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAtualizarProduto.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnAtualizarProduto.Size = new System.Drawing.Size(181, 26);
+            this.btnAtualizarProduto.TabIndex = 1;
+            this.btnAtualizarProduto.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnAtualizarProduto.Click += new System.EventHandler(this.btnAtualizarProduto_Click);
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel16.ColumnCount = 1;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Controls.Add(this.label25, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.tbAttDescProduto, 0, 1);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 2;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(742, 92);
+            this.tableLayoutPanel16.TabIndex = 6;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(3, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(166, 20);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Descrição do Produto:";
+            // 
+            // tbAttDescProduto
+            // 
+            this.tbAttDescProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbAttDescProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAttDescProduto.Location = new System.Drawing.Point(3, 26);
+            this.tbAttDescProduto.Multiline = true;
+            this.tbAttDescProduto.Name = "tbAttDescProduto";
+            this.tbAttDescProduto.Size = new System.Drawing.Size(736, 63);
+            this.tbAttDescProduto.TabIndex = 0;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1196,7 +1756,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.treeLabel);
+            this.Controls.Add(this.PanelAttProduto);
+            this.Controls.Add(this.PanelCadProduto);
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
             this.Controls.Add(this.fiveLabel);
@@ -1204,6 +1765,7 @@
             this.Controls.Add(this.firstLabel);
             this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.painelCadCliente);
+            this.Controls.Add(this.treeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaPrincipal";
@@ -1240,6 +1802,22 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
+            this.seccondLabel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Estoque)).EndInit();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.PanelCadProduto.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.PanelAttProduto.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,7 +1841,6 @@
         private System.Windows.Forms.Panel slidePanel;
         private System.Windows.Forms.Button btn_Venda;
         private System.Windows.Forms.Panel firstLabel;
-        private System.Windows.Forms.Panel seccondLabel;
         private System.Windows.Forms.Panel fourLabel;
         private System.Windows.Forms.Panel treeLabel;
         private System.Windows.Forms.Label label4;
@@ -1323,6 +1900,41 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox tbAtt_NomeCliente;
+        private System.Windows.Forms.Panel seccondLabel;
+        private System.Windows.Forms.DataGridView dgv_Estoque;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Button btn_DeletarProduto;
+        private System.Windows.Forms.Button btn_AtualizarProduto;
+        private System.Windows.Forms.TextBox tb_PesquisarProduto;
+        private System.Windows.Forms.Button btn_NovoProduto;
+        private System.Windows.Forms.Panel PanelCadProduto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private CuoreUI.Controls.cuiButton btn_CancelarCadProduto;
+        private CuoreUI.Controls.cuiButton btn_CadastrarProduto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox tb_DescricaoProduto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox tb_QuantidadeProduto;
+        private System.Windows.Forms.TextBox tb_PesoProduto;
+        private System.Windows.Forms.TextBox tb_PrecoProduto;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel PanelAttProduto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.TextBox tbAttQuantidadeProduto;
+        private System.Windows.Forms.TextBox tbAttPesoProduto;
+        private System.Windows.Forms.TextBox tbAttPrecoProduto;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private CuoreUI.Controls.cuiButton btnCancelarAttProduto;
+        private CuoreUI.Controls.cuiButton btnAtualizarProduto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tbAttDescProduto;
     }
 }
 

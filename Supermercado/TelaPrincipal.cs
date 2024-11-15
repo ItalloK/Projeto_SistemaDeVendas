@@ -25,6 +25,7 @@ namespace Supermercado
             Funcoes.SetPlaceholder(tb_EmailCliente, "Digite o email do cliente...");
             Funcoes.SetPlaceholder(tb_EnderecoCliente, "Digite o endereço do cliente...");
             Funcoes.SetPlaceholder(tb_AnotacoesCliente, "Digite aqui anotações para este cliente...");
+            Funcoes.SetPlaceholder(tb_PesquisarProduto, "Digite o nome ou codigo do produto...");
 
             if(Global.nomeFuncionario != null && Global.cpfFuncionario != null)
             {
@@ -34,7 +35,7 @@ namespace Supermercado
 
         }
 
-        private int idCliente;
+        private int idCliente = -1;
         private string nomeCliente;
         private string telefoneCliente;
         private string emailCliente;
@@ -43,9 +44,16 @@ namespace Supermercado
         private string enderecoCliente;
         private string anotacoesCliente;
 
+        private int idProduto = -1;
+        private string descricaoProduto;
+        private float precoProduto;
+        private float pesoProduto;
+        private float quantidadeProduto;
+
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
             CarregarClientes(); // fazer função
+            CarregarEstoque();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -179,6 +187,10 @@ namespace Supermercado
         private void CarregarClientes()
         {
             dgv_Dados.DataSource = Banco.DadosClientes();
+        }
+        private void CarregarEstoque()
+        {
+            dgv_Estoque.DataSource = Banco.Estoque();
         }
 
         private void CadastrarCliente()
@@ -350,6 +362,128 @@ namespace Supermercado
                 MessageBox.Show("Selecione um cliente para deletar!");
                 return;
             }
+        }
+
+        private void btn_NovoProduto_Click(object sender, EventArgs e)
+        {
+            LimparDadosProduto();
+            PanelCadProduto.BringToFront();
+        }
+
+        private void LimparDadosProduto()
+        {
+            tb_DescricaoProduto.Clear();
+            tb_PrecoProduto.Clear();
+            tb_PesoProduto.Clear();
+            tb_QuantidadeProduto.Clear();
+
+            tbAttDescProduto.Clear();
+            tbAttPrecoProduto.Clear();
+            tbAttPesoProduto.Clear();
+            tbAttQuantidadeProduto.Clear();
+        }
+
+        private void btn_AtualizarProduto_Click(object sender, EventArgs e)
+        {
+            LimparDadosProduto();
+            PegarDadosProduto();            
+        }
+
+        private void PegarDadosProduto()
+        {
+            if (idProduto != -1)
+            {
+                PanelAttProduto.BringToFront();
+                tbAttDescProduto.Text = descricaoProduto;
+                tbAttPrecoProduto.Text = precoProduto.ToString();
+                tbAttPesoProduto.Text = pesoProduto.ToString();
+                tbAttQuantidadeProduto.Text = quantidadeProduto.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto para atualizar!");
+                return;
+            }
+        }
+
+        private void AtualizarProduto()
+        {
+            string descricao = tbAttDescProduto.Text;
+            float preco = float.Parse(tbAttPrecoProduto.Text);
+            float peso = float.Parse(tbAttPesoProduto.Text);
+            float quantidade = float.Parse(tbAttQuantidadeProduto.Text);
+            var result = Banco.AtualizarProduto(descricao, preco, peso, quantidade, idProduto);
+            if (result)
+            {
+                seccondLabel.BringToFront();
+                LimparDadosProduto();
+                CarregarEstoque();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void dgv_Estoque_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_Estoque.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgv_Estoque.SelectedRows[0];
+                idProduto = Convert.ToInt32(selectedRow.Cells["codigo"].Value);
+                descricaoProduto = selectedRow.Cells["descricao"].Value.ToString();
+                precoProduto = Convert.ToSingle(selectedRow.Cells["preco"].Value);
+                pesoProduto = Convert.ToSingle(selectedRow.Cells["peso"].Value);
+                quantidadeProduto = Convert.ToSingle(selectedRow.Cells["quantidade"].Value);
+            }
+            else
+            {
+                idProduto = -1;
+            }
+        }
+
+        private void btnAtualizarProduto_Click(object sender, EventArgs e)
+        {
+            AtualizarProduto();
+        }
+
+        private void btn_CadastrarProduto_Click(object sender, EventArgs e)
+        {
+            CadastrarProduto();
+        }
+
+        private void CadastrarProduto()
+        {
+            string descricao = tb_DescricaoProduto.Text;
+            float preco = float.Parse(tb_PrecoProduto.Text);
+            float peso = float.Parse(tb_PesoProduto.Text);
+            float quantidade = float.Parse(tb_QuantidadeProduto.Text);
+
+            var result = Banco.CadastrarProduto(descricao, preco, peso, quantidade);
+            if (result)
+            {
+                seccondLabel.BringToFront();
+                LimparDadosProduto();
+                CarregarEstoque();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btn_CancelarCadProduto_Click(object sender, EventArgs e)
+        {
+            LimparDadosProduto();
+            seccondLabel.BringToFront();
+            Funcoes.Notificar("AVISO", "Produto não inserido.");
+        }
+
+        private void btnCancelarAttProduto_Click(object sender, EventArgs e)
+        {
+            LimparDadosProduto();
+            seccondLabel.BringToFront();
+            Funcoes.Notificar("AVISO", "Atualização Cancelada.");
         }
     }
 }

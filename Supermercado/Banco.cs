@@ -19,6 +19,7 @@ namespace Supermercado
             VerificarBanco();
         }
 
+        /* ------------------------------- Clientes ------------------------------- */
         public static bool CadastrarCliente(string nome, string telefone, string email, string cpf, string dataNasc, string endereco, string anotacoes)
         {
             try
@@ -126,7 +127,6 @@ namespace Supermercado
             }
         }
 
-
         public static DataTable DadosClientes()
         {
             try
@@ -159,6 +159,114 @@ namespace Supermercado
                 return null;
             }
         }
+        /* ------------------------------- Clientes ------------------------------- */
+
+
+        /* ------------------------------- Produtos ------------------------------- */
+
+        public static bool CadastrarProduto(string descricao, float preco, float quantidade, float peso)
+        {
+            try
+            {
+                string query = "INSERT INTO produtos (descricao, preco, quantidade, peso) VALUES (@descricao, @preco, @quantidade, @peso)";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@descricao", descricao);
+                        command.Parameters.AddWithValue("@preco", preco);
+                        command.Parameters.AddWithValue("@quantidade", quantidade);
+                        command.Parameters.AddWithValue("@peso", peso);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                Funcoes.Notificar("SUCESSO", "Produto Inserido com Sucesso!");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao inserir Produto no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao inserir Produto, olhe o LOG!");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao inserir Produto no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao inserir Produto, olhe o LOG!");
+                return false;
+            }
+        }
+
+        public static bool AtualizarProduto(string descricao, float preco, float peso, float quantidade, int codigo)
+        {
+            try
+            {
+                string query = "UPDATE produtos SET descricao = @descricao, preco = @preco, peso = @peso, quantidade = @quantidade WHERE codigo = @codigo";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@descricao", descricao);
+                        command.Parameters.AddWithValue("@preco", preco);
+                        command.Parameters.AddWithValue("@peso", peso);
+                        command.Parameters.AddWithValue("@quantidade", quantidade);
+                        command.Parameters.AddWithValue("@codigo", codigo);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                Funcoes.Notificar("SUCESSO", "Produto Atualizado com Sucesso!");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao atualizar Produto no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao atualizar Produto, olhe o LOG!");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao atualizar Produto no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao atualizar Produto, olhe o LOG!");
+                return false;
+            }
+        }
+
+        public static DataTable Estoque()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string query = "SELECT * FROM produtos";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+                return dt;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
+                return null;
+            }
+        }
+        /* ------------------------------- Produtos ------------------------------- */
+
 
         private static void VerificarBanco()
         {
@@ -189,11 +297,12 @@ namespace Supermercado
             )";
 
                     string sqlProdutos = @"
-            CREATE TABLE IF NOT EXISTS Produtos (
-                Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                Nome TEXT NOT NULL,
-                Preco REAL NOT NULL,
-                Quantidade INTEGER NOT NULL
+            CREATE TABLE IF NOT EXISTS produtos (
+                codigo INTEGER PRIMARY KEY AUTOINCREMENT,
+                descricao TEXT NOT NULL,
+                preco REAL NOT NULL DEFAULT 0,
+                quantidade REAL NOT NULL DEFAULT 0,
+                peso REAL DEFAULT 0
             )";
 
                     using (SQLiteCommand comando = new SQLiteCommand(sqlClientes, conexao))

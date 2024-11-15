@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|solutionrelative:banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|e:\\programa\u00E7\u00E3o\\projetos\\supermercado\\supermercado\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\loglocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|solutionrelative:loglocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|e:\\programa\u00E7\u00E3o\\projetos\\supermercado\\supermercado\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|e:\\programa\u00E7\u00E3o\\projetos\\supermercado\\supermercado\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Supermercado.csproj|solutionrelative:banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,29 +26,41 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LogLocal.cs",
-              "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\LogLocal.cs",
-              "RelativeDocumentMoniker": "LogLocal.cs",
-              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\LogLocal.cs",
-              "RelativeToolTip": "LogLocal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:33:30.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Banco.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\Banco.cs",
               "RelativeDocumentMoniker": "Banco.cs",
               "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\Banco.cs",
               "RelativeToolTip": "Banco.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAA4AAABgAAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAAAQwOYAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:28:11.819Z",
+              "WhenOpened": "2024-11-15T01:42:07.624Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TelaPrincipal.cs",
+              "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\TelaPrincipal.cs",
+              "RelativeDocumentMoniker": "TelaPrincipal.cs",
+              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\TelaPrincipal.cs",
+              "RelativeToolTip": "TelaPrincipal.cs",
+              "ViewState": "AgIAANMBAAAAAAAAAAAlwOUBAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T00:57:18.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TelaPrincipal.cs [Design]",
+              "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\TelaPrincipal.cs",
+              "RelativeDocumentMoniker": "TelaPrincipal.cs",
+              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Supermercado\\Supermercado\\TelaPrincipal.cs [Design]",
+              "RelativeToolTip": "TelaPrincipal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T00:56:17.083Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
