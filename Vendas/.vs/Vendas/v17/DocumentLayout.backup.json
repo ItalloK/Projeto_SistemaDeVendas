@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\notificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:notificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Login.Designer.cs",
+              "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Login.Designer.cs",
+              "RelativeDocumentMoniker": "Login.Designer.cs",
+              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Login.Designer.cs",
+              "RelativeToolTip": "Login.Designer.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAwIQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T03:41:57.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Notificacao.cs",
+              "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Notificacao.cs",
+              "RelativeDocumentMoniker": "Notificacao.cs",
+              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Notificacao.cs",
+              "RelativeToolTip": "Notificacao.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAwBYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T03:41:08.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Produtos.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Produtos.cs",
               "RelativeDocumentMoniker": "Produtos.cs",
@@ -38,38 +72,37 @@
               "RelativeToolTip": "Produtos.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T23:42:29.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T23:42:29.195Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Banco.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Banco.cs",
               "RelativeDocumentMoniker": "Banco.cs",
               "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\Banco.cs",
               "RelativeToolTip": "Banco.cs",
-              "ViewState": "AgIAAHcBAAAAAAAAAAAQwIgBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACkBAAAAAAAAAAAQwDUBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T23:34:04.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TelaPrincipal.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\TelaPrincipal.cs",
               "RelativeDocumentMoniker": "TelaPrincipal.cs",
               "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\TelaPrincipal.cs",
               "RelativeToolTip": "TelaPrincipal.cs",
-              "ViewState": "AgIAANECAAAAAAAAAAAQwDIDAABqAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T20:29:10.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "TelaPrincipal.cs [Design]",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\TelaPrincipal.cs",
               "RelativeDocumentMoniker": "TelaPrincipal.cs",

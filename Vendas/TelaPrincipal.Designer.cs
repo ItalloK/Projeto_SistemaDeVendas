@@ -523,8 +523,8 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(203, 118);
             this.label36.TabIndex = 0;
-            this.label36.Text = "F1 - NOVA VENDA\r\nF2 - PESQUISAR PRODUTO\r\nF3 - INSERIR QUANTIDADE\r\nF4 - CANCELAR V" +
-    "ENDA\r\nF5 - FINALIZAR VENDA\r\nF6 - IMP COMPROVANTE\r\nF7 - SAIR";
+            this.label36.Text = "F1 - NOVA VENDA\r\nF2 - PESQUISAR PRODUTO\r\nF3 - CANCELAR PRODUTO\r\nF4 - CANCELAR VEN" +
+    "DA\r\nF5 - FINALIZAR VENDA\r\nF6 - IMP COMPROVANTE\r\nF7 - SAIR";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel20
@@ -650,6 +650,7 @@
             this.tb_QntItensV.Name = "tb_QntItensV";
             this.tb_QntItensV.Size = new System.Drawing.Size(221, 36);
             this.tb_QntItensV.TabIndex = 5;
+            this.tb_QntItensV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_QntItensV_KeyDown);
             this.tb_QntItensV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_QntItensV_KeyPress);
             // 
             // label33
@@ -768,7 +769,6 @@
             this.dgv_ListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ListaProdutos.Enabled = false;
             this.dgv_ListaProdutos.Location = new System.Drawing.Point(4, 34);
             this.dgv_ListaProdutos.MultiSelect = false;
             this.dgv_ListaProdutos.Name = "dgv_ListaProdutos";
@@ -777,6 +777,8 @@
             this.dgv_ListaProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ListaProdutos.Size = new System.Drawing.Size(503, 264);
             this.dgv_ListaProdutos.TabIndex = 24;
+            this.dgv_ListaProdutos.SelectionChanged += new System.EventHandler(this.dgv_ListaProdutos_SelectionChanged);
+            this.dgv_ListaProdutos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_ListaProdutos_KeyDown);
             // 
             // label28
             // 
