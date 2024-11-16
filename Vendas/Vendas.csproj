@@ -70,6 +70,7 @@
     <Compile Include="Notificacao.Designer.cs">
       <DependentUpon>Notificacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produtos.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

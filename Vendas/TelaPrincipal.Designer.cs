@@ -55,21 +55,21 @@
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.label36 = new System.Windows.Forms.Label();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_TrocoV = new System.Windows.Forms.TextBox();
+            this.tb_SubTotalV = new System.Windows.Forms.TextBox();
+            this.tb_TotalRecebidoV = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_QntItensV = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_ValorUnitarioV = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_CodigoDeBarrasV = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lbl_DescProdutoV = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_ListaProdutos = new System.Windows.Forms.DataGridView();
             this.label28 = new System.Windows.Forms.Label();
@@ -535,9 +535,9 @@
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel20.Controls.Add(this.textBox6, 2, 1);
-            this.tableLayoutPanel20.Controls.Add(this.textBox5, 1, 1);
-            this.tableLayoutPanel20.Controls.Add(this.textBox4, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.tb_TrocoV, 2, 1);
+            this.tableLayoutPanel20.Controls.Add(this.tb_SubTotalV, 1, 1);
+            this.tableLayoutPanel20.Controls.Add(this.tb_TotalRecebidoV, 0, 1);
             this.tableLayoutPanel20.Controls.Add(this.label35, 2, 0);
             this.tableLayoutPanel20.Controls.Add(this.label34, 1, 0);
             this.tableLayoutPanel20.Controls.Add(this.label30, 0, 0);
@@ -549,32 +549,38 @@
             this.tableLayoutPanel20.Size = new System.Drawing.Size(742, 60);
             this.tableLayoutPanel20.TabIndex = 3;
             // 
-            // textBox6
+            // tb_TrocoV
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(497, 21);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(242, 36);
-            this.textBox6.TabIndex = 8;
+            this.tb_TrocoV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_TrocoV.Enabled = false;
+            this.tb_TrocoV.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TrocoV.Location = new System.Drawing.Point(497, 21);
+            this.tb_TrocoV.Name = "tb_TrocoV";
+            this.tb_TrocoV.ReadOnly = true;
+            this.tb_TrocoV.Size = new System.Drawing.Size(242, 36);
+            this.tb_TrocoV.TabIndex = 8;
             // 
-            // textBox5
+            // tb_SubTotalV
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(250, 21);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(241, 36);
-            this.textBox5.TabIndex = 7;
+            this.tb_SubTotalV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_SubTotalV.Enabled = false;
+            this.tb_SubTotalV.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SubTotalV.Location = new System.Drawing.Point(250, 21);
+            this.tb_SubTotalV.Name = "tb_SubTotalV";
+            this.tb_SubTotalV.ReadOnly = true;
+            this.tb_SubTotalV.Size = new System.Drawing.Size(241, 36);
+            this.tb_SubTotalV.TabIndex = 7;
             // 
-            // textBox4
+            // tb_TotalRecebidoV
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(3, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(241, 36);
-            this.textBox4.TabIndex = 6;
+            this.tb_TotalRecebidoV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_TotalRecebidoV.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TotalRecebidoV.Location = new System.Drawing.Point(3, 21);
+            this.tb_TotalRecebidoV.Name = "tb_TotalRecebidoV";
+            this.tb_TotalRecebidoV.Size = new System.Drawing.Size(241, 36);
+            this.tb_TotalRecebidoV.TabIndex = 6;
+            this.tb_TotalRecebidoV.TextChanged += new System.EventHandler(this.tb_TotalRecebidoV_TextChanged);
+            this.tb_TotalRecebidoV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_TotalRecebidoV_KeyPress);
             // 
             // label35
             // 
@@ -618,12 +624,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel19.ColumnCount = 1;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.Controls.Add(this.textBox3, 0, 5);
+            this.tableLayoutPanel19.Controls.Add(this.tb_QntItensV, 0, 5);
             this.tableLayoutPanel19.Controls.Add(this.label33, 0, 4);
-            this.tableLayoutPanel19.Controls.Add(this.textBox2, 0, 3);
+            this.tableLayoutPanel19.Controls.Add(this.tb_ValorUnitarioV, 0, 3);
             this.tableLayoutPanel19.Controls.Add(this.label32, 0, 2);
             this.tableLayoutPanel19.Controls.Add(this.label31, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.tb_CodigoDeBarrasV, 0, 1);
             this.tableLayoutPanel19.Location = new System.Drawing.Point(4, 42);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 6;
@@ -636,14 +642,15 @@
             this.tableLayoutPanel19.Size = new System.Drawing.Size(227, 176);
             this.tableLayoutPanel19.TabIndex = 2;
             // 
-            // textBox3
+            // tb_QntItensV
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(3, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 36);
-            this.textBox3.TabIndex = 5;
+            this.tb_QntItensV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_QntItensV.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_QntItensV.Location = new System.Drawing.Point(3, 136);
+            this.tb_QntItensV.Name = "tb_QntItensV";
+            this.tb_QntItensV.Size = new System.Drawing.Size(221, 36);
+            this.tb_QntItensV.TabIndex = 5;
+            this.tb_QntItensV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_QntItensV_KeyPress);
             // 
             // label33
             // 
@@ -654,17 +661,19 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(221, 16);
             this.label33.TabIndex = 4;
-            this.label33.Text = "TOTAL DO ITEM";
+            this.label33.Text = "QUANTIDADE";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // tb_ValorUnitarioV
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(3, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 36);
-            this.textBox2.TabIndex = 3;
+            this.tb_ValorUnitarioV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_ValorUnitarioV.Enabled = false;
+            this.tb_ValorUnitarioV.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_ValorUnitarioV.Location = new System.Drawing.Point(3, 78);
+            this.tb_ValorUnitarioV.Name = "tb_ValorUnitarioV";
+            this.tb_ValorUnitarioV.ReadOnly = true;
+            this.tb_ValorUnitarioV.Size = new System.Drawing.Size(221, 36);
+            this.tb_ValorUnitarioV.TabIndex = 3;
             // 
             // label32
             // 
@@ -690,14 +699,16 @@
             this.label31.Text = "CÓDIGO DE BARRAS";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // tb_CodigoDeBarrasV
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 36);
-            this.textBox1.TabIndex = 1;
+            this.tb_CodigoDeBarrasV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_CodigoDeBarrasV.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_CodigoDeBarrasV.Location = new System.Drawing.Point(3, 20);
+            this.tb_CodigoDeBarrasV.Name = "tb_CodigoDeBarrasV";
+            this.tb_CodigoDeBarrasV.Size = new System.Drawing.Size(221, 36);
+            this.tb_CodigoDeBarrasV.TabIndex = 1;
+            this.tb_CodigoDeBarrasV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_CodigoDeBarrasV_KeyDown);
+            this.tb_CodigoDeBarrasV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_CodigoDeBarrasV_KeyPress);
             // 
             // tableLayoutPanel18
             // 
@@ -706,7 +717,7 @@
             this.tableLayoutPanel18.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel18.ColumnCount = 1;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel18.Controls.Add(this.label29, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.lbl_DescProdutoV, 0, 0);
             this.tableLayoutPanel18.Location = new System.Drawing.Point(4, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
@@ -714,17 +725,18 @@
             this.tableLayoutPanel18.Size = new System.Drawing.Size(741, 35);
             this.tableLayoutPanel18.TabIndex = 1;
             // 
-            // label29
+            // lbl_DescProdutoV
             // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(4, 2);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(733, 31);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "DESCRIÇÃO DO PRODUTO";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_DescProdutoV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_DescProdutoV.AutoSize = true;
+            this.lbl_DescProdutoV.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DescProdutoV.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_DescProdutoV.Location = new System.Drawing.Point(4, 2);
+            this.lbl_DescProdutoV.Name = "lbl_DescProdutoV";
+            this.lbl_DescProdutoV.Size = new System.Drawing.Size(733, 31);
+            this.lbl_DescProdutoV.TabIndex = 0;
+            this.lbl_DescProdutoV.Text = "DESCRIÇÃO DO PRODUTO";
+            this.lbl_DescProdutoV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel17
             // 
@@ -756,6 +768,7 @@
             this.dgv_ListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ListaProdutos.Enabled = false;
             this.dgv_ListaProdutos.Location = new System.Drawing.Point(4, 34);
             this.dgv_ListaProdutos.MultiSelect = false;
             this.dgv_ListaProdutos.Name = "dgv_ListaProdutos";
@@ -2333,18 +2346,18 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.DataGridView dgv_ListaProdutos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lbl_DescProdutoV;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_ValorUnitarioV;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_CodigoDeBarrasV;
+        private System.Windows.Forms.TextBox tb_QntItensV;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_TrocoV;
+        private System.Windows.Forms.TextBox tb_SubTotalV;
+        private System.Windows.Forms.TextBox tb_TotalRecebidoV;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label30;

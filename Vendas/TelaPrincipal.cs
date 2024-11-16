@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Supermercado.Produtos;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -710,6 +712,214 @@ namespace Supermercado
                 MessageBox.Show("Apertou F5 com venda aberta!");
                 e.Handled = true;
             }
+            if (painelRealizarVenda.Visible && e.KeyCode == Keys.F4)
+            {
+                DialogResult resultado = MessageBox.Show("Você deseja Cancelar a Venda?", "Confirmação", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    CancelarVenda();
+                    CarregarEstoque();
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    MessageBox.Show("Você clicou em Não.");
+                }
+                e.Handled = true;
+            }
+        }
+
+        private void tb_QntItensV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_CodigoDeBarrasV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_TotalRecebidoV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private List<Produto> listaDeProdutos = new List<Produto>(); // Lista para armazenar os produtos
+
+        private void tb_CodigoDeBarrasV_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PesquisarItemV(); // Função buscar item no BD
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void PesquisarItemV()
+        {
+            if (!string.IsNullOrEmpty(tb_QntItensV.Text) && int.TryParse(tb_QntItensV.Text, out int quantidade) && quantidade > 0)
+            {
+                string codigoDeBarras = tb_CodigoDeBarrasV.Text;
+                Produto produto = Banco.BuscarProdutoPorCodigo(codigoDeBarras);
+
+                if (produto != null)
+                {
+                    if (quantidade > produto.Quantidade)
+                    {
+                        MessageBox.Show($"Quantidade solicitada ({quantidade}) é maior que o estoque disponível ({produto.Quantidade}).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        tb_QntItensV.Text = produto.Quantidade.ToString();
+                        quantidade = produto.Quantidade;
+                        return;
+                    }
+                    decimal valorUnit = produto.Preco;
+                    tb_CodigoDeBarrasV.Clear();
+                    lbl_DescProdutoV.Text = produto.Descricao;
+                    tb_ValorUnitarioV.Text = $"R$ {valorUnit:N2}";
+                    tb_QntItensV.Text = quantidade.ToString();
+                    AdicionarProdutoNaLista(produto, quantidade);
+                    Banco.AtualizarEstoqueProduto(produto.Codigo, produto.Quantidade - quantidade);
+                    CarregarEstoque();
+                    CalcularSubTotal();
+                }
+                else
+                {
+                    MessageBox.Show("Produto não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione a quantidade de itens válida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AdicionarProdutoNaLista(Produto produto, int quantidade)
+        {
+            Produto produtoComQuantidade = new Produto
+            {
+                Id = produto.Id,
+                Codigo = produto.Codigo,
+                Descricao = produto.Descricao,
+                Preco = produto.Preco,
+                Quantidade = quantidade,
+                Peso = produto.Peso,
+                IdExibicao = listaDeProdutos.Count + 1
+            };
+
+            listaDeProdutos.Add(produtoComQuantidade);
+            AtualizarDataGridView();
+            CalcularSubTotal();
+            tb_QntItensV.Text = 1.ToString(); // define a quantidade de itens como 1 após inserir um item.
+        }
+
+        private void AtualizarDataGridView()
+        {
+            dgv_ListaProdutos.DataSource = null;
+            dgv_ListaProdutos.DataSource = listaDeProdutos;
+
+            dgv_ListaProdutos.Columns["IdExibicao"].HeaderText = "ID";
+            dgv_ListaProdutos.Columns["Codigo"].HeaderText = "Código";
+            dgv_ListaProdutos.Columns["Descricao"].HeaderText = "Descrição";
+            dgv_ListaProdutos.Columns["Quantidade"].HeaderText = "Quantidade";
+            dgv_ListaProdutos.Columns["Preco"].HeaderText = "Preço Unitário";
+
+            dgv_ListaProdutos.Columns["Preco"].DefaultCellStyle.Format = "C2";
+
+            dgv_ListaProdutos.Columns["Id"].Visible = false;
+            dgv_ListaProdutos.Columns["peso"].Visible = false;
+
+            dgv_ListaProdutos.Columns["IdExibicao"].DisplayIndex = 0;
+            dgv_ListaProdutos.Columns["Codigo"].DisplayIndex = 1;
+            dgv_ListaProdutos.Columns["Descricao"].DisplayIndex = 2;
+            dgv_ListaProdutos.Columns["Quantidade"].DisplayIndex = 3;
+            dgv_ListaProdutos.Columns["Preco"].DisplayIndex = 4;
+
+            dgv_ListaProdutos.Columns["IdExibicao"].Width = 50;
+            dgv_ListaProdutos.Columns["Codigo"].Width = 100;
+            dgv_ListaProdutos.Columns["Descricao"].Width = 200;
+            dgv_ListaProdutos.Columns["Quantidade"].Width = 80;
+            dgv_ListaProdutos.Columns["Preco"].Width = 100;
+        }
+
+        private void CalcularSubTotal()
+        {
+            decimal total = 0;
+
+            foreach (var produto in listaDeProdutos)
+            {
+                total += produto.Preco * produto.Quantidade;
+            }
+
+            tb_SubTotalV.Text = $"R$ {total:N2}";
+            
+        }
+
+        private void tb_TotalRecebidoV_TextChanged(object sender, EventArgs e)
+        {
+            CalcularTroco();
+        }
+
+        private void CalcularTroco()
+        {
+            if (decimal.TryParse(tb_SubTotalV.Text.Replace("R$", "").Trim(), out decimal subtotal) &&
+                decimal.TryParse(tb_TotalRecebidoV.Text, out decimal valorPago))
+            {
+                if (valorPago >= subtotal)
+                {
+                    decimal troco = valorPago - subtotal;
+                    tb_TrocoV.Text = $"R$ {troco:N2}";
+                }
+                else
+                {
+                    tb_TrocoV.Text = "Valor insuficiente";
+                }
+            }
+            else
+            {
+                tb_TrocoV.Clear();
+            }
+        }
+
+        private void CancelarVenda()
+        {
+            if (listaDeProdutos.Count > 0)
+            {
+                foreach (var produto in listaDeProdutos)
+                {
+                    Produto produtoNoBanco = Banco.BuscarProdutoPorCodigo(produto.Codigo);
+
+                    if (produtoNoBanco != null)
+                    {
+                        int estoqueAtualizado = produtoNoBanco.Quantidade + produto.Quantidade;
+                        Banco.AtualizarEstoqueProduto(produtoNoBanco.Codigo, estoqueAtualizado);
+                    }
+                }
+
+                LimparCarrinho();
+                MessageBox.Show("Venda cancelada com sucesso. Os produtos foram devolvidos ao estoque.", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Não há produtos no carrinho para cancelar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimparCarrinho()
+        {
+            listaDeProdutos.Clear();
+            AtualizarDataGridView();
+            tb_SubTotalV.Clear();
+            tb_TrocoV.Clear();
+            tb_TotalRecebidoV.Clear();
+            tb_ValorUnitarioV.Clear();
+            tb_QntItensV.Text = 1.ToString();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
+using static Supermercado.Produtos;
 
 namespace Supermercado
 {
@@ -339,6 +340,53 @@ namespace Supermercado
             else
             {
                 Console.WriteLine("O banco de dados já existe.");
+            }
+        }
+
+        public static Produto BuscarProdutoPorCodigo(string codigoDeBarras)
+        {
+            Produto produto = null;
+
+            string query = "SELECT * FROM produtos WHERE codigo = @codigo";
+            using (var connection = new SQLiteConnection(stringConexao)) // Use sua conexão aqui
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@codigo", codigoDeBarras);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            produto = new Produto
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Codigo = reader["codigo"].ToString(),
+                                Descricao = reader["descricao"].ToString(),
+                                Preco = Convert.ToDecimal(reader["preco"]),
+                                Quantidade = Convert.ToInt32(reader["quantidade"]), // Quantidade em estoque
+                                Peso = Convert.ToDecimal(reader["peso"])
+                            };
+                        }
+                    }
+                }
+            }
+
+            return produto;
+        }
+
+        public static void AtualizarEstoqueProduto(string codigo, int novoEstoque)
+        {
+            using (var conn = new SQLiteConnection(stringConexao))
+            {
+                conn.Open();
+                string sql = "UPDATE produtos SET quantidade = @quantidade WHERE codigo = @codigo";
+                using (var cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@quantidade", novoEstoque);
+                    cmd.Parameters.AddWithValue("@codigo", codigo);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }
