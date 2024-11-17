@@ -2148,7 +2148,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.painelVerEstoque);
             this.Controls.Add(this.painelRealizarVenda);
             this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.painelCadCliente);
@@ -2158,6 +2157,7 @@
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
             this.Controls.Add(this.painelFuncionario);
+            this.Controls.Add(this.painelVerEstoque);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;

@@ -344,6 +344,7 @@ namespace Supermercado
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         dataVenda TEXT NOT NULL,
                         total NUMERIC NOT NULL,
+                        vendedor TEXT NOT NULL,
                         clienteId INTEGER,
                         FOREIGN KEY (clienteId) REFERENCES clientes(id)
                     )" },
@@ -425,7 +426,7 @@ namespace Supermercado
             }
         }
 
-        public static bool FecharVenda(List<Produto> itens, decimal totalVenda)
+        public static bool FecharVenda(List<Produto> itens, decimal totalVenda, string vendedor)
         {
             try
             {
@@ -434,12 +435,13 @@ namespace Supermercado
                     connection.Open();
                     using (var transaction = connection.BeginTransaction())
                     {
-                        string queryVenda = "INSERT INTO vendas (dataVenda, total) VALUES (@data, @total); SELECT last_insert_rowid();";
+                        string queryVenda = "INSERT INTO vendas (dataVenda, total, vendedor) VALUES (@data, @total, @vendedor); SELECT last_insert_rowid();";
                         int vendaId;
                         using (var command = new SQLiteCommand(queryVenda, connection))
                         {
                             command.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                             command.Parameters.AddWithValue("@total", totalVenda);
+                            command.Parameters.AddWithValue("@vendedor", vendedor);
 
                             vendaId = Convert.ToInt32(command.ExecuteScalar());
                         }
@@ -480,7 +482,6 @@ namespace Supermercado
                                 command.ExecuteNonQuery();
                             }
                         }
-
                         transaction.Commit();
                     }
                 }

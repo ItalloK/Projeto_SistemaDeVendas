@@ -711,7 +711,20 @@ namespace Supermercado
         {
             if (painelRealizarVenda.Visible && e.KeyCode == Keys.F5)
             {
-                FinalizarVenda();
+                if (listaDeProdutos.Count <= 0)
+                {
+                    MessageBox.Show("Não há itens no carrinho.");
+                    return;
+                }
+                DialogResult resultado = MessageBox.Show("Você deseja finalizar a Venda?", "Confirmação", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    FinalizarVenda();
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    Funcoes.Notificar("AVISO", "Você não finalizou a venda.");
+                }
                 e.Handled = true;
             }
             if (painelRealizarVenda.Visible && e.KeyCode == Keys.F4)
@@ -809,10 +822,12 @@ namespace Supermercado
                 tb_QntItensV.Text = produto.Quantidade.ToString();
                 return;
             }
-            AdicionarProdutoNaLista(produto, quantidade);
-            tb_CodigoDeBarrasV.Clear();
             lbl_DescProdutoV.Text = string.Empty;
             tb_ValorUnitarioV.Text = string.Empty;
+            AdicionarProdutoNaLista(produto, quantidade);
+            tb_CodigoDeBarrasV.Clear();
+            lbl_DescProdutoV.Text = produto.Descricao;
+            tb_ValorUnitarioV.Text = produto.Preco.ToString("N2");
             tb_QntItensV.Text = "1";
             AtualizarDataGridView();
             CalcularSubTotal();
@@ -849,7 +864,7 @@ namespace Supermercado
         {
             decimal totalVenda = listaDeProdutos.Sum(p => p.Quantidade * p.Preco);
 
-            if (Banco.FecharVenda(listaDeProdutos, totalVenda))
+            if (Banco.FecharVenda(listaDeProdutos, totalVenda, Global.cpfFuncionario))
             {
                 listaDeProdutos.Clear();
                 AtualizarDataGridView();
@@ -936,19 +951,8 @@ namespace Supermercado
         {
             if (listaDeProdutos.Count > 0)
             {
-                foreach (var produto in listaDeProdutos)
-                {
-                    Produto produtoNoBanco = Banco.BuscarProdutoPorCodigo(produto.Codigo);
-
-                    if (produtoNoBanco != null)
-                    {
-                        int estoqueAtualizado = produtoNoBanco.Quantidade + produto.Quantidade;
-                        Banco.AtualizarEstoqueProduto(produtoNoBanco.Codigo, estoqueAtualizado);
-                    }
-                }
-
                 LimparCarrinho();
-                MessageBox.Show("Venda cancelada com sucesso. Os produtos foram devolvidos ao estoque.", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Venda cancelada com sucesso.", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -982,16 +986,13 @@ namespace Supermercado
                 if (produtoParaCancelar != null)
                 {
                     Produto produtoNoBanco = Banco.BuscarProdutoPorCodigo(produtoParaCancelar.Codigo);
-
                     if (produtoNoBanco != null)
                     {
-                        int estoqueAtualizado = produtoNoBanco.Quantidade + produtoParaCancelar.Quantidade;
-                        Banco.AtualizarEstoqueProduto(produtoNoBanco.Codigo, estoqueAtualizado);
                         listaDeProdutos.Remove(produtoParaCancelar);
                         AtualizarDataGridView();
                         CalcularSubTotal();
                         CarregarEstoque();
-                        MessageBox.Show("Produto removido com sucesso. O estoque foi atualizado.", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Produto removido com sucesso.", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
