@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="Buttons.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Funcoes.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Login.cs">

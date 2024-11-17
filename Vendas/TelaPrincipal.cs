@@ -781,70 +781,88 @@ namespace Supermercado
         {
             if (e.KeyCode == Keys.Enter)
             {
-                PesquisarItemV(); // Função buscar item no BD
+                PesquisarItemV(); 
                 e.SuppressKeyPress = true;
             }
         }
 
         private void PesquisarItemV()
         {
-            if (!string.IsNullOrEmpty(tb_QntItensV.Text) && int.TryParse(tb_QntItensV.Text, out int quantidade) && quantidade > 0)
+            if (string.IsNullOrEmpty(tb_QntItensV.Text) || !int.TryParse(tb_QntItensV.Text, out int quantidade) || quantidade <= 0)
             {
-                string codigoDeBarras = tb_CodigoDeBarrasV.Text;
-                Produto produto = Banco.BuscarProdutoPorCodigo(codigoDeBarras);
+                MessageBox.Show("Por favor, insira uma quantidade válida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                if (produto != null)
-                {
-                    if (quantidade > produto.Quantidade)
-                    {
-                        MessageBox.Show($"Quantidade solicitada ({quantidade}) é maior que o estoque disponível ({produto.Quantidade}).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        tb_QntItensV.Text = produto.Quantidade.ToString();
-                        quantidade = produto.Quantidade;
-                        return;
-                    }
-                    decimal valorUnit = produto.Preco;
-                    tb_CodigoDeBarrasV.Clear();
-                    lbl_DescProdutoV.Text = produto.Descricao;
-                    tb_ValorUnitarioV.Text = $"R$ {valorUnit:N2}";
-                    tb_QntItensV.Text = quantidade.ToString();
-                    AdicionarProdutoNaLista(produto, quantidade);
-                    Banco.AtualizarEstoqueProduto(produto.Codigo, produto.Quantidade - quantidade);
-                    CarregarEstoque();
-                    CalcularSubTotal();
-                }
-                else
-                {
-                    MessageBox.Show("Produto não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
+            string codigoDeBarras = tb_CodigoDeBarrasV.Text;
+            Produto produto = Banco.BuscarProdutoPorCodigo(codigoDeBarras);
+
+            if (produto == null)
             {
-                MessageBox.Show("Selecione a quantidade de itens válida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Produto não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            if (quantidade > produto.Quantidade)
+            {
+                MessageBox.Show($"Quantidade solicitada ({quantidade}) é maior que o estoque disponível ({produto.Quantidade}).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tb_QntItensV.Text = produto.Quantidade.ToString();
+                return;
+            }
+            AdicionarProdutoNaLista(produto, quantidade);
+            tb_CodigoDeBarrasV.Clear();
+            lbl_DescProdutoV.Text = string.Empty;
+            tb_ValorUnitarioV.Text = string.Empty;
+            tb_QntItensV.Text = "1";
+            AtualizarDataGridView();
+            CalcularSubTotal();
         }
 
         private void AdicionarProdutoNaLista(Produto produto, int quantidade)
         {
-            // Encontrar o maior valor de IdExibicao atual na lista e adicionar +1
-            int novoIdExibicao = listaDeProdutos.Count > 0 ? listaDeProdutos.Max(p => p.IdExibicao) + 1 : 1;
+            Produto produtoExistente = listaDeProdutos.FirstOrDefault(p => p.Codigo == produto.Codigo);
 
-            Produto produtoComQuantidade = new Produto
+            if (produtoExistente != null)
             {
-                Id = produto.Id,
-                Codigo = produto.Codigo,
-                Descricao = produto.Descricao,
-                Preco = produto.Preco,
-                Quantidade = quantidade,
-                Peso = produto.Peso,
-                IdExibicao = novoIdExibicao
-            };
+                produtoExistente.Quantidade += quantidade;
+            }
+            else
+            {
+                int novoIdExibicao = listaDeProdutos.Count > 0 ? listaDeProdutos.Max(p => p.IdExibicao) + 1 : 1;
 
-            listaDeProdutos.Add(produtoComQuantidade);
-            AtualizarDataGridView();
-            CalcularSubTotal();
-            tb_QntItensV.Text = 1.ToString();
-            //tb_QntItensV.Text = listaDeProdutos.Count.ToString(); // Atualiza a quantidade de itens no carrinho
+                Produto produtoComQuantidade = new Produto
+                {
+                    Id = produto.Id,
+                    Codigo = produto.Codigo,
+                    Descricao = produto.Descricao,
+                    Preco = produto.Preco,
+                    Quantidade = quantidade,
+                    Peso = produto.Peso,
+                    IdExibicao = novoIdExibicao
+                };
+
+                listaDeProdutos.Add(produtoComQuantidade);
+            }
         }
+
+        private void FinalizarVenda()
+        {
+            decimal totalVenda = listaDeProdutos.Sum(p => p.Quantidade * p.Preco);
+
+            if (Banco.FecharVenda(listaDeProdutos, totalVenda))
+            {
+                listaDeProdutos.Clear();
+                AtualizarDataGridView();
+                MessageBox.Show("Venda finalizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarEstoque();
+                LimparCarrinho();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao finalizar a venda. Verifique o log.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void AtualizarDataGridView()
         {
@@ -959,32 +977,20 @@ namespace Supermercado
         {
             if (listaDeProdutos.Count > 0)
             {
-                // Encontra o produto pelo idExibicao na lista
                 var produtoParaCancelar = listaDeProdutos.FirstOrDefault(p => p.IdExibicao == idExibicao);
 
                 if (produtoParaCancelar != null)
                 {
-                    // Buscar o produto no banco de dados (usando o código do produto)
                     Produto produtoNoBanco = Banco.BuscarProdutoPorCodigo(produtoParaCancelar.Codigo);
 
                     if (produtoNoBanco != null)
                     {
-                        // Atualiza o estoque
                         int estoqueAtualizado = produtoNoBanco.Quantidade + produtoParaCancelar.Quantidade;
                         Banco.AtualizarEstoqueProduto(produtoNoBanco.Codigo, estoqueAtualizado);
-
-                        // Remove o produto da lista
                         listaDeProdutos.Remove(produtoParaCancelar);
-
-                        // Atualiza o DataGridView
                         AtualizarDataGridView();
-
-                        // Recalcula o subtotal após a remoção
                         CalcularSubTotal();
-
-                        // Atualiza o estoque na interface
                         CarregarEstoque();
-
                         MessageBox.Show("Produto removido com sucesso. O estoque foi atualizado.", "Cancelamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -1025,15 +1031,38 @@ namespace Supermercado
             }
         }
 
-        private void FinalizarVenda()
+        private void btn_DeletarProduto_Click(object sender, EventArgs e)
+        { 
+            DeletarProduto();
+        }
+
+        private void DeletarProduto()
         {
-            if(!string.IsNullOrEmpty(tb_TotalRecebidoV.Text) && tb_TrocoV.Text != "Valor insuficiente")
+            if (idProduto != -1)
             {
-                MessageBox.Show($"O troco do cliente foi: {tb_TrocoV.Text}");
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja deletar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    var result = Banco.DeletarProduto(idProduto);
+                    if (result)
+                    {
+                        CarregarEstoque();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    Funcoes.Notificar("AVISO", "Produto nao deletado.");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Digite o valor entregue pelo cliente.");
+                MessageBox.Show("Selecione um Produto para deletar!");
+                return;
             }
         }
     }

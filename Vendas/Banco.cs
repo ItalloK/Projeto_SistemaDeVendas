@@ -128,6 +128,37 @@ namespace Supermercado
             }
         }
 
+        public static bool DeletarProduto(int id)
+        {
+            try
+            {
+                string query = "DELETE FROM produtos WHERE id = @id";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                Funcoes.Notificar("SUCESSO", "Produto deletado com Sucesso!");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao deletar Produto no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao deletar Produto, olhe o LOG!");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao deletar Produto no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao deletar Produto, olhe o LOG!");
+                return false;
+            }
+        }
+
         public static DataTable DadosClientes()
         {
             try
@@ -286,8 +317,9 @@ namespace Supermercado
                 using (SQLiteConnection conexao = new SQLiteConnection(stringConexao))
                 {
                     conexao.Open();
-
-                    string sqlClientes = @"
+                    var tabelasSQL = new Dictionary<string, string>
+            {
+                { "clientes", @"
                     CREATE TABLE IF NOT EXISTS clientes (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         nome TEXT NOT NULL,
@@ -297,9 +329,8 @@ namespace Supermercado
                         dataNasc TEXT,
                         endereco TEXT,
                         anotacoes TEXT
-                    )";
-
-                    string sqlProdutos = @"
+                    )" },
+                { "produtos", @"
                     CREATE TABLE IF NOT EXISTS produtos (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         codigo TEXT NOT NULL,
@@ -307,33 +338,36 @@ namespace Supermercado
                         preco NUMERIC NOT NULL DEFAULT 0,
                         quantidade NUMERIC NOT NULL DEFAULT 0,
                         peso NUMERIC DEFAULT 0
-                    )";
+                    )" },
+                { "vendas", @"
+                    CREATE TABLE IF NOT EXISTS vendas (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        dataVenda TEXT NOT NULL,
+                        total NUMERIC NOT NULL,
+                        clienteId INTEGER,
+                        FOREIGN KEY (clienteId) REFERENCES clientes(id)
+                    )" },
+                { "itens_venda", @"
+                    CREATE TABLE IF NOT EXISTS itens_venda (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        venda_id INTEGER NOT NULL,
+                        produto_id INTEGER NOT NULL,
+                        quantidade NUMERIC NOT NULL,
+                        preco_unitario NUMERIC NOT NULL,
+                        FOREIGN KEY (venda_id) REFERENCES vendas(id),
+                        FOREIGN KEY (produto_id) REFERENCES produtos(id)
+                    )" }
+            };
 
-                    using (SQLiteCommand comando = new SQLiteCommand(sqlClientes, conexao))
+                    foreach (var tabela in tabelasSQL)
                     {
-                        comando.ExecuteNonQuery();
-                    }
-
-                    using (SQLiteCommand comando = new SQLiteCommand(sqlProdutos, conexao))
-                    {
-                        comando.ExecuteNonQuery();
-                    }
-
-                    string verificarTabela = "SELECT name FROM sqlite_master WHERE type='table' AND name='clientes';";
-                    using (SQLiteCommand cmdVerificar = new SQLiteCommand(verificarTabela, conexao))
-                    {
-                        var resultado = cmdVerificar.ExecuteScalar();
-                        if (resultado != null)
+                        using (SQLiteCommand comando = new SQLiteCommand(tabela.Value, conexao))
                         {
-                            Console.WriteLine("Tabela 'clientes' criada com sucesso.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Erro ao criar tabela 'clientes'.");
+                            comando.ExecuteNonQuery();
+                            Console.WriteLine($"Tabela '{tabela.Key}' verificada/criada com sucesso.");
                         }
                     }
 
-                    Console.WriteLine("Tabelas criadas com sucesso!");
                     conexao.Close();
                 }
             }
@@ -343,12 +377,13 @@ namespace Supermercado
             }
         }
 
+
         public static Produto BuscarProdutoPorCodigo(string codigoDeBarras)
         {
             Produto produto = null;
 
             string query = "SELECT * FROM produtos WHERE codigo = @codigo";
-            using (var connection = new SQLiteConnection(stringConexao)) // Use sua conexão aqui
+            using (var connection = new SQLiteConnection(stringConexao))
             {
                 connection.Open();
                 using (var command = new SQLiteCommand(query, connection))
@@ -364,7 +399,7 @@ namespace Supermercado
                                 Codigo = reader["codigo"].ToString(),
                                 Descricao = reader["descricao"].ToString(),
                                 Preco = Convert.ToDecimal(reader["preco"]),
-                                Quantidade = Convert.ToInt32(reader["quantidade"]), // Quantidade em estoque
+                                Quantidade = Convert.ToInt32(reader["quantidade"]),
                                 Peso = Convert.ToDecimal(reader["peso"])
                             };
                         }
@@ -387,6 +422,77 @@ namespace Supermercado
                     cmd.Parameters.AddWithValue("@codigo", codigo);
                     cmd.ExecuteNonQuery();
                 }
+            }
+        }
+
+        public static bool FecharVenda(List<Produto> itens, decimal totalVenda)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        string queryVenda = "INSERT INTO vendas (dataVenda, total) VALUES (@data, @total); SELECT last_insert_rowid();";
+                        int vendaId;
+                        using (var command = new SQLiteCommand(queryVenda, connection))
+                        {
+                            command.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                            command.Parameters.AddWithValue("@total", totalVenda);
+
+                            vendaId = Convert.ToInt32(command.ExecuteScalar());
+                        }
+
+                        string queryItem = "INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco_unitario) VALUES (@venda_id, @produto_id, @quantidade, @preco_unitario)";
+                        foreach (var item in itens)
+                        {
+                            using (var command = new SQLiteCommand(queryItem, connection))
+                            {
+                                command.Parameters.AddWithValue("@venda_id", vendaId);
+                                command.Parameters.AddWithValue("@produto_id", item.Id);
+                                command.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                                command.Parameters.AddWithValue("@preco_unitario", item.Preco);
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            string queryEstoqueAtual = "SELECT quantidade FROM produtos WHERE codigo = @codigo";
+                            int estoqueAtual = 0;
+
+                            using (var command = new SQLiteCommand(queryEstoqueAtual, connection))
+                            {
+                                command.Parameters.AddWithValue("@codigo", item.Codigo);
+                                estoqueAtual = Convert.ToInt32(command.ExecuteScalar());
+                            }
+
+                            if (estoqueAtual < item.Quantidade)
+                            {
+                                Funcoes.CriarLogLocal($"Não há estoque suficiente para o produto {item.Descricao} (Código: {item.Codigo}). Estoque disponível: {estoqueAtual}");
+                            }
+
+                            string queryEstoque = "UPDATE produtos SET quantidade = quantidade - @quantidade WHERE codigo = @codigo";
+                            using (var command = new SQLiteCommand(queryEstoque, connection))
+                            {
+                                command.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                                command.Parameters.AddWithValue("@codigo", item.Codigo);
+
+                                command.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                }
+
+                Funcoes.Notificar("SUCESSO", "Venda registrada com sucesso!");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao registrar venda: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao registrar venda, verifique o LOG!");
+                return false;
             }
         }
     }
