@@ -165,6 +165,10 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tbAttDescProduto = new System.Windows.Forms.TextBox();
+            this.dgv_DadosRelatorios = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonIG1 = new CustomControls.Botoes.ButtonIG();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -177,6 +181,7 @@
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).BeginInit();
+            this.fourLabel.SuspendLayout();
             this.painelClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -203,6 +208,8 @@
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DadosRelatorios)).BeginInit();
+            this.tableLayoutPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -797,7 +804,9 @@
             this.fourLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.fourLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.fourLabel.BackColor = System.Drawing.Color.White;
+            this.fourLabel.Controls.Add(this.tableLayoutPanel22);
+            this.fourLabel.Controls.Add(this.dgv_DadosRelatorios);
             this.fourLabel.Location = new System.Drawing.Point(185, 57);
             this.fourLabel.Name = "fourLabel";
             this.fourLabel.Size = new System.Drawing.Size(748, 410);
@@ -2137,6 +2146,73 @@
             this.tbAttDescProduto.Size = new System.Drawing.Size(736, 51);
             this.tbAttDescProduto.TabIndex = 0;
             // 
+            // dgv_DadosRelatorios
+            // 
+            this.dgv_DadosRelatorios.AllowUserToAddRows = false;
+            this.dgv_DadosRelatorios.AllowUserToDeleteRows = false;
+            this.dgv_DadosRelatorios.AllowUserToResizeColumns = false;
+            this.dgv_DadosRelatorios.AllowUserToResizeRows = false;
+            this.dgv_DadosRelatorios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_DadosRelatorios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_DadosRelatorios.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_DadosRelatorios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_DadosRelatorios.Location = new System.Drawing.Point(3, 39);
+            this.dgv_DadosRelatorios.MultiSelect = false;
+            this.dgv_DadosRelatorios.Name = "dgv_DadosRelatorios";
+            this.dgv_DadosRelatorios.ReadOnly = true;
+            this.dgv_DadosRelatorios.RowHeadersVisible = false;
+            this.dgv_DadosRelatorios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_DadosRelatorios.Size = new System.Drawing.Size(742, 368);
+            this.dgv_DadosRelatorios.TabIndex = 23;
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel22.ColumnCount = 2;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Controls.Add(this.dateTimePicker1, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.buttonIG1, 1, 0);
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 1;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(742, 33);
+            this.tableLayoutPanel22.TabIndex = 24;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 3);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(365, 26);
+            this.dateTimePicker1.TabIndex = 25;
+            // 
+            // buttonIG1
+            // 
+            this.buttonIG1.BackColor = System.Drawing.Color.Black;
+            this.buttonIG1.BackgroundColor = System.Drawing.Color.Black;
+            this.buttonIG1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonIG1.BorderRadius = 5;
+            this.buttonIG1.BorderSize = 0;
+            this.buttonIG1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonIG1.FlatAppearance.BorderSize = 0;
+            this.buttonIG1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIG1.ForeColor = System.Drawing.Color.White;
+            this.buttonIG1.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.buttonIG1.Location = new System.Drawing.Point(374, 3);
+            this.buttonIG1.Name = "buttonIG1";
+            this.buttonIG1.Size = new System.Drawing.Size(365, 27);
+            this.buttonIG1.TabIndex = 26;
+            this.buttonIG1.Text = "Pesquisar";
+            this.buttonIG1.TextColor = System.Drawing.Color.White;
+            this.buttonIG1.UseVisualStyleBackColor = false;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2148,16 +2224,16 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.fourLabel);
+            this.Controls.Add(this.homeLabel);
+            this.Controls.Add(this.painelFuncionario);
+            this.Controls.Add(this.painelVerEstoque);
             this.Controls.Add(this.painelRealizarVenda);
             this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.painelCadCliente);
             this.Controls.Add(this.painelClientes);
             this.Controls.Add(this.PanelAttProduto);
             this.Controls.Add(this.PanelCadProduto);
-            this.Controls.Add(this.fourLabel);
-            this.Controls.Add(this.homeLabel);
-            this.Controls.Add(this.painelFuncionario);
-            this.Controls.Add(this.painelVerEstoque);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -2186,6 +2262,7 @@
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).EndInit();
+            this.fourLabel.ResumeLayout(false);
             this.painelClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -2224,6 +2301,8 @@
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DadosRelatorios)).EndInit();
+            this.tableLayoutPanel22.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2366,6 +2445,10 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.DataGridView dgv_DadosRelatorios;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private CustomControls.Botoes.ButtonIG buttonIG1;
     }
 }
 

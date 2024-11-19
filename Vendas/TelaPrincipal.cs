@@ -55,6 +55,7 @@ namespace Supermercado
         {
             CarregarClientes(); // fazer função
             CarregarEstoque();
+            CarregarRelatorios();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -192,7 +193,6 @@ namespace Supermercado
         }
         private void CarregarEstoque()
         {
-
             dgv_Estoque.DataSource = Banco.Estoque();
 
             dgv_Estoque.Columns["id"].DisplayIndex = 0;
@@ -212,6 +212,24 @@ namespace Supermercado
             dgv_Estoque.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
+        private void CarregarRelatorios()
+        {
+            dgv_DadosRelatorios.DataSource = Banco.Vendas();
+
+            dgv_DadosRelatorios.Columns["id"].Visible = false; // oculta id
+
+            dgv_DadosRelatorios.Columns["dataVenda"].DisplayIndex = 0; // altera ordem
+            dgv_DadosRelatorios.Columns["total"].DisplayIndex = 1;
+            dgv_DadosRelatorios.Columns["vendedor"].DisplayIndex = 2;
+            dgv_DadosRelatorios.Columns["clienteCpf"].DisplayIndex = 3;
+
+            dgv_DadosRelatorios.Columns["dataVenda"].HeaderText = "Data da Venda"; // altera nome
+            dgv_DadosRelatorios.Columns["total"].HeaderText = "Valor da Venda";
+            dgv_DadosRelatorios.Columns["vendedor"].HeaderText = "Vendedor";
+            dgv_DadosRelatorios.Columns["clienteCpf"].HeaderText = "Cpf do Cliente";
+
+            dgv_DadosRelatorios.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
         private void CadastrarCliente()
         {
             string nome = tb_NomeCliente.Text;
@@ -871,6 +889,7 @@ namespace Supermercado
                 MessageBox.Show("Venda finalizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CarregarEstoque();
                 LimparCarrinho();
+                CarregarRelatorios();
             }
             else
             {

@@ -301,6 +301,38 @@ namespace Supermercado
         }
         /* ------------------------------- Produtos ------------------------------- */
 
+        public static DataTable Vendas()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string query = "SELECT * FROM vendas";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+                return dt;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
+                return null;
+            }
+        }
 
         private static void VerificarBanco()
         {
@@ -345,8 +377,8 @@ namespace Supermercado
                         dataVenda TEXT NOT NULL,
                         total NUMERIC NOT NULL,
                         vendedor TEXT NOT NULL,
-                        clienteId INTEGER,
-                        FOREIGN KEY (clienteId) REFERENCES clientes(id)
+                        clienteCpf TEXT,
+                        FOREIGN KEY (clienteCpf) REFERENCES clientes(cpf)
                     )" },
                 { "itens_venda", @"
                     CREATE TABLE IF NOT EXISTS itens_venda (
