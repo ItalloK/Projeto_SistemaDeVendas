@@ -153,11 +153,6 @@ namespace Supermercado
             }
         }
 
-        private void btn_CadCliente_Click(object sender, EventArgs e)
-        {
-            AtivarPainel(painelCadCliente);
-        }
-
         private void btn_CancelarCadCliente_Click(object sender, EventArgs e)
         {
             LimparDados();
@@ -216,12 +211,16 @@ namespace Supermercado
         {
             dgv_DadosRelatorios.DataSource = Banco.Vendas();
 
+            EstatisticasRelatorios();
+
             dgv_DadosRelatorios.Columns["id"].Visible = false; // oculta id
 
             dgv_DadosRelatorios.Columns["dataVenda"].DisplayIndex = 0; // altera ordem
             dgv_DadosRelatorios.Columns["total"].DisplayIndex = 1;
             dgv_DadosRelatorios.Columns["vendedor"].DisplayIndex = 2;
             dgv_DadosRelatorios.Columns["clienteCpf"].DisplayIndex = 3;
+
+            dgv_DadosRelatorios.Columns["total"].DefaultCellStyle.Format = "C2";
 
             dgv_DadosRelatorios.Columns["dataVenda"].HeaderText = "Data da Venda"; // altera nome
             dgv_DadosRelatorios.Columns["total"].HeaderText = "Valor da Venda";
@@ -301,12 +300,6 @@ namespace Supermercado
             }
         }
 
-        private void btn_AttCliente_Click(object sender, EventArgs e)
-        {
-            LimparDados();
-            PegarDadosCliente();
-        }
-
         private void PegarDadosCliente()
         {
             if(idCliente != -1)
@@ -366,11 +359,6 @@ namespace Supermercado
             }
         }
 
-        private void btn_DelCliente_Click(object sender, EventArgs e)
-        {
-            DeletarCliente();
-        }
-
         private void DeletarCliente()
         {
             if (idCliente != -1)
@@ -401,12 +389,6 @@ namespace Supermercado
             }
         }
 
-        private void btn_NovoProduto_Click(object sender, EventArgs e)
-        {
-            LimparDadosProduto();
-            AtivarPainel(PanelCadProduto);
-        }
-
         private void LimparDadosProduto()
         {
             tb_DescricaoProduto.Clear();
@@ -418,12 +400,6 @@ namespace Supermercado
             tbAttPrecoProduto.Clear();
             tbAttPesoProduto.Clear();
             tbAttQuantidadeProduto.Clear();
-        }
-
-        private void btn_AtualizarProduto_Click(object sender, EventArgs e)
-        {
-            LimparDadosProduto();
-            PegarDadosProduto();            
         }
 
         private void PegarDadosProduto()
@@ -727,6 +703,27 @@ namespace Supermercado
 
         private void TelaPrincipal_KeyDown(object sender, KeyEventArgs e)
         {
+            if (painelRealizarVenda.Visible && e.KeyCode == Keys.F1)
+            {
+                
+                DialogResult resultado = MessageBox.Show("Você deseja inciar uma nova Venda?", "Confirmação", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    if (listaDeProdutos.Count > 0)
+                    {
+                        MessageBox.Show("Carrinho limpo.");
+                        CancelarVenda();
+                        CarregarEstoque();   
+                    }
+                    tb_CodigoDeBarrasV.Focus(); // foca no codigo de barras
+                    tb_QntItensV.Text = 1.ToString(); // poe a quantidade inicial de itens
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    Funcoes.Notificar("AVISO", "Você não inicio uma nova venda.");
+                }
+                e.Handled = true;
+            }
             if (painelRealizarVenda.Visible && e.KeyCode == Keys.F5)
             {
                 if (listaDeProdutos.Count <= 0)
@@ -1084,6 +1081,69 @@ namespace Supermercado
                 MessageBox.Show("Selecione um Produto para deletar!");
                 return;
             }
+        }
+
+        private void btn_PesquisarRelatorio_Click(object sender, EventArgs e)
+        {
+            string dataSelecionada = dtp_DataRelatorio.Value.ToString("yyyy-MM-dd");
+            var dt = Banco.VendasPorData(dataSelecionada);
+            dgv_DadosRelatorios.DataSource = dt;
+            EstatisticasRelatorios();
+        }
+
+        private void btn_VerTodosRelatorios_Click(object sender, EventArgs e)
+        {
+            CarregarRelatorios();
+        }
+
+        private void EstatisticasRelatorios()
+        {
+            decimal soma = 0;
+            int qntVendas = 0;
+            foreach (DataGridViewRow row in dgv_DadosRelatorios.Rows)
+            {
+                if (row.Cells["total"].Value != null && row.Cells["total"].Value != DBNull.Value)
+                {
+                    soma += Convert.ToDecimal(row.Cells["total"].Value);
+                    qntVendas++;
+                }
+            }
+
+            lbl_QntVendas.Text = $"Qnt Vendas: {qntVendas}";
+            lbl_ValTotalVendas.Text = $"Total Vendas: R$ {soma}";
+        }
+
+        private void btn_NovoProduto_Click(object sender, EventArgs e)
+        {
+            LimparDadosProduto();
+            AtivarPainel(PanelCadProduto);
+        }
+
+        private void btn_AtualizarProduto_Click(object sender, EventArgs e)
+        {
+            LimparDadosProduto();
+            PegarDadosProduto();
+        }
+
+        private void btn_DeletarProduto_Click_1(object sender, EventArgs e)
+        {
+            DeletarProduto();
+        }
+
+        private void btn_CadCliente_Click(object sender, EventArgs e)
+        {
+            AtivarPainel(painelCadCliente);
+        }
+
+        private void btn_AttCliente_Click(object sender, EventArgs e)
+        {
+            LimparDados();
+            PegarDadosCliente();
+        }
+
+        private void btn_DelCliente_Click(object sender, EventArgs e)
+        {
+            DeletarCliente();
         }
     }
 }

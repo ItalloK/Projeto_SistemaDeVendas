@@ -301,6 +301,40 @@ namespace Supermercado
         }
         /* ------------------------------- Produtos ------------------------------- */
 
+        public static DataTable VendasPorData(string data)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string query = "SELECT * FROM vendas WHERE DATE(dataVenda) = @data;";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            command.Parameters.AddWithValue("@data", data);
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+                return dt;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal($"Erro SQL: {ex.Message}");
+                Funcoes.Notificar("ERRO", "Erro ao receber dados, olhe o LOG!");
+                return null;
+            }
+        }
+
         public static DataTable Vendas()
         {
             try
