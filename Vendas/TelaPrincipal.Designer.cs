@@ -74,6 +74,9 @@
             this.dgv_ListaProdutos = new System.Windows.Forms.DataGridView();
             this.label28 = new System.Windows.Forms.Label();
             this.fourLabel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_ValTotalVendas = new System.Windows.Forms.Label();
+            this.lbl_QntVendas = new System.Windows.Forms.Label();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.dtp_DataRelatorio = new System.Windows.Forms.DateTimePicker();
             this.dgv_DadosRelatorios = new System.Windows.Forms.DataGridView();
@@ -162,17 +165,21 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tbAttDescProduto = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_QntVendas = new System.Windows.Forms.Label();
-            this.lbl_ValTotalVendas = new System.Windows.Forms.Label();
+            this.btn_DelCliente = new CustomControls.Botoes.ButtonIG();
+            this.btn_AttCliente = new CustomControls.Botoes.ButtonIG();
+            this.btn_CadCliente = new CustomControls.Botoes.ButtonIG();
             this.btn_VerTodosRelatorios = new CustomControls.Botoes.ButtonIG();
             this.btn_PesquisarRelatorio = new CustomControls.Botoes.ButtonIG();
             this.btn_DeletarProduto = new CustomControls.Botoes.ButtonIG();
             this.btn_AtualizarProduto = new CustomControls.Botoes.ButtonIG();
             this.btn_NovoProduto = new CustomControls.Botoes.ButtonIG();
-            this.btn_CadCliente = new CustomControls.Botoes.ButtonIG();
-            this.btn_AttCliente = new CustomControls.Botoes.ButtonIG();
-            this.btn_DelCliente = new CustomControls.Botoes.ButtonIG();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lbl_NomeFunc = new System.Windows.Forms.Label();
+            this.lbl_EmailFunc = new System.Windows.Forms.Label();
+            this.lbl_CPFFunc = new System.Windows.Forms.Label();
+            this.lbl_DataNascFunc = new System.Windows.Forms.Label();
+            this.lbl_CodigoFunc = new System.Windows.Forms.Label();
+            this.lbl_TelefoneFunc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -186,11 +193,13 @@
             this.tableLayoutPanel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).BeginInit();
             this.fourLabel.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DadosRelatorios)).BeginInit();
             this.painelClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.painelFuncionario.SuspendLayout();
             this.homeLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
             this.painelCadCliente.SuspendLayout();
@@ -214,7 +223,6 @@
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
-            this.tableLayoutPanel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -598,10 +606,10 @@
             // 
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(497, 1);
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(497, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(242, 16);
+            this.label35.Size = new System.Drawing.Size(242, 17);
             this.label35.TabIndex = 2;
             this.label35.Text = "TROCO";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -610,10 +618,10 @@
             // 
             this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(250, 1);
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(250, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(241, 16);
+            this.label34.Size = new System.Drawing.Size(241, 17);
             this.label34.TabIndex = 1;
             this.label34.Text = "SUB-TOTAL";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -622,10 +630,10 @@
             // 
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(3, 1);
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(3, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(241, 16);
+            this.label30.Size = new System.Drawing.Size(241, 17);
             this.label30.TabIndex = 0;
             this.label30.Text = "TOTAL RECEBIDO";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -669,10 +677,10 @@
             // 
             this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(3, 116);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(221, 16);
+            this.label33.Size = new System.Drawing.Size(221, 17);
             this.label33.TabIndex = 4;
             this.label33.Text = "QUANTIDADE";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -692,10 +700,10 @@
             // 
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(3, 58);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(221, 16);
+            this.label32.Size = new System.Drawing.Size(221, 17);
             this.label32.TabIndex = 2;
             this.label32.Text = "VALOR UNITÁRIO";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -704,10 +712,10 @@
             // 
             this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(3, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(221, 16);
+            this.label31.Size = new System.Drawing.Size(221, 17);
             this.label31.TabIndex = 0;
             this.label31.Text = "CÓDIGO DE BARRAS";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -742,11 +750,11 @@
             // 
             this.lbl_DescProdutoV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_DescProdutoV.AutoSize = true;
-            this.lbl_DescProdutoV.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DescProdutoV.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_DescProdutoV.Location = new System.Drawing.Point(4, 2);
+            this.lbl_DescProdutoV.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DescProdutoV.ForeColor = System.Drawing.Color.Black;
+            this.lbl_DescProdutoV.Location = new System.Drawing.Point(4, 1);
             this.lbl_DescProdutoV.Name = "lbl_DescProdutoV";
-            this.lbl_DescProdutoV.Size = new System.Drawing.Size(733, 31);
+            this.lbl_DescProdutoV.Size = new System.Drawing.Size(733, 32);
             this.lbl_DescProdutoV.TabIndex = 0;
             this.lbl_DescProdutoV.Text = "DESCRIÇÃO DO PRODUTO";
             this.lbl_DescProdutoV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -817,6 +825,46 @@
             this.fourLabel.Name = "fourLabel";
             this.fourLabel.Size = new System.Drawing.Size(748, 410);
             this.fourLabel.TabIndex = 11;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel23.ColumnCount = 2;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.Controls.Add(this.lbl_ValTotalVendas, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.lbl_QntVendas, 0, 0);
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 1;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(742, 20);
+            this.tableLayoutPanel23.TabIndex = 29;
+            // 
+            // lbl_ValTotalVendas
+            // 
+            this.lbl_ValTotalVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_ValTotalVendas.AutoSize = true;
+            this.lbl_ValTotalVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ValTotalVendas.Location = new System.Drawing.Point(374, 2);
+            this.lbl_ValTotalVendas.Name = "lbl_ValTotalVendas";
+            this.lbl_ValTotalVendas.Size = new System.Drawing.Size(365, 16);
+            this.lbl_ValTotalVendas.TabIndex = 27;
+            this.lbl_ValTotalVendas.Text = "Total Vendas: R$ ";
+            this.lbl_ValTotalVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_QntVendas
+            // 
+            this.lbl_QntVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_QntVendas.AutoSize = true;
+            this.lbl_QntVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QntVendas.Location = new System.Drawing.Point(3, 2);
+            this.lbl_QntVendas.Name = "lbl_QntVendas";
+            this.lbl_QntVendas.Size = new System.Drawing.Size(365, 16);
+            this.lbl_QntVendas.TabIndex = 26;
+            this.lbl_QntVendas.Text = "Qnt Vendas:";
+            this.lbl_QntVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel22
             // 
@@ -936,7 +984,14 @@
             this.painelFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelFuncionario.BackColor = System.Drawing.Color.Olive;
+            this.painelFuncionario.BackColor = System.Drawing.Color.MistyRose;
+            this.painelFuncionario.Controls.Add(this.lbl_TelefoneFunc);
+            this.painelFuncionario.Controls.Add(this.lbl_CodigoFunc);
+            this.painelFuncionario.Controls.Add(this.lbl_DataNascFunc);
+            this.painelFuncionario.Controls.Add(this.lbl_CPFFunc);
+            this.painelFuncionario.Controls.Add(this.lbl_EmailFunc);
+            this.painelFuncionario.Controls.Add(this.lbl_NomeFunc);
+            this.painelFuncionario.Controls.Add(this.label29);
             this.painelFuncionario.Location = new System.Drawing.Point(185, 57);
             this.painelFuncionario.Name = "painelFuncionario";
             this.painelFuncionario.Size = new System.Drawing.Size(748, 410);
@@ -2122,45 +2177,71 @@
             this.tbAttDescProduto.Size = new System.Drawing.Size(736, 51);
             this.tbAttDescProduto.TabIndex = 0;
             // 
-            // tableLayoutPanel23
+            // btn_DelCliente
             // 
-            this.tableLayoutPanel23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel23.ColumnCount = 2;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.Controls.Add(this.lbl_ValTotalVendas, 1, 0);
-            this.tableLayoutPanel23.Controls.Add(this.lbl_QntVendas, 0, 0);
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(3, 38);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 1;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(742, 20);
-            this.tableLayoutPanel23.TabIndex = 29;
+            this.btn_DelCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DelCliente.BackColor = System.Drawing.Color.Black;
+            this.btn_DelCliente.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_DelCliente.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_DelCliente.BorderRadius = 5;
+            this.btn_DelCliente.BorderSize = 0;
+            this.btn_DelCliente.FlatAppearance.BorderSize = 0;
+            this.btn_DelCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DelCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_DelCliente.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_DelCliente.Location = new System.Drawing.Point(595, 8);
+            this.btn_DelCliente.Name = "btn_DelCliente";
+            this.btn_DelCliente.Size = new System.Drawing.Size(143, 28);
+            this.btn_DelCliente.TabIndex = 6;
+            this.btn_DelCliente.Text = "Deletar Cliente";
+            this.btn_DelCliente.TextColor = System.Drawing.Color.White;
+            this.btn_DelCliente.UseVisualStyleBackColor = false;
+            this.btn_DelCliente.Click += new System.EventHandler(this.btn_DelCliente_Click);
             // 
-            // lbl_QntVendas
+            // btn_AttCliente
             // 
-            this.lbl_QntVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QntVendas.AutoSize = true;
-            this.lbl_QntVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QntVendas.Location = new System.Drawing.Point(3, 2);
-            this.lbl_QntVendas.Name = "lbl_QntVendas";
-            this.lbl_QntVendas.Size = new System.Drawing.Size(365, 16);
-            this.lbl_QntVendas.TabIndex = 26;
-            this.lbl_QntVendas.Text = "Qnt Vendas:";
-            this.lbl_QntVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_AttCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AttCliente.BackColor = System.Drawing.Color.Black;
+            this.btn_AttCliente.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_AttCliente.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_AttCliente.BorderRadius = 5;
+            this.btn_AttCliente.BorderSize = 0;
+            this.btn_AttCliente.FlatAppearance.BorderSize = 0;
+            this.btn_AttCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AttCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AttCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_AttCliente.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_AttCliente.Location = new System.Drawing.Point(447, 8);
+            this.btn_AttCliente.Name = "btn_AttCliente";
+            this.btn_AttCliente.Size = new System.Drawing.Size(142, 28);
+            this.btn_AttCliente.TabIndex = 5;
+            this.btn_AttCliente.Text = "Atualizar Cliente";
+            this.btn_AttCliente.TextColor = System.Drawing.Color.White;
+            this.btn_AttCliente.UseVisualStyleBackColor = false;
+            this.btn_AttCliente.Click += new System.EventHandler(this.btn_AttCliente_Click);
             // 
-            // lbl_ValTotalVendas
+            // btn_CadCliente
             // 
-            this.lbl_ValTotalVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_ValTotalVendas.AutoSize = true;
-            this.lbl_ValTotalVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ValTotalVendas.Location = new System.Drawing.Point(374, 2);
-            this.lbl_ValTotalVendas.Name = "lbl_ValTotalVendas";
-            this.lbl_ValTotalVendas.Size = new System.Drawing.Size(365, 16);
-            this.lbl_ValTotalVendas.TabIndex = 27;
-            this.lbl_ValTotalVendas.Text = "Total Vendas: R$ ";
-            this.lbl_ValTotalVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CadCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CadCliente.BackColor = System.Drawing.Color.Black;
+            this.btn_CadCliente.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_CadCliente.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_CadCliente.BorderRadius = 5;
+            this.btn_CadCliente.BorderSize = 0;
+            this.btn_CadCliente.FlatAppearance.BorderSize = 0;
+            this.btn_CadCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CadCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CadCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_CadCliente.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_CadCliente.Location = new System.Drawing.Point(299, 8);
+            this.btn_CadCliente.Name = "btn_CadCliente";
+            this.btn_CadCliente.Size = new System.Drawing.Size(142, 28);
+            this.btn_CadCliente.TabIndex = 4;
+            this.btn_CadCliente.Text = "Cadastrar Cliente";
+            this.btn_CadCliente.TextColor = System.Drawing.Color.White;
+            this.btn_CadCliente.UseVisualStyleBackColor = false;
+            this.btn_CadCliente.Click += new System.EventHandler(this.btn_CadCliente_Click);
             // 
             // btn_VerTodosRelatorios
             // 
@@ -2174,7 +2255,7 @@
             this.btn_VerTodosRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerTodosRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_VerTodosRelatorios.ForeColor = System.Drawing.Color.White;
-            this.btn_VerTodosRelatorios.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_VerTodosRelatorios.HoverBackgroundColor = System.Drawing.Color.Silver;
             this.btn_VerTodosRelatorios.Location = new System.Drawing.Point(497, 3);
             this.btn_VerTodosRelatorios.Name = "btn_VerTodosRelatorios";
             this.btn_VerTodosRelatorios.Size = new System.Drawing.Size(242, 27);
@@ -2196,7 +2277,7 @@
             this.btn_PesquisarRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_PesquisarRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_PesquisarRelatorio.ForeColor = System.Drawing.Color.White;
-            this.btn_PesquisarRelatorio.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_PesquisarRelatorio.HoverBackgroundColor = System.Drawing.Color.Silver;
             this.btn_PesquisarRelatorio.Location = new System.Drawing.Point(250, 3);
             this.btn_PesquisarRelatorio.Name = "btn_PesquisarRelatorio";
             this.btn_PesquisarRelatorio.Size = new System.Drawing.Size(241, 27);
@@ -2272,71 +2353,75 @@
             this.btn_NovoProduto.UseVisualStyleBackColor = false;
             this.btn_NovoProduto.Click += new System.EventHandler(this.btn_NovoProduto_Click);
             // 
-            // btn_CadCliente
+            // label29
             // 
-            this.btn_CadCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CadCliente.BackColor = System.Drawing.Color.Black;
-            this.btn_CadCliente.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_CadCliente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_CadCliente.BorderRadius = 5;
-            this.btn_CadCliente.BorderSize = 0;
-            this.btn_CadCliente.FlatAppearance.BorderSize = 0;
-            this.btn_CadCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CadCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CadCliente.ForeColor = System.Drawing.Color.White;
-            this.btn_CadCliente.HoverBackgroundColor = System.Drawing.Color.Silver;
-            this.btn_CadCliente.Location = new System.Drawing.Point(299, 8);
-            this.btn_CadCliente.Name = "btn_CadCliente";
-            this.btn_CadCliente.Size = new System.Drawing.Size(142, 28);
-            this.btn_CadCliente.TabIndex = 4;
-            this.btn_CadCliente.Text = "Cadastrar Cliente";
-            this.btn_CadCliente.TextColor = System.Drawing.Color.White;
-            this.btn_CadCliente.UseVisualStyleBackColor = false;
-            this.btn_CadCliente.Click += new System.EventHandler(this.btn_CadCliente_Click);
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(5, 6);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(104, 21);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Meus Dados:";
             // 
-            // btn_AttCliente
+            // lbl_NomeFunc
             // 
-            this.btn_AttCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_AttCliente.BackColor = System.Drawing.Color.Black;
-            this.btn_AttCliente.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_AttCliente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_AttCliente.BorderRadius = 5;
-            this.btn_AttCliente.BorderSize = 0;
-            this.btn_AttCliente.FlatAppearance.BorderSize = 0;
-            this.btn_AttCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AttCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AttCliente.ForeColor = System.Drawing.Color.White;
-            this.btn_AttCliente.HoverBackgroundColor = System.Drawing.Color.Silver;
-            this.btn_AttCliente.Location = new System.Drawing.Point(447, 8);
-            this.btn_AttCliente.Name = "btn_AttCliente";
-            this.btn_AttCliente.Size = new System.Drawing.Size(142, 28);
-            this.btn_AttCliente.TabIndex = 5;
-            this.btn_AttCliente.Text = "Atualizar Cliente";
-            this.btn_AttCliente.TextColor = System.Drawing.Color.White;
-            this.btn_AttCliente.UseVisualStyleBackColor = false;
-            this.btn_AttCliente.Click += new System.EventHandler(this.btn_AttCliente_Click);
+            this.lbl_NomeFunc.AutoSize = true;
+            this.lbl_NomeFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NomeFunc.Location = new System.Drawing.Point(7, 50);
+            this.lbl_NomeFunc.Name = "lbl_NomeFunc";
+            this.lbl_NomeFunc.Size = new System.Drawing.Size(51, 17);
+            this.lbl_NomeFunc.TabIndex = 1;
+            this.lbl_NomeFunc.Text = "Nome: ";
             // 
-            // btn_DelCliente
+            // lbl_EmailFunc
             // 
-            this.btn_DelCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_DelCliente.BackColor = System.Drawing.Color.Black;
-            this.btn_DelCliente.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_DelCliente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_DelCliente.BorderRadius = 5;
-            this.btn_DelCliente.BorderSize = 0;
-            this.btn_DelCliente.FlatAppearance.BorderSize = 0;
-            this.btn_DelCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DelCliente.ForeColor = System.Drawing.Color.White;
-            this.btn_DelCliente.HoverBackgroundColor = System.Drawing.Color.Silver;
-            this.btn_DelCliente.Location = new System.Drawing.Point(595, 8);
-            this.btn_DelCliente.Name = "btn_DelCliente";
-            this.btn_DelCliente.Size = new System.Drawing.Size(143, 28);
-            this.btn_DelCliente.TabIndex = 6;
-            this.btn_DelCliente.Text = "Deletar Cliente";
-            this.btn_DelCliente.TextColor = System.Drawing.Color.White;
-            this.btn_DelCliente.UseVisualStyleBackColor = false;
-            this.btn_DelCliente.Click += new System.EventHandler(this.btn_DelCliente_Click);
+            this.lbl_EmailFunc.AutoSize = true;
+            this.lbl_EmailFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmailFunc.Location = new System.Drawing.Point(7, 150);
+            this.lbl_EmailFunc.Name = "lbl_EmailFunc";
+            this.lbl_EmailFunc.Size = new System.Drawing.Size(42, 17);
+            this.lbl_EmailFunc.TabIndex = 2;
+            this.lbl_EmailFunc.Text = "Email:";
+            // 
+            // lbl_CPFFunc
+            // 
+            this.lbl_CPFFunc.AutoSize = true;
+            this.lbl_CPFFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CPFFunc.Location = new System.Drawing.Point(7, 100);
+            this.lbl_CPFFunc.Name = "lbl_CPFFunc";
+            this.lbl_CPFFunc.Size = new System.Drawing.Size(32, 17);
+            this.lbl_CPFFunc.TabIndex = 3;
+            this.lbl_CPFFunc.Text = "CPF:";
+            // 
+            // lbl_DataNascFunc
+            // 
+            this.lbl_DataNascFunc.AutoSize = true;
+            this.lbl_DataNascFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataNascFunc.Location = new System.Drawing.Point(300, 100);
+            this.lbl_DataNascFunc.Name = "lbl_DataNascFunc";
+            this.lbl_DataNascFunc.Size = new System.Drawing.Size(130, 17);
+            this.lbl_DataNascFunc.TabIndex = 4;
+            this.lbl_DataNascFunc.Text = "Data de Nascimento:";
+            // 
+            // lbl_CodigoFunc
+            // 
+            this.lbl_CodigoFunc.AutoSize = true;
+            this.lbl_CodigoFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodigoFunc.Location = new System.Drawing.Point(300, 150);
+            this.lbl_CodigoFunc.Name = "lbl_CodigoFunc";
+            this.lbl_CodigoFunc.Size = new System.Drawing.Size(54, 17);
+            this.lbl_CodigoFunc.TabIndex = 5;
+            this.lbl_CodigoFunc.Text = "Código:";
+            // 
+            // lbl_TelefoneFunc
+            // 
+            this.lbl_TelefoneFunc.AutoSize = true;
+            this.lbl_TelefoneFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TelefoneFunc.Location = new System.Drawing.Point(7, 200);
+            this.lbl_TelefoneFunc.Name = "lbl_TelefoneFunc";
+            this.lbl_TelefoneFunc.Size = new System.Drawing.Size(60, 17);
+            this.lbl_TelefoneFunc.TabIndex = 6;
+            this.lbl_TelefoneFunc.Text = "Telefone:";
             // 
             // TelaPrincipal
             // 
@@ -2349,6 +2434,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.painelFuncionario);
+            this.Controls.Add(this.painelVerEstoque);
             this.Controls.Add(this.painelRealizarVenda);
             this.Controls.Add(this.panelAttCliente);
             this.Controls.Add(this.painelCadCliente);
@@ -2357,8 +2444,6 @@
             this.Controls.Add(this.PanelCadProduto);
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
-            this.Controls.Add(this.painelFuncionario);
-            this.Controls.Add(this.painelVerEstoque);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -2388,12 +2473,16 @@
             this.tableLayoutPanel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).EndInit();
             this.fourLabel.ResumeLayout(false);
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
             this.tableLayoutPanel22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DadosRelatorios)).EndInit();
             this.painelClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.painelFuncionario.ResumeLayout(false);
+            this.painelFuncionario.PerformLayout();
             this.homeLabel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).EndInit();
             this.painelCadCliente.ResumeLayout(false);
@@ -2428,8 +2517,6 @@
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
-            this.tableLayoutPanel23.ResumeLayout(false);
-            this.tableLayoutPanel23.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2580,6 +2667,13 @@
         private CustomControls.Botoes.ButtonIG btn_CadCliente;
         private CustomControls.Botoes.ButtonIG btn_DelCliente;
         private CustomControls.Botoes.ButtonIG btn_AttCliente;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lbl_NomeFunc;
+        private System.Windows.Forms.Label lbl_CPFFunc;
+        private System.Windows.Forms.Label lbl_EmailFunc;
+        private System.Windows.Forms.Label lbl_DataNascFunc;
+        private System.Windows.Forms.Label lbl_CodigoFunc;
+        private System.Windows.Forms.Label lbl_TelefoneFunc;
     }
 }
 

@@ -197,6 +197,8 @@ namespace Supermercado
             dgv_Estoque.Columns["peso"].DisplayIndex = 4;
             dgv_Estoque.Columns["quantidade"].DisplayIndex = 5;
 
+            dgv_Estoque.Columns["preco"].DefaultCellStyle.Format = "C2";
+
             dgv_Estoque.Columns["id"].HeaderText = "ID";
             dgv_Estoque.Columns["codigo"].HeaderText = "Cod. Produto";
             dgv_Estoque.Columns["descricao"].HeaderText = "Desc. Produto";
@@ -204,7 +206,7 @@ namespace Supermercado
             dgv_Estoque.Columns["peso"].HeaderText = "Peso";
             dgv_Estoque.Columns["quantidade"].HeaderText = "Quantidade";
 
-            dgv_Estoque.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //dgv_Estoque.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void CarregarRelatorios()

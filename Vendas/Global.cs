@@ -8,10 +8,11 @@ namespace Supermercado
 {
     internal class Global
     {
-        public static string nomeFuncionario = "Italo Gabriel";
-        public static string cpfFuncionario = "05438627398";
-        public static string codigoFuncionario = null;
-        public static string datanascimentoFuncionario = null;
+        public static string nomeFuncionario = null;
         public static string emailFuncionario = null;
+        public static string cpfFuncionario = null;
+        public static string codigoFuncionario = null;
+        public static string telefoneFuncionario = null;
+        public static string datanascimentoFuncionario = null;
     }
 }

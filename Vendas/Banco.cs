@@ -414,6 +414,16 @@ namespace Supermercado
                         clienteCpf TEXT,
                         FOREIGN KEY (clienteCpf) REFERENCES clientes(cpf)
                     )" },
+                { "funcionarios", @"
+                    CREATE TABLE IF NOT EXISTS funcionarios (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        nome TEXT NOT NULL,
+                        email TEXT,
+                        cpf TEXT NOT NULL,
+                        codigo TEXT,
+                        telefone TEXT,
+                        datanascimento TEXT NOT NULL
+                    )" },
                 { "itens_venda", @"
                     CREATE TABLE IF NOT EXISTS itens_venda (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
