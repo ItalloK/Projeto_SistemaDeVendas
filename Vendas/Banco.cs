@@ -8,6 +8,7 @@ using System.Data.SQLite;
 using System.Windows.Forms;
 using System.IO;
 using static Supermercado.Produtos;
+using System.Drawing;
 
 namespace Supermercado
 {
@@ -422,7 +423,8 @@ namespace Supermercado
                         cpf TEXT NOT NULL,
                         codigo TEXT,
                         telefone TEXT,
-                        datanascimento TEXT NOT NULL
+                        datanascimento TEXT NOT NULL,
+                        senha TEXT NOT NULL
                     )" },
                 { "itens_venda", @"
                     CREATE TABLE IF NOT EXISTS itens_venda (
@@ -572,5 +574,45 @@ namespace Supermercado
                 return false;
             }
         }
+
+        
+
+        public static Contas.Conta VerificarConta(string emailOrCodigo, string senha)
+        {
+            using (var connection = new SQLiteConnection(stringConexao))
+            {
+                connection.Open();
+                string query = @"SELECT * FROM funcionarios WHERE senha = @Senha AND (email = @emailOrCodigo OR codigo = @emailOrCodigo)";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@emailOrCodigo", emailOrCodigo);
+                    command.Parameters.AddWithValue("@Senha", senha);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Contas.Conta
+                            {
+                                Id = reader.GetInt32(0),
+                                Nome = reader.GetString(1),
+                                Email = reader.GetString(2),   
+                                Cpf = reader.GetString(3),
+                                Codigo = reader.GetString(4),
+                                Telefone = reader.GetString(5),
+                                DataNascimento = reader.GetString(6)
+                            };
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERRO");
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

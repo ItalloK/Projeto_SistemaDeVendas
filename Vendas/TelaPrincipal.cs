@@ -104,8 +104,7 @@ namespace Supermercado
             slidePanel.Top = btn_Funcionario.Top;
             if (verificarFuncionario() == false)
             {
-                Login login = new Login();
-                login.ShowDialog();
+                AtivarPainel(panel_Login);
                 return;
             }
             AtivarPainel(painelFuncionario);
@@ -526,6 +525,9 @@ namespace Supermercado
             Funcoes.SetPlaceholder(tb_QuantidadeProduto, "Digite a quantidade, ex: '1' = '1,00' é 1 unidade.");
             Funcoes.SetPlaceholder(tbAttCodigoProduto, "Digite o código do produto.");
             Funcoes.SetPlaceholder(tb_CodigoProduto, "Digite o código do produto.");
+            Funcoes.SetPlaceholder(tb_EmailOuCodigo, "Digite o Email ou Codigo de login...");
+            Funcoes.SetPlaceholder(tb_SenhaUsuario, "******");
+
         }
 
         private void tbAttPrecoProduto_Leave(object sender, EventArgs e)
@@ -700,6 +702,7 @@ namespace Supermercado
             painelFuncionario.Visible = false; // Painel que mostra os dados do funcionario
             painelVerEstoque.Visible = false; // Painel onde ver o estoque e funcionalidades dos produtos
             fourLabel.Visible = false; // não sei
+            panel_Login.Visible = false;
             painelAtivar.Visible = true;
         }
 
@@ -1146,6 +1149,62 @@ namespace Supermercado
         private void btn_DelCliente_Click(object sender, EventArgs e)
         {
             DeletarCliente();
+        }
+
+        private void btn_RealizarLogin_Click(object sender, EventArgs e)
+        {
+            RealizarLogin();
+        }
+        private void RealizarLogin()
+        {
+            string email = tb_EmailOuCodigo.Text;
+            string senha = tb_SenhaUsuario.Text;
+            if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
+            {
+                Funcoes.Notificar("ERRO", "Digite o Email/Codigo e a Senha.");
+                return;
+            }
+            var conta = Banco.VerificarConta(email, senha);
+
+            if (conta != null) 
+            {
+                AtivarPainel(painelFuncionario);
+                lbl_DadosFuncionario.Text = $"Usuário: {conta.Nome} - CPF: {conta.Cpf}";
+
+                Global.idFuncionario = conta.Id;
+                Global.nomeFuncionario = conta.Nome;
+                Global.emailFuncionario = conta.Email;
+                Global.cpfFuncionario = conta.Cpf;
+                Global.codigoFuncionario = conta.Codigo;
+                Global.telefoneFuncionario = conta.Telefone;
+                Global.datanascimentoFuncionario = conta.DataNascimento;
+
+                lbl_NomeFunc.Text = $"Nome: {conta.Nome}";
+                lbl_CPFFunc.Text = $"CPF: {conta.Cpf}";
+                lbl_DataNascFunc.Text = $"Data de Nascimento: {conta.DataNascimento}";
+                lbl_EmailFunc.Text = $"Email: {conta.Email}";
+                lbl_CodigoFunc.Text = $"Código: {conta.Codigo}";
+                lbl_TelefoneFunc.Text = $"Telefone: {conta.Telefone}";
+            }
+            else
+            {
+                Funcoes.Notificar("ERRO", "Email/Código ou Senha inválidos.");
+                return;
+            }
+        }
+
+        private void cb_ExibirSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tb_SenhaUsuario.PasswordChar == '*')
+            {
+                tb_SenhaUsuario.PasswordChar = '\0';
+                cb_ExibirSenha.Checked = true;
+            }
+            else
+            {
+                tb_SenhaUsuario.PasswordChar = '*';
+                cb_ExibirSenha.Checked = false;
+            }
         }
     }
 }

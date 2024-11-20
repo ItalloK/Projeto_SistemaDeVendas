@@ -61,14 +61,9 @@
     <Compile Include="Buttons.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Contas.cs" />
     <Compile Include="Funcoes.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="LogLocal.cs" />
     <Compile Include="Notificacao.cs">
       <SubType>Form</SubType>
@@ -85,9 +80,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Notificacao.resx">
       <DependentUpon>Notificacao.cs</DependentUpon>
     </EmbeddedResource>

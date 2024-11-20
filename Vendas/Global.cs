@@ -8,6 +8,7 @@ namespace Supermercado
 {
     internal class Global
     {
+        public static int idFuncionario = -1;
         public static string nomeFuncionario = null;
         public static string emailFuncionario = null;
         public static string cpfFuncionario = null;

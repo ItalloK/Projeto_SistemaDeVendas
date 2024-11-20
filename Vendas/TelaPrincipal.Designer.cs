@@ -85,6 +85,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tb_Pesquisa = new System.Windows.Forms.TextBox();
             this.painelFuncionario = new System.Windows.Forms.Panel();
+            this.lbl_TelefoneFunc = new System.Windows.Forms.Label();
+            this.lbl_CodigoFunc = new System.Windows.Forms.Label();
+            this.lbl_DataNascFunc = new System.Windows.Forms.Label();
+            this.lbl_CPFFunc = new System.Windows.Forms.Label();
+            this.lbl_EmailFunc = new System.Windows.Forms.Label();
+            this.lbl_NomeFunc = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.homeLabel = new System.Windows.Forms.Panel();
             this.pictureboxPromo = new System.Windows.Forms.PictureBox();
             this.painelCadCliente = new System.Windows.Forms.Panel();
@@ -165,21 +172,23 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tbAttDescProduto = new System.Windows.Forms.TextBox();
+            this.panel_Login = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tb_EmailOuCodigo = new System.Windows.Forms.TextBox();
+            this.cb_ExibirSenha = new System.Windows.Forms.CheckBox();
+            this.btn_RealizarLogin = new CustomControls.Botoes.ButtonIG();
+            this.btn_DeletarProduto = new CustomControls.Botoes.ButtonIG();
+            this.btn_AtualizarProduto = new CustomControls.Botoes.ButtonIG();
+            this.btn_NovoProduto = new CustomControls.Botoes.ButtonIG();
             this.btn_DelCliente = new CustomControls.Botoes.ButtonIG();
             this.btn_AttCliente = new CustomControls.Botoes.ButtonIG();
             this.btn_CadCliente = new CustomControls.Botoes.ButtonIG();
             this.btn_VerTodosRelatorios = new CustomControls.Botoes.ButtonIG();
             this.btn_PesquisarRelatorio = new CustomControls.Botoes.ButtonIG();
-            this.btn_DeletarProduto = new CustomControls.Botoes.ButtonIG();
-            this.btn_AtualizarProduto = new CustomControls.Botoes.ButtonIG();
-            this.btn_NovoProduto = new CustomControls.Botoes.ButtonIG();
-            this.label29 = new System.Windows.Forms.Label();
-            this.lbl_NomeFunc = new System.Windows.Forms.Label();
-            this.lbl_EmailFunc = new System.Windows.Forms.Label();
-            this.lbl_CPFFunc = new System.Windows.Forms.Label();
-            this.lbl_DataNascFunc = new System.Windows.Forms.Label();
-            this.lbl_CodigoFunc = new System.Windows.Forms.Label();
-            this.lbl_TelefoneFunc = new System.Windows.Forms.Label();
+            this.tb_SenhaUsuario = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonIG1 = new CustomControls.Botoes.ButtonIG();
+            this.buttonIG2 = new CustomControls.Botoes.ButtonIG();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -223,6 +232,9 @@
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            this.panel_Login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -984,7 +996,8 @@
             this.painelFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelFuncionario.BackColor = System.Drawing.Color.MistyRose;
+            this.painelFuncionario.BackColor = System.Drawing.Color.White;
+            this.painelFuncionario.Controls.Add(this.tableLayoutPanel24);
             this.painelFuncionario.Controls.Add(this.lbl_TelefoneFunc);
             this.painelFuncionario.Controls.Add(this.lbl_CodigoFunc);
             this.painelFuncionario.Controls.Add(this.lbl_DataNascFunc);
@@ -996,6 +1009,78 @@
             this.painelFuncionario.Name = "painelFuncionario";
             this.painelFuncionario.Size = new System.Drawing.Size(748, 410);
             this.painelFuncionario.TabIndex = 11;
+            // 
+            // lbl_TelefoneFunc
+            // 
+            this.lbl_TelefoneFunc.AutoSize = true;
+            this.lbl_TelefoneFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TelefoneFunc.Location = new System.Drawing.Point(7, 200);
+            this.lbl_TelefoneFunc.Name = "lbl_TelefoneFunc";
+            this.lbl_TelefoneFunc.Size = new System.Drawing.Size(70, 21);
+            this.lbl_TelefoneFunc.TabIndex = 6;
+            this.lbl_TelefoneFunc.Text = "Telefone:";
+            // 
+            // lbl_CodigoFunc
+            // 
+            this.lbl_CodigoFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_CodigoFunc.AutoSize = true;
+            this.lbl_CodigoFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodigoFunc.Location = new System.Drawing.Point(300, 150);
+            this.lbl_CodigoFunc.Name = "lbl_CodigoFunc";
+            this.lbl_CodigoFunc.Size = new System.Drawing.Size(63, 21);
+            this.lbl_CodigoFunc.TabIndex = 5;
+            this.lbl_CodigoFunc.Text = "Código:";
+            // 
+            // lbl_DataNascFunc
+            // 
+            this.lbl_DataNascFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_DataNascFunc.AutoSize = true;
+            this.lbl_DataNascFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataNascFunc.Location = new System.Drawing.Point(300, 100);
+            this.lbl_DataNascFunc.Name = "lbl_DataNascFunc";
+            this.lbl_DataNascFunc.Size = new System.Drawing.Size(153, 21);
+            this.lbl_DataNascFunc.TabIndex = 4;
+            this.lbl_DataNascFunc.Text = "Data de Nascimento:";
+            // 
+            // lbl_CPFFunc
+            // 
+            this.lbl_CPFFunc.AutoSize = true;
+            this.lbl_CPFFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CPFFunc.Location = new System.Drawing.Point(7, 100);
+            this.lbl_CPFFunc.Name = "lbl_CPFFunc";
+            this.lbl_CPFFunc.Size = new System.Drawing.Size(40, 21);
+            this.lbl_CPFFunc.TabIndex = 3;
+            this.lbl_CPFFunc.Text = "CPF:";
+            // 
+            // lbl_EmailFunc
+            // 
+            this.lbl_EmailFunc.AutoSize = true;
+            this.lbl_EmailFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmailFunc.Location = new System.Drawing.Point(7, 150);
+            this.lbl_EmailFunc.Name = "lbl_EmailFunc";
+            this.lbl_EmailFunc.Size = new System.Drawing.Size(51, 21);
+            this.lbl_EmailFunc.TabIndex = 2;
+            this.lbl_EmailFunc.Text = "Email:";
+            // 
+            // lbl_NomeFunc
+            // 
+            this.lbl_NomeFunc.AutoSize = true;
+            this.lbl_NomeFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NomeFunc.Location = new System.Drawing.Point(7, 50);
+            this.lbl_NomeFunc.Name = "lbl_NomeFunc";
+            this.lbl_NomeFunc.Size = new System.Drawing.Size(60, 21);
+            this.lbl_NomeFunc.TabIndex = 1;
+            this.lbl_NomeFunc.Text = "Nome: ";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(5, 6);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(104, 21);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Meus Dados:";
             // 
             // homeLabel
             // 
@@ -2177,6 +2262,147 @@
             this.tbAttDescProduto.Size = new System.Drawing.Size(736, 51);
             this.tbAttDescProduto.TabIndex = 0;
             // 
+            // panel_Login
+            // 
+            this.panel_Login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Login.BackColor = System.Drawing.Color.White;
+            this.panel_Login.Controls.Add(this.tb_SenhaUsuario);
+            this.panel_Login.Controls.Add(this.cb_ExibirSenha);
+            this.panel_Login.Controls.Add(this.btn_RealizarLogin);
+            this.panel_Login.Controls.Add(this.tb_EmailOuCodigo);
+            this.panel_Login.Controls.Add(this.pictureBox1);
+            this.panel_Login.Location = new System.Drawing.Point(185, 57);
+            this.panel_Login.Name = "panel_Login";
+            this.panel_Login.Size = new System.Drawing.Size(748, 410);
+            this.panel_Login.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(303, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tb_EmailOuCodigo
+            // 
+            this.tb_EmailOuCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_EmailOuCodigo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_EmailOuCodigo.Location = new System.Drawing.Point(262, 203);
+            this.tb_EmailOuCodigo.Name = "tb_EmailOuCodigo";
+            this.tb_EmailOuCodigo.Size = new System.Drawing.Size(227, 33);
+            this.tb_EmailOuCodigo.TabIndex = 1;
+            // 
+            // cb_ExibirSenha
+            // 
+            this.cb_ExibirSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_ExibirSenha.AutoSize = true;
+            this.cb_ExibirSenha.Location = new System.Drawing.Point(262, 293);
+            this.cb_ExibirSenha.Name = "cb_ExibirSenha";
+            this.cb_ExibirSenha.Size = new System.Drawing.Size(85, 17);
+            this.cb_ExibirSenha.TabIndex = 3;
+            this.cb_ExibirSenha.Text = "Exibir Senha";
+            this.cb_ExibirSenha.UseVisualStyleBackColor = true;
+            this.cb_ExibirSenha.CheckedChanged += new System.EventHandler(this.cb_ExibirSenha_CheckedChanged);
+            // 
+            // btn_RealizarLogin
+            // 
+            this.btn_RealizarLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_RealizarLogin.BackColor = System.Drawing.Color.Black;
+            this.btn_RealizarLogin.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_RealizarLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_RealizarLogin.BorderRadius = 5;
+            this.btn_RealizarLogin.BorderSize = 0;
+            this.btn_RealizarLogin.FlatAppearance.BorderSize = 0;
+            this.btn_RealizarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RealizarLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RealizarLogin.ForeColor = System.Drawing.Color.White;
+            this.btn_RealizarLogin.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_RealizarLogin.Location = new System.Drawing.Point(262, 314);
+            this.btn_RealizarLogin.Name = "btn_RealizarLogin";
+            this.btn_RealizarLogin.Size = new System.Drawing.Size(227, 40);
+            this.btn_RealizarLogin.TabIndex = 4;
+            this.btn_RealizarLogin.Text = "Fazer Login";
+            this.btn_RealizarLogin.TextColor = System.Drawing.Color.White;
+            this.btn_RealizarLogin.UseVisualStyleBackColor = false;
+            this.btn_RealizarLogin.Click += new System.EventHandler(this.btn_RealizarLogin_Click);
+            // 
+            // btn_DeletarProduto
+            // 
+            this.btn_DeletarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DeletarProduto.BackColor = System.Drawing.Color.Black;
+            this.btn_DeletarProduto.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_DeletarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_DeletarProduto.BorderRadius = 5;
+            this.btn_DeletarProduto.BorderSize = 0;
+            this.btn_DeletarProduto.FlatAppearance.BorderSize = 0;
+            this.btn_DeletarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeletarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeletarProduto.ForeColor = System.Drawing.Color.White;
+            this.btn_DeletarProduto.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_DeletarProduto.Location = new System.Drawing.Point(595, 7);
+            this.btn_DeletarProduto.Name = "btn_DeletarProduto";
+            this.btn_DeletarProduto.Size = new System.Drawing.Size(143, 29);
+            this.btn_DeletarProduto.TabIndex = 6;
+            this.btn_DeletarProduto.Text = "Deletar Produto";
+            this.btn_DeletarProduto.TextColor = System.Drawing.Color.White;
+            this.btn_DeletarProduto.UseVisualStyleBackColor = false;
+            this.btn_DeletarProduto.Click += new System.EventHandler(this.btn_DeletarProduto_Click_1);
+            // 
+            // btn_AtualizarProduto
+            // 
+            this.btn_AtualizarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_AtualizarProduto.BackColor = System.Drawing.Color.Black;
+            this.btn_AtualizarProduto.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_AtualizarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_AtualizarProduto.BorderRadius = 5;
+            this.btn_AtualizarProduto.BorderSize = 0;
+            this.btn_AtualizarProduto.FlatAppearance.BorderSize = 0;
+            this.btn_AtualizarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AtualizarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AtualizarProduto.ForeColor = System.Drawing.Color.White;
+            this.btn_AtualizarProduto.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_AtualizarProduto.Location = new System.Drawing.Point(447, 7);
+            this.btn_AtualizarProduto.Name = "btn_AtualizarProduto";
+            this.btn_AtualizarProduto.Size = new System.Drawing.Size(142, 29);
+            this.btn_AtualizarProduto.TabIndex = 5;
+            this.btn_AtualizarProduto.Text = "Atualizar Produto";
+            this.btn_AtualizarProduto.TextColor = System.Drawing.Color.White;
+            this.btn_AtualizarProduto.UseVisualStyleBackColor = false;
+            this.btn_AtualizarProduto.Click += new System.EventHandler(this.btn_AtualizarProduto_Click);
+            // 
+            // btn_NovoProduto
+            // 
+            this.btn_NovoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NovoProduto.BackColor = System.Drawing.Color.Black;
+            this.btn_NovoProduto.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_NovoProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_NovoProduto.BorderRadius = 5;
+            this.btn_NovoProduto.BorderSize = 0;
+            this.btn_NovoProduto.FlatAppearance.BorderSize = 0;
+            this.btn_NovoProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_NovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NovoProduto.ForeColor = System.Drawing.Color.White;
+            this.btn_NovoProduto.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_NovoProduto.Location = new System.Drawing.Point(299, 7);
+            this.btn_NovoProduto.Name = "btn_NovoProduto";
+            this.btn_NovoProduto.Size = new System.Drawing.Size(142, 29);
+            this.btn_NovoProduto.TabIndex = 4;
+            this.btn_NovoProduto.Text = "Novo Produto";
+            this.btn_NovoProduto.TextColor = System.Drawing.Color.White;
+            this.btn_NovoProduto.UseVisualStyleBackColor = false;
+            this.btn_NovoProduto.Click += new System.EventHandler(this.btn_NovoProduto_Click);
+            // 
             // btn_DelCliente
             // 
             this.btn_DelCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -2287,141 +2513,76 @@
             this.btn_PesquisarRelatorio.UseVisualStyleBackColor = false;
             this.btn_PesquisarRelatorio.Click += new System.EventHandler(this.btn_PesquisarRelatorio_Click);
             // 
-            // btn_DeletarProduto
+            // tb_SenhaUsuario
             // 
-            this.btn_DeletarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_DeletarProduto.BackColor = System.Drawing.Color.Black;
-            this.btn_DeletarProduto.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_DeletarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_DeletarProduto.BorderRadius = 5;
-            this.btn_DeletarProduto.BorderSize = 0;
-            this.btn_DeletarProduto.FlatAppearance.BorderSize = 0;
-            this.btn_DeletarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DeletarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeletarProduto.ForeColor = System.Drawing.Color.White;
-            this.btn_DeletarProduto.HoverBackgroundColor = System.Drawing.Color.Gray;
-            this.btn_DeletarProduto.Location = new System.Drawing.Point(595, 7);
-            this.btn_DeletarProduto.Name = "btn_DeletarProduto";
-            this.btn_DeletarProduto.Size = new System.Drawing.Size(143, 29);
-            this.btn_DeletarProduto.TabIndex = 6;
-            this.btn_DeletarProduto.Text = "Deletar Produto";
-            this.btn_DeletarProduto.TextColor = System.Drawing.Color.White;
-            this.btn_DeletarProduto.UseVisualStyleBackColor = false;
-            this.btn_DeletarProduto.Click += new System.EventHandler(this.btn_DeletarProduto_Click_1);
+            this.tb_SenhaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_SenhaUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SenhaUsuario.Location = new System.Drawing.Point(262, 248);
+            this.tb_SenhaUsuario.Name = "tb_SenhaUsuario";
+            this.tb_SenhaUsuario.PasswordChar = '*';
+            this.tb_SenhaUsuario.Size = new System.Drawing.Size(227, 33);
+            this.tb_SenhaUsuario.TabIndex = 2;
             // 
-            // btn_AtualizarProduto
+            // tableLayoutPanel24
             // 
-            this.btn_AtualizarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_AtualizarProduto.BackColor = System.Drawing.Color.Black;
-            this.btn_AtualizarProduto.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_AtualizarProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_AtualizarProduto.BorderRadius = 5;
-            this.btn_AtualizarProduto.BorderSize = 0;
-            this.btn_AtualizarProduto.FlatAppearance.BorderSize = 0;
-            this.btn_AtualizarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AtualizarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AtualizarProduto.ForeColor = System.Drawing.Color.White;
-            this.btn_AtualizarProduto.HoverBackgroundColor = System.Drawing.Color.Gray;
-            this.btn_AtualizarProduto.Location = new System.Drawing.Point(447, 7);
-            this.btn_AtualizarProduto.Name = "btn_AtualizarProduto";
-            this.btn_AtualizarProduto.Size = new System.Drawing.Size(142, 29);
-            this.btn_AtualizarProduto.TabIndex = 5;
-            this.btn_AtualizarProduto.Text = "Atualizar Produto";
-            this.btn_AtualizarProduto.TextColor = System.Drawing.Color.White;
-            this.btn_AtualizarProduto.UseVisualStyleBackColor = false;
-            this.btn_AtualizarProduto.Click += new System.EventHandler(this.btn_AtualizarProduto_Click);
+            this.tableLayoutPanel24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel24.ColumnCount = 4;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.Controls.Add(this.buttonIG1, 3, 0);
+            this.tableLayoutPanel24.Controls.Add(this.buttonIG2, 2, 0);
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 375);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 1;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(742, 32);
+            this.tableLayoutPanel24.TabIndex = 7;
             // 
-            // btn_NovoProduto
+            // buttonIG1
             // 
-            this.btn_NovoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_NovoProduto.BackColor = System.Drawing.Color.Black;
-            this.btn_NovoProduto.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_NovoProduto.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_NovoProduto.BorderRadius = 5;
-            this.btn_NovoProduto.BorderSize = 0;
-            this.btn_NovoProduto.FlatAppearance.BorderSize = 0;
-            this.btn_NovoProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_NovoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_NovoProduto.ForeColor = System.Drawing.Color.White;
-            this.btn_NovoProduto.HoverBackgroundColor = System.Drawing.Color.Gray;
-            this.btn_NovoProduto.Location = new System.Drawing.Point(299, 7);
-            this.btn_NovoProduto.Name = "btn_NovoProduto";
-            this.btn_NovoProduto.Size = new System.Drawing.Size(142, 29);
-            this.btn_NovoProduto.TabIndex = 4;
-            this.btn_NovoProduto.Text = "Novo Produto";
-            this.btn_NovoProduto.TextColor = System.Drawing.Color.White;
-            this.btn_NovoProduto.UseVisualStyleBackColor = false;
-            this.btn_NovoProduto.Click += new System.EventHandler(this.btn_NovoProduto_Click);
+            this.buttonIG1.BackColor = System.Drawing.Color.Black;
+            this.buttonIG1.BackgroundColor = System.Drawing.Color.Black;
+            this.buttonIG1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonIG1.BorderRadius = 5;
+            this.buttonIG1.BorderSize = 0;
+            this.buttonIG1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonIG1.FlatAppearance.BorderSize = 0;
+            this.buttonIG1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIG1.ForeColor = System.Drawing.Color.White;
+            this.buttonIG1.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.buttonIG1.Location = new System.Drawing.Point(558, 3);
+            this.buttonIG1.Name = "buttonIG1";
+            this.buttonIG1.Size = new System.Drawing.Size(181, 26);
+            this.buttonIG1.TabIndex = 0;
+            this.buttonIG1.Text = "Sair da Conta";
+            this.buttonIG1.TextColor = System.Drawing.Color.White;
+            this.buttonIG1.UseVisualStyleBackColor = false;
             // 
-            // label29
+            // buttonIG2
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(5, 6);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(104, 21);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Meus Dados:";
-            // 
-            // lbl_NomeFunc
-            // 
-            this.lbl_NomeFunc.AutoSize = true;
-            this.lbl_NomeFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NomeFunc.Location = new System.Drawing.Point(7, 50);
-            this.lbl_NomeFunc.Name = "lbl_NomeFunc";
-            this.lbl_NomeFunc.Size = new System.Drawing.Size(51, 17);
-            this.lbl_NomeFunc.TabIndex = 1;
-            this.lbl_NomeFunc.Text = "Nome: ";
-            // 
-            // lbl_EmailFunc
-            // 
-            this.lbl_EmailFunc.AutoSize = true;
-            this.lbl_EmailFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_EmailFunc.Location = new System.Drawing.Point(7, 150);
-            this.lbl_EmailFunc.Name = "lbl_EmailFunc";
-            this.lbl_EmailFunc.Size = new System.Drawing.Size(42, 17);
-            this.lbl_EmailFunc.TabIndex = 2;
-            this.lbl_EmailFunc.Text = "Email:";
-            // 
-            // lbl_CPFFunc
-            // 
-            this.lbl_CPFFunc.AutoSize = true;
-            this.lbl_CPFFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CPFFunc.Location = new System.Drawing.Point(7, 100);
-            this.lbl_CPFFunc.Name = "lbl_CPFFunc";
-            this.lbl_CPFFunc.Size = new System.Drawing.Size(32, 17);
-            this.lbl_CPFFunc.TabIndex = 3;
-            this.lbl_CPFFunc.Text = "CPF:";
-            // 
-            // lbl_DataNascFunc
-            // 
-            this.lbl_DataNascFunc.AutoSize = true;
-            this.lbl_DataNascFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DataNascFunc.Location = new System.Drawing.Point(300, 100);
-            this.lbl_DataNascFunc.Name = "lbl_DataNascFunc";
-            this.lbl_DataNascFunc.Size = new System.Drawing.Size(130, 17);
-            this.lbl_DataNascFunc.TabIndex = 4;
-            this.lbl_DataNascFunc.Text = "Data de Nascimento:";
-            // 
-            // lbl_CodigoFunc
-            // 
-            this.lbl_CodigoFunc.AutoSize = true;
-            this.lbl_CodigoFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CodigoFunc.Location = new System.Drawing.Point(300, 150);
-            this.lbl_CodigoFunc.Name = "lbl_CodigoFunc";
-            this.lbl_CodigoFunc.Size = new System.Drawing.Size(54, 17);
-            this.lbl_CodigoFunc.TabIndex = 5;
-            this.lbl_CodigoFunc.Text = "Código:";
-            // 
-            // lbl_TelefoneFunc
-            // 
-            this.lbl_TelefoneFunc.AutoSize = true;
-            this.lbl_TelefoneFunc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TelefoneFunc.Location = new System.Drawing.Point(7, 200);
-            this.lbl_TelefoneFunc.Name = "lbl_TelefoneFunc";
-            this.lbl_TelefoneFunc.Size = new System.Drawing.Size(60, 17);
-            this.lbl_TelefoneFunc.TabIndex = 6;
-            this.lbl_TelefoneFunc.Text = "Telefone:";
+            this.buttonIG2.BackColor = System.Drawing.Color.Black;
+            this.buttonIG2.BackgroundColor = System.Drawing.Color.Black;
+            this.buttonIG2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonIG2.BorderRadius = 5;
+            this.buttonIG2.BorderSize = 0;
+            this.buttonIG2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonIG2.FlatAppearance.BorderSize = 0;
+            this.buttonIG2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIG2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIG2.ForeColor = System.Drawing.Color.White;
+            this.buttonIG2.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.buttonIG2.Location = new System.Drawing.Point(373, 3);
+            this.buttonIG2.Name = "buttonIG2";
+            this.buttonIG2.Size = new System.Drawing.Size(179, 26);
+            this.buttonIG2.TabIndex = 1;
+            this.buttonIG2.Text = "Atualizar Dados";
+            this.buttonIG2.TextColor = System.Drawing.Color.White;
+            this.buttonIG2.UseVisualStyleBackColor = false;
             // 
             // TelaPrincipal
             // 
@@ -2444,6 +2605,7 @@
             this.Controls.Add(this.PanelCadProduto);
             this.Controls.Add(this.fourLabel);
             this.Controls.Add(this.homeLabel);
+            this.Controls.Add(this.panel_Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -2517,6 +2679,10 @@
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
+            this.panel_Login.ResumeLayout(false);
+            this.panel_Login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel24.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2674,6 +2840,15 @@
         private System.Windows.Forms.Label lbl_DataNascFunc;
         private System.Windows.Forms.Label lbl_CodigoFunc;
         private System.Windows.Forms.Label lbl_TelefoneFunc;
+        private System.Windows.Forms.Panel panel_Login;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox tb_EmailOuCodigo;
+        private CustomControls.Botoes.ButtonIG btn_RealizarLogin;
+        private System.Windows.Forms.CheckBox cb_ExibirSenha;
+        private System.Windows.Forms.TextBox tb_SenhaUsuario;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private CustomControls.Botoes.ButtonIG buttonIG1;
+        private CustomControls.Botoes.ButtonIG buttonIG2;
     }
 }
 

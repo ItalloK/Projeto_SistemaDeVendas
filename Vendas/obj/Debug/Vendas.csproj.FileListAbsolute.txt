@@ -5,7 +5,6 @@ E:\Programação\Projetos\Vendas\Vendas\bin\Debug\CuoreUI.dll
 E:\Programação\Projetos\Vendas\Vendas\bin\Debug\System.Data.SQLite.dll
 E:\Programação\Projetos\Vendas\Vendas\bin\Debug\System.Data.SQLite.xml
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Vendas.csproj.AssemblyReference.cache
-E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.Login.resources
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.Notificacao.resources
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.TelaPrincipal.resources
 E:\Programação\Projetos\Vendas\Vendas\obj\Debug\Supermercado.Properties.Resources.resources
