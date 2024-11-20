@@ -613,6 +613,40 @@ namespace Supermercado
                 }
             }
         }
+        public static bool AtualizarFuncionario(string nome, string dataNasc, string email, string telefone, string cpf)
+        {
+            try
+            {
+                string query = "UPDATE funcionarios SET nome = @nome, datanascimento = @dataNasc, email = @email, telefone = @telefone WHERE cpf = @cpf";
+                using (var connection = new SQLiteConnection(stringConexao))
+                {
+                    connection.Open();
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@nome", nome);
+                        command.Parameters.AddWithValue("@telefone", telefone);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@cpf", cpf);
+                        command.Parameters.AddWithValue("@dataNasc", dataNasc);
 
+                        command.ExecuteNonQuery();
+                    }
+                }
+                Funcoes.Notificar("SUCESSO", "Funcionario atualizado com Sucesso!");
+                return true;
+            }
+            catch (SQLiteException ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao atualizar Funcionario no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao atualizar Funcionario, olhe o LOG!");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Funcoes.CriarLogLocal("Erro ao atualizar Funcionario no banco de dados: " + ex.Message);
+                Funcoes.Notificar("ERRO", "Erro ao atualizar Funcionario, olhe o LOG!");
+                return false;
+            }
+        }
     }
 }

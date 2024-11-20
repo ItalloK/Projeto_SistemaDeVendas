@@ -85,12 +85,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tb_Pesquisa = new System.Windows.Forms.TextBox();
             this.painelFuncionario = new System.Windows.Forms.Panel();
-            this.lbl_TelefoneFunc = new System.Windows.Forms.Label();
-            this.lbl_CodigoFunc = new System.Windows.Forms.Label();
-            this.lbl_DataNascFunc = new System.Windows.Forms.Label();
-            this.lbl_CPFFunc = new System.Windows.Forms.Label();
-            this.lbl_EmailFunc = new System.Windows.Forms.Label();
-            this.lbl_NomeFunc = new System.Windows.Forms.Label();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.label29 = new System.Windows.Forms.Label();
             this.homeLabel = new System.Windows.Forms.Panel();
             this.pictureboxPromo = new System.Windows.Forms.PictureBox();
@@ -173,10 +168,13 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tbAttDescProduto = new System.Windows.Forms.TextBox();
             this.panel_Login = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tb_EmailOuCodigo = new System.Windows.Forms.TextBox();
+            this.tb_SenhaUsuario = new System.Windows.Forms.TextBox();
             this.cb_ExibirSenha = new System.Windows.Forms.CheckBox();
-            this.btn_RealizarLogin = new CustomControls.Botoes.ButtonIG();
+            this.tb_EmailOuCodigo = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tb_CodigoFuncLBL = new System.Windows.Forms.TextBox();
+            this.btn_SairContaFunc = new CustomControls.Botoes.ButtonIG();
+            this.btn_AtualizarDadosFunc = new CustomControls.Botoes.ButtonIG();
             this.btn_DeletarProduto = new CustomControls.Botoes.ButtonIG();
             this.btn_AtualizarProduto = new CustomControls.Botoes.ButtonIG();
             this.btn_NovoProduto = new CustomControls.Botoes.ButtonIG();
@@ -185,10 +183,21 @@
             this.btn_CadCliente = new CustomControls.Botoes.ButtonIG();
             this.btn_VerTodosRelatorios = new CustomControls.Botoes.ButtonIG();
             this.btn_PesquisarRelatorio = new CustomControls.Botoes.ButtonIG();
-            this.tb_SenhaUsuario = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonIG1 = new CustomControls.Botoes.ButtonIG();
-            this.buttonIG2 = new CustomControls.Botoes.ButtonIG();
+            this.btn_RealizarLogin = new CustomControls.Botoes.ButtonIG();
+            this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_NomeFunc = new System.Windows.Forms.Label();
+            this.tb_NomeFuncionarioLBL = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_CPFFunc = new System.Windows.Forms.Label();
+            this.mtb_CpfFuncionarioLBL = new System.Windows.Forms.MaskedTextBox();
+            this.lbl_DataNascFunc = new System.Windows.Forms.Label();
+            this.mtb_DataNascFuncionarioLBL = new System.Windows.Forms.MaskedTextBox();
+            this.lbl_EmailFunc = new System.Windows.Forms.Label();
+            this.tb_EmailFuncionarioLBL = new System.Windows.Forms.TextBox();
+            this.lbl_CodigoFunc = new System.Windows.Forms.Label();
+            this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_TelefoneFunc = new System.Windows.Forms.Label();
+            this.mtb_TelefoneFuncLBL = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -209,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Dados)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.painelFuncionario.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
             this.homeLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).BeginInit();
             this.painelCadCliente.SuspendLayout();
@@ -234,7 +244,9 @@
             this.tableLayoutPanel16.SuspendLayout();
             this.panel_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel24.SuspendLayout();
+            this.tableLayoutPanel25.SuspendLayout();
+            this.tableLayoutPanel26.SuspendLayout();
+            this.tableLayoutPanel28.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -997,80 +1009,33 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.painelFuncionario.BackColor = System.Drawing.Color.White;
+            this.painelFuncionario.Controls.Add(this.tableLayoutPanel28);
+            this.painelFuncionario.Controls.Add(this.tableLayoutPanel26);
+            this.painelFuncionario.Controls.Add(this.tableLayoutPanel25);
             this.painelFuncionario.Controls.Add(this.tableLayoutPanel24);
-            this.painelFuncionario.Controls.Add(this.lbl_TelefoneFunc);
-            this.painelFuncionario.Controls.Add(this.lbl_CodigoFunc);
-            this.painelFuncionario.Controls.Add(this.lbl_DataNascFunc);
-            this.painelFuncionario.Controls.Add(this.lbl_CPFFunc);
-            this.painelFuncionario.Controls.Add(this.lbl_EmailFunc);
-            this.painelFuncionario.Controls.Add(this.lbl_NomeFunc);
             this.painelFuncionario.Controls.Add(this.label29);
             this.painelFuncionario.Location = new System.Drawing.Point(185, 57);
             this.painelFuncionario.Name = "painelFuncionario";
             this.painelFuncionario.Size = new System.Drawing.Size(748, 410);
             this.painelFuncionario.TabIndex = 11;
             // 
-            // lbl_TelefoneFunc
+            // tableLayoutPanel24
             // 
-            this.lbl_TelefoneFunc.AutoSize = true;
-            this.lbl_TelefoneFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TelefoneFunc.Location = new System.Drawing.Point(7, 200);
-            this.lbl_TelefoneFunc.Name = "lbl_TelefoneFunc";
-            this.lbl_TelefoneFunc.Size = new System.Drawing.Size(70, 21);
-            this.lbl_TelefoneFunc.TabIndex = 6;
-            this.lbl_TelefoneFunc.Text = "Telefone:";
-            // 
-            // lbl_CodigoFunc
-            // 
-            this.lbl_CodigoFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_CodigoFunc.AutoSize = true;
-            this.lbl_CodigoFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CodigoFunc.Location = new System.Drawing.Point(300, 150);
-            this.lbl_CodigoFunc.Name = "lbl_CodigoFunc";
-            this.lbl_CodigoFunc.Size = new System.Drawing.Size(63, 21);
-            this.lbl_CodigoFunc.TabIndex = 5;
-            this.lbl_CodigoFunc.Text = "Código:";
-            // 
-            // lbl_DataNascFunc
-            // 
-            this.lbl_DataNascFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_DataNascFunc.AutoSize = true;
-            this.lbl_DataNascFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DataNascFunc.Location = new System.Drawing.Point(300, 100);
-            this.lbl_DataNascFunc.Name = "lbl_DataNascFunc";
-            this.lbl_DataNascFunc.Size = new System.Drawing.Size(153, 21);
-            this.lbl_DataNascFunc.TabIndex = 4;
-            this.lbl_DataNascFunc.Text = "Data de Nascimento:";
-            // 
-            // lbl_CPFFunc
-            // 
-            this.lbl_CPFFunc.AutoSize = true;
-            this.lbl_CPFFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CPFFunc.Location = new System.Drawing.Point(7, 100);
-            this.lbl_CPFFunc.Name = "lbl_CPFFunc";
-            this.lbl_CPFFunc.Size = new System.Drawing.Size(40, 21);
-            this.lbl_CPFFunc.TabIndex = 3;
-            this.lbl_CPFFunc.Text = "CPF:";
-            // 
-            // lbl_EmailFunc
-            // 
-            this.lbl_EmailFunc.AutoSize = true;
-            this.lbl_EmailFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_EmailFunc.Location = new System.Drawing.Point(7, 150);
-            this.lbl_EmailFunc.Name = "lbl_EmailFunc";
-            this.lbl_EmailFunc.Size = new System.Drawing.Size(51, 21);
-            this.lbl_EmailFunc.TabIndex = 2;
-            this.lbl_EmailFunc.Text = "Email:";
-            // 
-            // lbl_NomeFunc
-            // 
-            this.lbl_NomeFunc.AutoSize = true;
-            this.lbl_NomeFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NomeFunc.Location = new System.Drawing.Point(7, 50);
-            this.lbl_NomeFunc.Name = "lbl_NomeFunc";
-            this.lbl_NomeFunc.Size = new System.Drawing.Size(60, 21);
-            this.lbl_NomeFunc.TabIndex = 1;
-            this.lbl_NomeFunc.Text = "Nome: ";
+            this.tableLayoutPanel24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel24.ColumnCount = 4;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel24.Controls.Add(this.btn_SairContaFunc, 3, 0);
+            this.tableLayoutPanel24.Controls.Add(this.btn_AtualizarDadosFunc, 2, 0);
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 375);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 1;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(742, 32);
+            this.tableLayoutPanel24.TabIndex = 7;
             // 
             // label29
             // 
@@ -2278,28 +2243,16 @@
             this.panel_Login.Size = new System.Drawing.Size(748, 410);
             this.panel_Login.TabIndex = 16;
             // 
-            // pictureBox1
+            // tb_SenhaUsuario
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tb_SenhaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(303, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tb_EmailOuCodigo
-            // 
-            this.tb_EmailOuCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_EmailOuCodigo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_EmailOuCodigo.Location = new System.Drawing.Point(262, 203);
-            this.tb_EmailOuCodigo.Name = "tb_EmailOuCodigo";
-            this.tb_EmailOuCodigo.Size = new System.Drawing.Size(227, 33);
-            this.tb_EmailOuCodigo.TabIndex = 1;
+            this.tb_SenhaUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SenhaUsuario.Location = new System.Drawing.Point(262, 248);
+            this.tb_SenhaUsuario.Name = "tb_SenhaUsuario";
+            this.tb_SenhaUsuario.PasswordChar = '*';
+            this.tb_SenhaUsuario.Size = new System.Drawing.Size(227, 33);
+            this.tb_SenhaUsuario.TabIndex = 2;
             // 
             // cb_ExibirSenha
             // 
@@ -2314,28 +2267,82 @@
             this.cb_ExibirSenha.UseVisualStyleBackColor = true;
             this.cb_ExibirSenha.CheckedChanged += new System.EventHandler(this.cb_ExibirSenha_CheckedChanged);
             // 
-            // btn_RealizarLogin
+            // tb_EmailOuCodigo
             // 
-            this.btn_RealizarLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tb_EmailOuCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_RealizarLogin.BackColor = System.Drawing.Color.Black;
-            this.btn_RealizarLogin.BackgroundColor = System.Drawing.Color.Black;
-            this.btn_RealizarLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_RealizarLogin.BorderRadius = 5;
-            this.btn_RealizarLogin.BorderSize = 0;
-            this.btn_RealizarLogin.FlatAppearance.BorderSize = 0;
-            this.btn_RealizarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RealizarLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RealizarLogin.ForeColor = System.Drawing.Color.White;
-            this.btn_RealizarLogin.HoverBackgroundColor = System.Drawing.Color.Silver;
-            this.btn_RealizarLogin.Location = new System.Drawing.Point(262, 314);
-            this.btn_RealizarLogin.Name = "btn_RealizarLogin";
-            this.btn_RealizarLogin.Size = new System.Drawing.Size(227, 40);
-            this.btn_RealizarLogin.TabIndex = 4;
-            this.btn_RealizarLogin.Text = "Fazer Login";
-            this.btn_RealizarLogin.TextColor = System.Drawing.Color.White;
-            this.btn_RealizarLogin.UseVisualStyleBackColor = false;
-            this.btn_RealizarLogin.Click += new System.EventHandler(this.btn_RealizarLogin_Click);
+            this.tb_EmailOuCodigo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_EmailOuCodigo.Location = new System.Drawing.Point(262, 203);
+            this.tb_EmailOuCodigo.Name = "tb_EmailOuCodigo";
+            this.tb_EmailOuCodigo.Size = new System.Drawing.Size(227, 33);
+            this.tb_EmailOuCodigo.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(303, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tb_CodigoFuncLBL
+            // 
+            this.tb_CodigoFuncLBL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_CodigoFuncLBL.Enabled = false;
+            this.tb_CodigoFuncLBL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_CodigoFuncLBL.Location = new System.Drawing.Point(374, 105);
+            this.tb_CodigoFuncLBL.Name = "tb_CodigoFuncLBL";
+            this.tb_CodigoFuncLBL.Size = new System.Drawing.Size(365, 29);
+            this.tb_CodigoFuncLBL.TabIndex = 14;
+            // 
+            // btn_SairContaFunc
+            // 
+            this.btn_SairContaFunc.BackColor = System.Drawing.Color.Black;
+            this.btn_SairContaFunc.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_SairContaFunc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_SairContaFunc.BorderRadius = 5;
+            this.btn_SairContaFunc.BorderSize = 0;
+            this.btn_SairContaFunc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_SairContaFunc.FlatAppearance.BorderSize = 0;
+            this.btn_SairContaFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SairContaFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SairContaFunc.ForeColor = System.Drawing.Color.White;
+            this.btn_SairContaFunc.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_SairContaFunc.Location = new System.Drawing.Point(558, 3);
+            this.btn_SairContaFunc.Name = "btn_SairContaFunc";
+            this.btn_SairContaFunc.Size = new System.Drawing.Size(181, 26);
+            this.btn_SairContaFunc.TabIndex = 0;
+            this.btn_SairContaFunc.Text = "Sair da Conta";
+            this.btn_SairContaFunc.TextColor = System.Drawing.Color.White;
+            this.btn_SairContaFunc.UseVisualStyleBackColor = false;
+            this.btn_SairContaFunc.Click += new System.EventHandler(this.btn_SairContaFunc_Click);
+            // 
+            // btn_AtualizarDadosFunc
+            // 
+            this.btn_AtualizarDadosFunc.BackColor = System.Drawing.Color.Black;
+            this.btn_AtualizarDadosFunc.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_AtualizarDadosFunc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_AtualizarDadosFunc.BorderRadius = 5;
+            this.btn_AtualizarDadosFunc.BorderSize = 0;
+            this.btn_AtualizarDadosFunc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_AtualizarDadosFunc.FlatAppearance.BorderSize = 0;
+            this.btn_AtualizarDadosFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AtualizarDadosFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AtualizarDadosFunc.ForeColor = System.Drawing.Color.White;
+            this.btn_AtualizarDadosFunc.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_AtualizarDadosFunc.Location = new System.Drawing.Point(373, 3);
+            this.btn_AtualizarDadosFunc.Name = "btn_AtualizarDadosFunc";
+            this.btn_AtualizarDadosFunc.Size = new System.Drawing.Size(179, 26);
+            this.btn_AtualizarDadosFunc.TabIndex = 1;
+            this.btn_AtualizarDadosFunc.Text = "Atualizar Dados";
+            this.btn_AtualizarDadosFunc.TextColor = System.Drawing.Color.White;
+            this.btn_AtualizarDadosFunc.UseVisualStyleBackColor = false;
+            this.btn_AtualizarDadosFunc.Click += new System.EventHandler(this.btn_AtualizarDadosFunc_Click);
             // 
             // btn_DeletarProduto
             // 
@@ -2513,76 +2520,202 @@
             this.btn_PesquisarRelatorio.UseVisualStyleBackColor = false;
             this.btn_PesquisarRelatorio.Click += new System.EventHandler(this.btn_PesquisarRelatorio_Click);
             // 
-            // tb_SenhaUsuario
+            // btn_RealizarLogin
             // 
-            this.tb_SenhaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_RealizarLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_SenhaUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SenhaUsuario.Location = new System.Drawing.Point(262, 248);
-            this.tb_SenhaUsuario.Name = "tb_SenhaUsuario";
-            this.tb_SenhaUsuario.PasswordChar = '*';
-            this.tb_SenhaUsuario.Size = new System.Drawing.Size(227, 33);
-            this.tb_SenhaUsuario.TabIndex = 2;
+            this.btn_RealizarLogin.BackColor = System.Drawing.Color.Black;
+            this.btn_RealizarLogin.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_RealizarLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_RealizarLogin.BorderRadius = 5;
+            this.btn_RealizarLogin.BorderSize = 0;
+            this.btn_RealizarLogin.FlatAppearance.BorderSize = 0;
+            this.btn_RealizarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RealizarLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RealizarLogin.ForeColor = System.Drawing.Color.White;
+            this.btn_RealizarLogin.HoverBackgroundColor = System.Drawing.Color.Silver;
+            this.btn_RealizarLogin.Location = new System.Drawing.Point(262, 314);
+            this.btn_RealizarLogin.Name = "btn_RealizarLogin";
+            this.btn_RealizarLogin.Size = new System.Drawing.Size(227, 40);
+            this.btn_RealizarLogin.TabIndex = 4;
+            this.btn_RealizarLogin.Text = "Fazer Login";
+            this.btn_RealizarLogin.TextColor = System.Drawing.Color.White;
+            this.btn_RealizarLogin.UseVisualStyleBackColor = false;
+            this.btn_RealizarLogin.Click += new System.EventHandler(this.btn_RealizarLogin_Click);
             // 
-            // tableLayoutPanel24
+            // tableLayoutPanel25
             // 
-            this.tableLayoutPanel24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel24.ColumnCount = 4;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel24.Controls.Add(this.buttonIG1, 3, 0);
-            this.tableLayoutPanel24.Controls.Add(this.buttonIG2, 2, 0);
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 375);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 1;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(742, 32);
-            this.tableLayoutPanel24.TabIndex = 7;
+            this.tableLayoutPanel25.ColumnCount = 1;
+            this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel25.Controls.Add(this.tb_NomeFuncionarioLBL, 0, 1);
+            this.tableLayoutPanel25.Controls.Add(this.lbl_NomeFunc, 0, 0);
+            this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel25.Name = "tableLayoutPanel25";
+            this.tableLayoutPanel25.RowCount = 2;
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(742, 74);
+            this.tableLayoutPanel25.TabIndex = 17;
             // 
-            // buttonIG1
+            // lbl_NomeFunc
             // 
-            this.buttonIG1.BackColor = System.Drawing.Color.Black;
-            this.buttonIG1.BackgroundColor = System.Drawing.Color.Black;
-            this.buttonIG1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.buttonIG1.BorderRadius = 5;
-            this.buttonIG1.BorderSize = 0;
-            this.buttonIG1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonIG1.FlatAppearance.BorderSize = 0;
-            this.buttonIG1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIG1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIG1.ForeColor = System.Drawing.Color.White;
-            this.buttonIG1.HoverBackgroundColor = System.Drawing.Color.Silver;
-            this.buttonIG1.Location = new System.Drawing.Point(558, 3);
-            this.buttonIG1.Name = "buttonIG1";
-            this.buttonIG1.Size = new System.Drawing.Size(181, 26);
-            this.buttonIG1.TabIndex = 0;
-            this.buttonIG1.Text = "Sair da Conta";
-            this.buttonIG1.TextColor = System.Drawing.Color.White;
-            this.buttonIG1.UseVisualStyleBackColor = false;
+            this.lbl_NomeFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_NomeFunc.AutoSize = true;
+            this.lbl_NomeFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NomeFunc.Location = new System.Drawing.Point(3, 16);
+            this.lbl_NomeFunc.Name = "lbl_NomeFunc";
+            this.lbl_NomeFunc.Size = new System.Drawing.Size(60, 21);
+            this.lbl_NomeFunc.TabIndex = 2;
+            this.lbl_NomeFunc.Text = "Nome: ";
+            this.lbl_NomeFunc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonIG2
+            // tb_NomeFuncionarioLBL
             // 
-            this.buttonIG2.BackColor = System.Drawing.Color.Black;
-            this.buttonIG2.BackgroundColor = System.Drawing.Color.Black;
-            this.buttonIG2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.buttonIG2.BorderRadius = 5;
-            this.buttonIG2.BorderSize = 0;
-            this.buttonIG2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonIG2.FlatAppearance.BorderSize = 0;
-            this.buttonIG2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIG2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIG2.ForeColor = System.Drawing.Color.White;
-            this.buttonIG2.HoverBackgroundColor = System.Drawing.Color.Silver;
-            this.buttonIG2.Location = new System.Drawing.Point(373, 3);
-            this.buttonIG2.Name = "buttonIG2";
-            this.buttonIG2.Size = new System.Drawing.Size(179, 26);
-            this.buttonIG2.TabIndex = 1;
-            this.buttonIG2.Text = "Atualizar Dados";
-            this.buttonIG2.TextColor = System.Drawing.Color.White;
-            this.buttonIG2.UseVisualStyleBackColor = false;
+            this.tb_NomeFuncionarioLBL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_NomeFuncionarioLBL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_NomeFuncionarioLBL.Location = new System.Drawing.Point(3, 41);
+            this.tb_NomeFuncionarioLBL.Name = "tb_NomeFuncionarioLBL";
+            this.tb_NomeFuncionarioLBL.Size = new System.Drawing.Size(736, 29);
+            this.tb_NomeFuncionarioLBL.TabIndex = 9;
+            // 
+            // tableLayoutPanel26
+            // 
+            this.tableLayoutPanel26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel26.ColumnCount = 2;
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.Controls.Add(this.lbl_CodigoFunc, 1, 2);
+            this.tableLayoutPanel26.Controls.Add(this.lbl_EmailFunc, 0, 2);
+            this.tableLayoutPanel26.Controls.Add(this.tb_CodigoFuncLBL, 1, 3);
+            this.tableLayoutPanel26.Controls.Add(this.mtb_DataNascFuncionarioLBL, 1, 1);
+            this.tableLayoutPanel26.Controls.Add(this.lbl_DataNascFunc, 1, 0);
+            this.tableLayoutPanel26.Controls.Add(this.lbl_CPFFunc, 0, 0);
+            this.tableLayoutPanel26.Controls.Add(this.mtb_CpfFuncionarioLBL, 0, 1);
+            this.tableLayoutPanel26.Controls.Add(this.tb_EmailFuncionarioLBL, 0, 3);
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 126);
+            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
+            this.tableLayoutPanel26.RowCount = 4;
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(742, 137);
+            this.tableLayoutPanel26.TabIndex = 18;
+            // 
+            // lbl_CPFFunc
+            // 
+            this.lbl_CPFFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_CPFFunc.AutoSize = true;
+            this.lbl_CPFFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CPFFunc.Location = new System.Drawing.Point(3, 13);
+            this.lbl_CPFFunc.Name = "lbl_CPFFunc";
+            this.lbl_CPFFunc.Size = new System.Drawing.Size(40, 21);
+            this.lbl_CPFFunc.TabIndex = 4;
+            this.lbl_CPFFunc.Text = "CPF:";
+            // 
+            // mtb_CpfFuncionarioLBL
+            // 
+            this.mtb_CpfFuncionarioLBL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtb_CpfFuncionarioLBL.Enabled = false;
+            this.mtb_CpfFuncionarioLBL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mtb_CpfFuncionarioLBL.Location = new System.Drawing.Point(3, 37);
+            this.mtb_CpfFuncionarioLBL.Mask = "000.000.000-00";
+            this.mtb_CpfFuncionarioLBL.Name = "mtb_CpfFuncionarioLBL";
+            this.mtb_CpfFuncionarioLBL.Size = new System.Drawing.Size(365, 29);
+            this.mtb_CpfFuncionarioLBL.TabIndex = 16;
+            // 
+            // lbl_DataNascFunc
+            // 
+            this.lbl_DataNascFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_DataNascFunc.AutoSize = true;
+            this.lbl_DataNascFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DataNascFunc.Location = new System.Drawing.Point(374, 13);
+            this.lbl_DataNascFunc.Name = "lbl_DataNascFunc";
+            this.lbl_DataNascFunc.Size = new System.Drawing.Size(153, 21);
+            this.lbl_DataNascFunc.TabIndex = 17;
+            this.lbl_DataNascFunc.Text = "Data de Nascimento:";
+            // 
+            // mtb_DataNascFuncionarioLBL
+            // 
+            this.mtb_DataNascFuncionarioLBL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtb_DataNascFuncionarioLBL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mtb_DataNascFuncionarioLBL.Location = new System.Drawing.Point(374, 37);
+            this.mtb_DataNascFuncionarioLBL.Mask = "00/00/0000";
+            this.mtb_DataNascFuncionarioLBL.Name = "mtb_DataNascFuncionarioLBL";
+            this.mtb_DataNascFuncionarioLBL.Size = new System.Drawing.Size(365, 29);
+            this.mtb_DataNascFuncionarioLBL.TabIndex = 18;
+            // 
+            // lbl_EmailFunc
+            // 
+            this.lbl_EmailFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_EmailFunc.AutoSize = true;
+            this.lbl_EmailFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmailFunc.Location = new System.Drawing.Point(3, 81);
+            this.lbl_EmailFunc.Name = "lbl_EmailFunc";
+            this.lbl_EmailFunc.Size = new System.Drawing.Size(51, 21);
+            this.lbl_EmailFunc.TabIndex = 19;
+            this.lbl_EmailFunc.Text = "Email:";
+            this.lbl_EmailFunc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tb_EmailFuncionarioLBL
+            // 
+            this.tb_EmailFuncionarioLBL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_EmailFuncionarioLBL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tb_EmailFuncionarioLBL.Location = new System.Drawing.Point(3, 105);
+            this.tb_EmailFuncionarioLBL.Name = "tb_EmailFuncionarioLBL";
+            this.tb_EmailFuncionarioLBL.Size = new System.Drawing.Size(365, 29);
+            this.tb_EmailFuncionarioLBL.TabIndex = 20;
+            // 
+            // lbl_CodigoFunc
+            // 
+            this.lbl_CodigoFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_CodigoFunc.AutoSize = true;
+            this.lbl_CodigoFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CodigoFunc.Location = new System.Drawing.Point(374, 81);
+            this.lbl_CodigoFunc.Name = "lbl_CodigoFunc";
+            this.lbl_CodigoFunc.Size = new System.Drawing.Size(63, 21);
+            this.lbl_CodigoFunc.TabIndex = 21;
+            this.lbl_CodigoFunc.Text = "Código:";
+            this.lbl_CodigoFunc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel28
+            // 
+            this.tableLayoutPanel28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel28.ColumnCount = 1;
+            this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel28.Controls.Add(this.mtb_TelefoneFuncLBL, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.lbl_TelefoneFunc, 0, 0);
+            this.tableLayoutPanel28.Location = new System.Drawing.Point(4, 281);
+            this.tableLayoutPanel28.Name = "tableLayoutPanel28";
+            this.tableLayoutPanel28.RowCount = 2;
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(741, 59);
+            this.tableLayoutPanel28.TabIndex = 18;
+            // 
+            // lbl_TelefoneFunc
+            // 
+            this.lbl_TelefoneFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_TelefoneFunc.AutoSize = true;
+            this.lbl_TelefoneFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TelefoneFunc.Location = new System.Drawing.Point(3, 2);
+            this.lbl_TelefoneFunc.Name = "lbl_TelefoneFunc";
+            this.lbl_TelefoneFunc.Size = new System.Drawing.Size(70, 21);
+            this.lbl_TelefoneFunc.TabIndex = 7;
+            this.lbl_TelefoneFunc.Text = "Telefone:";
+            // 
+            // mtb_TelefoneFuncLBL
+            // 
+            this.mtb_TelefoneFuncLBL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mtb_TelefoneFuncLBL.Location = new System.Drawing.Point(3, 26);
+            this.mtb_TelefoneFuncLBL.Mask = "(00) 0 0000-0000";
+            this.mtb_TelefoneFuncLBL.Name = "mtb_TelefoneFuncLBL";
+            this.mtb_TelefoneFuncLBL.Size = new System.Drawing.Size(238, 29);
+            this.mtb_TelefoneFuncLBL.TabIndex = 14;
             // 
             // TelaPrincipal
             // 
@@ -2645,6 +2778,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.painelFuncionario.ResumeLayout(false);
             this.painelFuncionario.PerformLayout();
+            this.tableLayoutPanel24.ResumeLayout(false);
             this.homeLabel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxPromo)).EndInit();
             this.painelCadCliente.ResumeLayout(false);
@@ -2682,7 +2816,12 @@
             this.panel_Login.ResumeLayout(false);
             this.panel_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel25.ResumeLayout(false);
+            this.tableLayoutPanel25.PerformLayout();
+            this.tableLayoutPanel26.ResumeLayout(false);
+            this.tableLayoutPanel26.PerformLayout();
+            this.tableLayoutPanel28.ResumeLayout(false);
+            this.tableLayoutPanel28.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2834,12 +2973,6 @@
         private CustomControls.Botoes.ButtonIG btn_DelCliente;
         private CustomControls.Botoes.ButtonIG btn_AttCliente;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label lbl_NomeFunc;
-        private System.Windows.Forms.Label lbl_CPFFunc;
-        private System.Windows.Forms.Label lbl_EmailFunc;
-        private System.Windows.Forms.Label lbl_DataNascFunc;
-        private System.Windows.Forms.Label lbl_CodigoFunc;
-        private System.Windows.Forms.Label lbl_TelefoneFunc;
         private System.Windows.Forms.Panel panel_Login;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tb_EmailOuCodigo;
@@ -2847,8 +2980,23 @@
         private System.Windows.Forms.CheckBox cb_ExibirSenha;
         private System.Windows.Forms.TextBox tb_SenhaUsuario;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private CustomControls.Botoes.ButtonIG buttonIG1;
-        private CustomControls.Botoes.ButtonIG buttonIG2;
+        private CustomControls.Botoes.ButtonIG btn_SairContaFunc;
+        private CustomControls.Botoes.ButtonIG btn_AtualizarDadosFunc;
+        private System.Windows.Forms.TextBox tb_CodigoFuncLBL;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
+        private System.Windows.Forms.TextBox tb_NomeFuncionarioLBL;
+        private System.Windows.Forms.Label lbl_NomeFunc;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.MaskedTextBox mtb_DataNascFuncionarioLBL;
+        private System.Windows.Forms.Label lbl_DataNascFunc;
+        private System.Windows.Forms.Label lbl_CPFFunc;
+        private System.Windows.Forms.MaskedTextBox mtb_CpfFuncionarioLBL;
+        private System.Windows.Forms.Label lbl_CodigoFunc;
+        private System.Windows.Forms.Label lbl_EmailFunc;
+        private System.Windows.Forms.TextBox tb_EmailFuncionarioLBL;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
+        private System.Windows.Forms.MaskedTextBox mtb_TelefoneFuncLBL;
+        private System.Windows.Forms.Label lbl_TelefoneFunc;
     }
 }
 

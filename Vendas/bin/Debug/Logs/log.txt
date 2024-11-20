@@ -1,0 +1,2 @@
+20-11-2024 11:38:35 - LOG: Erro ao atualizar Funcionario no banco de dados: SQL logic error
+no such table: funcionario

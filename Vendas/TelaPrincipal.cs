@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Supermercado.Contas;
 using static Supermercado.Produtos;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -1179,12 +1180,15 @@ namespace Supermercado
                 Global.telefoneFuncionario = conta.Telefone;
                 Global.datanascimentoFuncionario = conta.DataNascimento;
 
-                lbl_NomeFunc.Text = $"Nome: {conta.Nome}";
-                lbl_CPFFunc.Text = $"CPF: {conta.Cpf}";
-                lbl_DataNascFunc.Text = $"Data de Nascimento: {conta.DataNascimento}";
-                lbl_EmailFunc.Text = $"Email: {conta.Email}";
-                lbl_CodigoFunc.Text = $"Código: {conta.Codigo}";
-                lbl_TelefoneFunc.Text = $"Telefone: {conta.Telefone}";
+                tb_NomeFuncionarioLBL.Text = conta.Nome;
+                mtb_CpfFuncionarioLBL.Text = conta.Cpf;
+                mtb_DataNascFuncionarioLBL.Text = conta.DataNascimento;
+                tb_EmailFuncionarioLBL.Text = conta.Email;
+                tb_CodigoFuncLBL.Text = conta.Codigo;
+                mtb_TelefoneFuncLBL.Text = conta.Telefone;
+
+                tb_EmailOuCodigo.Clear();
+                tb_SenhaUsuario.Clear();
             }
             else
             {
@@ -1205,6 +1209,62 @@ namespace Supermercado
                 tb_SenhaUsuario.PasswordChar = '*';
                 cb_ExibirSenha.Checked = false;
             }
+        }
+
+        private void btn_SairContaFunc_Click(object sender, EventArgs e)
+        {
+            Global.idFuncionario = -1;
+            Global.nomeFuncionario = null;
+            Global.emailFuncionario = null;
+            Global.cpfFuncionario = null;
+            Global.codigoFuncionario = null;
+            Global.telefoneFuncionario = null;
+            Global.datanascimentoFuncionario = null;
+            Funcoes.Notificar("INFO", "Você saiu da sua conta.");
+            AtivarPainel(homeLabel);
+        }
+
+        private void btn_AtualizarDadosFunc_Click(object sender, EventArgs e)
+        {
+            AtualizarFuncionario();
+        }
+
+        private void AtualizarFuncionario()
+        {
+            string nome = tb_NomeFuncionarioLBL.Text;
+            mtb_CpfFuncionarioLBL.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtb_CpfFuncionarioLBL.Text;
+            mtb_DataNascFuncionarioLBL.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string dataNasc = mtb_DataNascFuncionarioLBL.Text;
+            string email = tb_EmailFuncionarioLBL.Text;
+            mtb_TelefoneFuncLBL.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefone = mtb_TelefoneFuncLBL.Text;
+
+            if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(dataNasc)
+                || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(telefone))
+            {
+                MessageBox.Show("Digite todos os dados para atualizar.");
+                return;
+            }
+
+            var result = Banco.AtualizarFuncionario(nome, dataNasc, email, telefone, cpf);
+            if (result)
+            {
+                AtivarPainel(homeLabel);
+                AtualizarDadosFunc(nome, dataNasc, email, telefone, cpf); // atualiza no programa
+            }
+            else
+            {
+                return;
+            }
+        }
+        private void AtualizarDadosFunc(string nome, string dataNasc, string email, string telefone, string cpf)
+        {
+            Global.nomeFuncionario = nome;
+            Global.datanascimentoFuncionario = dataNasc;
+            Global.emailFuncionario = email;
+            Global.telefoneFuncionario = telefone;
+            lbl_DadosFuncionario.Text = $"Usuário: {nome}, Cpf: {cpf}";
         }
     }
 }
