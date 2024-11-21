@@ -184,8 +184,70 @@ namespace Supermercado
         private void CarregarClientes()
         {
             dgv_Dados.DataSource = Banco.DadosClientes();
+
+            dgv_Dados.Columns["id"].DisplayIndex = 0;
+            dgv_Dados.Columns["nome"].DisplayIndex = 1;
+            dgv_Dados.Columns["cpf"].DisplayIndex = 2;
+            dgv_Dados.Columns["dataNasc"].DisplayIndex = 3;
+            dgv_Dados.Columns["telefone"].DisplayIndex = 4;
+            dgv_Dados.Columns["email"].DisplayIndex = 5;
+            dgv_Dados.Columns["endereco"].DisplayIndex = 6;
+            dgv_Dados.Columns["anotacoes"].DisplayIndex = 7;
+
+            dgv_Dados.Columns["id"].HeaderText = "ID";
+            dgv_Dados.Columns["nome"].HeaderText = "Nome";
+            dgv_Dados.Columns["cpf"].HeaderText = "CPF";
+            dgv_Dados.Columns["dataNasc"].HeaderText = "Data de Nasc";
+            dgv_Dados.Columns["telefone"].HeaderText = "Telefone";
+            dgv_Dados.Columns["email"].HeaderText = "Email";
+            dgv_Dados.Columns["endereco"].HeaderText = "Endereço";
+            dgv_Dados.Columns["anotacoes"].HeaderText = "Anotações";
+
             dgv_Dados.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            dgv_Dados.CellFormatting += dgv_Dados_CellFormatting;
         }
+
+        private void dgv_Dados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgv_Dados.Columns[e.ColumnIndex].Name == "dataNasc")
+            {
+                if (e.Value != null)
+                {
+                    string data = e.Value.ToString();
+                    if (data.Length == 8)
+                    {
+                        e.Value = $"{data.Substring(0, 2)}/{data.Substring(2, 2)}/{data.Substring(4, 4)}";
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+            if (dgv_Dados.Columns[e.ColumnIndex].Name == "cpf")
+            {
+                if (e.Value != null)
+                {
+                    string cpf = e.Value.ToString();
+                    if (cpf.Length == 11)
+                    {
+                        e.Value = $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+            if (dgv_Dados.Columns[e.ColumnIndex].Name == "telefone")
+            {
+                if (e.Value != null)
+                {
+                    string telefone = e.Value.ToString();
+                    if (telefone.Length == 11)
+                    {
+                        e.Value = $"({telefone.Substring(0, 2)}) {telefone.Substring(2, 1)} {telefone.Substring(3, 4)}-{telefone.Substring(7, 4)}";
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+        }
+
         private void CarregarEstoque()
         {
             dgv_Estoque.DataSource = Banco.Estoque();
