@@ -34,6 +34,7 @@
             this.lbl_DadosFuncionario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_AlterarConfig = new System.Windows.Forms.Button();
             this.btn_Minimize = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
             this.btn_Maximize = new System.Windows.Forms.Button();
@@ -284,13 +285,28 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btn_AlterarConfig);
             this.panel3.Controls.Add(this.btn_Minimize);
             this.panel3.Controls.Add(this.btn_Close);
             this.panel3.Controls.Add(this.btn_Maximize);
-            this.panel3.Location = new System.Drawing.Point(843, 23);
+            this.panel3.Location = new System.Drawing.Point(807, 23);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(95, 28);
+            this.panel3.Size = new System.Drawing.Size(131, 28);
             this.panel3.TabIndex = 6;
+            // 
+            // btn_AlterarConfig
+            // 
+            this.btn_AlterarConfig.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AlterarConfig.FlatAppearance.BorderSize = 0;
+            this.btn_AlterarConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AlterarConfig.Image = global::Supermercado.Properties.Resources.configP;
+            this.btn_AlterarConfig.Location = new System.Drawing.Point(4, 1);
+            this.btn_AlterarConfig.Name = "btn_AlterarConfig";
+            this.btn_AlterarConfig.Size = new System.Drawing.Size(25, 25);
+            this.btn_AlterarConfig.TabIndex = 16;
+            this.btn_AlterarConfig.UseVisualStyleBackColor = true;
+            this.btn_AlterarConfig.Visible = false;
+            this.btn_AlterarConfig.Click += new System.EventHandler(this.btn_AlterarConfig_Click);
             // 
             // btn_Minimize
             // 
@@ -298,7 +314,7 @@
             this.btn_Minimize.FlatAppearance.BorderSize = 0;
             this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minimize.Image = global::Supermercado.Properties.Resources.btn4MenorMM;
-            this.btn_Minimize.Location = new System.Drawing.Point(5, 2);
+            this.btn_Minimize.Location = new System.Drawing.Point(42, 2);
             this.btn_Minimize.Name = "btn_Minimize";
             this.btn_Minimize.Size = new System.Drawing.Size(25, 25);
             this.btn_Minimize.TabIndex = 14;
@@ -311,7 +327,7 @@
             this.btn_Close.FlatAppearance.BorderSize = 0;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.Image = global::Supermercado.Properties.Resources.btn6Menormm;
-            this.btn_Close.Location = new System.Drawing.Point(65, 2);
+            this.btn_Close.Location = new System.Drawing.Point(102, 2);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(25, 25);
             this.btn_Close.TabIndex = 15;
@@ -324,7 +340,7 @@
             this.btn_Maximize.FlatAppearance.BorderSize = 0;
             this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Maximize.Image = global::Supermercado.Properties.Resources.btn5MenorMM;
-            this.btn_Maximize.Location = new System.Drawing.Point(35, 2);
+            this.btn_Maximize.Location = new System.Drawing.Point(72, 2);
             this.btn_Maximize.Name = "btn_Maximize";
             this.btn_Maximize.Size = new System.Drawing.Size(25, 25);
             this.btn_Maximize.TabIndex = 13;
@@ -2997,6 +3013,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
         private System.Windows.Forms.MaskedTextBox mtb_TelefoneFuncLBL;
         private System.Windows.Forms.Label lbl_TelefoneFunc;
+        private System.Windows.Forms.Button btn_AlterarConfig;
     }
 }
 

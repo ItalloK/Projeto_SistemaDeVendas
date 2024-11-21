@@ -1328,5 +1328,11 @@ namespace Supermercado
             Global.telefoneFuncionario = telefone;
             lbl_DadosFuncionario.Text = $"Usuário: {nome}, Cpf: {cpf}";
         }
+
+        private void btn_AlterarConfig_Click(object sender, EventArgs e)
+        {
+            Configuracoes config = new Configuracoes();
+            config.ShowDialog();
+        }
     }
 }
