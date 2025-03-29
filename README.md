@@ -20,3 +20,6 @@
   <img src="Imagens/13.png" width="200" alt="Imagem 13">
   <img src="Imagens/14.png" width="200" alt="Imagem 14">
 </p>
+
+</br>
+<h6>Concluido, Ver: 1.0.0</h6>

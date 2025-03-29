@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|e:\\programa\u00E7\u00E3o\\projetos\\vendas\\vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EB431ED-CC14-4F10-BE15-E40E79587E78}|Vendas.csproj|solutionrelative:telaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,8 +42,8 @@
               "Title": "TelaPrincipal.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\TelaPrincipal.cs",
               "RelativeDocumentMoniker": "TelaPrincipal.cs",
-              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\TelaPrincipal.cs",
-              "RelativeToolTip": "TelaPrincipal.cs",
+              "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Vendas\\Vendas\\TelaPrincipal.cs*",
+              "RelativeToolTip": "TelaPrincipal.cs*",
               "ViewState": "AgIAADQFAAAAAAAAAAAlwDYFAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T23:19:32.489Z",
