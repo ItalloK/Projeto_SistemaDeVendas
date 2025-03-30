@@ -22,4 +22,4 @@
 </p>
 
 </br>
-<h6>Concluido, Ver: 1.0.0 - 29/03/2025</h6>
+<h6>✅ Concluído — Versão 1.0.0 (30/03/2025) • <a href="Changelog.txt">Changelog</a></h6>
